@@ -6,7 +6,7 @@
 package foodmood_v1;
 
 /**
- *
+ * This class is the initiator of the application
  * @author Akhil
  */
 public class FoodMood_v1 {
