@@ -3,18 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CrudUserView;
+package ResearchModel;
 
 /**
  *
  * @author Shawn
  */
-public class CrudUserView {
+public class ResearchModel {
     
     /**
-     * This is the default constructor for CrudUserView
+     * This is the default
      */
-    public CrudUserView(){
-        
-    }
+    
 }

@@ -3,18 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CrudUserView;
+package ResearchController;
 
 /**
  *
  * @author Shawn
  */
-public class CrudUserView {
+public class ResearchController {
     
     /**
-     * This is the default constructor for CrudUserView
+     * This is the default constructor for ResearchController
      */
-    public CrudUserView(){
+    
+    public ResearchController(){
         
     }
+    
 }

@@ -11,4 +11,11 @@ package CrudUserModel;
  */
 public class CrudUserModel {
     
+    /**
+     * This is the default constructor for CrudUserModel
+     */
+    public CrudUserModel(){
+        
+    }
+    
 }

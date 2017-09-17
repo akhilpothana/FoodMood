@@ -11,4 +11,11 @@ package CrudUserController;
  */
 public class CrudUserController {
     
+    /**
+     * This is the default constructor for CrudUserController
+     */
+    public CrudUserController(){
+        
+    }
+    
 }
