@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view_FoodMood_correlation;
+package control_ViewNotifications;
 
 /**
  * This class correspond to the View within the MVC structure. This is where view of this use case
@@ -11,13 +11,13 @@ package view_FoodMood_correlation;
  * Control class.
  * @author edgardoreinoso
  */
-public class ViewFoodMoodCorrelation {
+public class ControlViewNotifications {
 // FIELDS
     
     /**
-     * This is the default constructor for the ViewFoodMoodCorrelation class
+     * This is the default constructor for the ControlViewNotifications class
      */
-    public ViewFoodMoodCorrelation(){
+    public ControlViewNotifications(){
     
     }
     
