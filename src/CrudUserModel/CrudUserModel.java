@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model_crud_user_profile;
+package CrudUserModel;
 
 /**
  *
  * @author Shawn
  */
-public class model_crud_user_profile {
+public class CrudUserModel {
     
 }
