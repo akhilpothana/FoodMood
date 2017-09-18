@@ -6,7 +6,9 @@
 package ResearchController;
 
 /**
- *
+ *This is the ResearchController where any processes in the research page will
+ * be handled
+ * 
  * @author Shawn
  */
 public class ResearchController {

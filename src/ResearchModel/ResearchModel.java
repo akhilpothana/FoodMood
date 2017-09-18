@@ -6,7 +6,9 @@
 package ResearchModel;
 
 /**
- *
+ *This is the ResearchModel where the information and links for the Research
+ * page of the application
+ * 
  * @author Shawn
  */
 public class ResearchModel {

@@ -6,7 +6,9 @@
 package CrudUserView;
 
 /**
- *
+ *This is the CrudUserView that holds all the page design information for 
+ * user CRUD processes
+ * 
  * @author Shawn
  */
 public class CrudUserView {

@@ -6,7 +6,8 @@
 package CrudUserModel;
 
 /**
- *
+ *This is the CrudUserModel where user profile data will be held or retrieved
+ * 
  * @author Shawn
  */
 public class CrudUserModel {

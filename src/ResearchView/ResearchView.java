@@ -6,7 +6,9 @@
 package ResearchView;
 
 /**
- *
+ *This is the ResearchView class that contains the page design specifications
+ * for the Research page
+ * 
  * @author Shawn
  */
 public class ResearchView {

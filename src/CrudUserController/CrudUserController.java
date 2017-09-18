@@ -6,7 +6,9 @@
 package CrudUserController;
 
 /**
- *
+ *This is the CrudUserController, where the application will manage all
+ * processes concerning user profiles
+ * 
  * @author Shawn
  */
 public class CrudUserController {
