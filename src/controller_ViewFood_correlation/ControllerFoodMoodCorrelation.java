@@ -27,6 +27,7 @@ public class ControllerFoodMoodCorrelation {
     
 // METHOD
     /**
+     * This class is going to return the instance of the view food/mood correlation
      * @return the foodMoodCo_view
      */
     public ViewFoodMoodCorrelation getFoodMoodCo_view() {
@@ -34,6 +35,7 @@ public class ControllerFoodMoodCorrelation {
     }
 
     /**
+     * This class is going to return the instance of the model food/mood correlation
      * @return the foodMoodCo_model
      */
     public ModelFoodMoodCorrelation getFoodMoodCo_model() {

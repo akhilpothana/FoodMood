@@ -26,4 +26,19 @@ public class ControlViewNotifications {
     }
     
 // METHOD
+    /**
+     * This class is going to return the model for the model notification use case
+     * @return the viewNofitications_model
+     */
+    public ModelViewNotifications getViewNofitications_model() {
+        return viewNofitications_model;
+    }
+
+    /**
+     * This class is going to return the model for the view notification use case
+     * @return the notifications_viewDisplay
+     */
+    public ViewNotifications getNotifications_viewDisplay() {
+        return notifications_viewDisplay;
+    }
 }

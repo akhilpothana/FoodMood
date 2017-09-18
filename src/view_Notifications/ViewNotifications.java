@@ -36,4 +36,14 @@ public class ViewNotifications {
     public String getMessageSent() {
         return messageSent;
     }
+    
+    /**
+    * This class is supposed to get the instance from the controller in this use case.
+    * It would be crucial to get the controller since this how the information is going to be passed
+    * To the front-end view
+    * @return the viewNotification_controller
+    */
+    public ControlViewNotifications getViewNotification_controller() {
+        return viewNotification_controller;
+    }
 }
