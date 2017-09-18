@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package model_ViewNotifications;
+import userprofilemodel.User;
 
 /**
  * This class correspond to the Model within the MVC structure. This is where the data of this use case
@@ -12,7 +13,8 @@ package model_ViewNotifications;
  */
 public class ModelViewNotifications {
 // FIELD
-
+    private User usernameID;
+    
     /**
      * This is the default constructor for the ModelViewNotifications class
      */

@@ -5,6 +5,9 @@
  */
 package controller_ViewFood_correlation;
 
+import model_ViewFood_correlation.ModelFoodMoodCorrelation;
+import view_FoodMood_correlation.ViewFoodMoodCorrelation;
+
 /**
  * This class correspond to the Controller within the MVC structure. This is where the main control of
  * The functionality will take place. This class will connect both the model with the view
@@ -12,6 +15,8 @@ package controller_ViewFood_correlation;
  */
 public class ControllerFoodMoodCorrelation {
 // FIELDS
+    private ViewFoodMoodCorrelation foodMoodCo_view;
+    private ModelFoodMoodCorrelation foodMoodCo_model;
     
     /**
      * This is the default constructor for the ControllerFoodMoodCorrelation class
@@ -21,4 +26,17 @@ public class ControllerFoodMoodCorrelation {
     }
     
 // METHOD
+    /**
+     * @return the foodMoodCo_view
+     */
+    public ViewFoodMoodCorrelation getFoodMoodCo_view() {
+        return foodMoodCo_view;
+    }
+
+    /**
+     * @return the foodMoodCo_model
+     */
+    public ModelFoodMoodCorrelation getFoodMoodCo_model() {
+        return foodMoodCo_model;
+    }
 }

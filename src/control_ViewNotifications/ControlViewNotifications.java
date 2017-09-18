@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package control_ViewNotifications;
+import model_ViewNotifications.ModelViewNotifications;
+import view_Notifications.ViewNotifications;
 
 /**
  * This class correspond to the View within the MVC structure. This is where view of this use case
@@ -13,6 +15,8 @@ package control_ViewNotifications;
  */
 public class ControlViewNotifications {
 // FIELDS
+    private ModelViewNotifications viewNofitications_model;
+    private ViewNotifications notifications_viewDisplay;
     
     /**
      * This is the default constructor for the ControlViewNotifications class
