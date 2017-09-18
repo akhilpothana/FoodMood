@@ -14,6 +14,13 @@ package RecommendationsView;
 public class RecommendationsView {
     
     /**
+     * Displays the current page
+     */
+    public void DisplayPage(){
+        
+    }
+    
+    /**
      * This is the default constructor for RecommendationsView
      */
     public RecommendationsView(){

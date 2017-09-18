@@ -12,6 +12,11 @@ package RecommendationModel;
 public class RecommendationModel {
     
     /**
+     * user's favorite food
+     */
+    private String favoriteFood[];
+    
+    /**
      * This is the default constructor for RecommendationModel class
      */
     public RecommendationModel(){

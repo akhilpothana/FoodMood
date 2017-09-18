@@ -14,6 +14,18 @@ package ResearchView;
 public class ResearchView {
     
     /**
+     * The site's url
+     */
+    private String siteLink[];
+    
+    /**
+     * Displays the current page
+     */
+    public void DisplayPage(){
+        
+    }
+    
+    /**
      * This is the default constructor for ResearchView
      */
     public ResearchView(){

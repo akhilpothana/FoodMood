@@ -13,6 +13,17 @@ package RecommendationController;
  */
 public class RecommendationController {
     
+    private String reccommendation[];
+    
+    /**
+     * Retrieves the recommended food
+     */
+    
+    public void RetrieveInfo(){
+        
+    }
+    
+    
     /**
      * This is the default constructor for the RecommendationController
      * class

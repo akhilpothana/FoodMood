@@ -12,6 +12,36 @@ package CrudUserModel;
  */
 public class CrudUserModel {
     
+     /**
+     * username data
+     */
+    private String username[];
+    /**
+     * password data string
+     */
+    private String password[];
+    
+    /**
+     * create a new model
+     */
+    public void CreateModel(){
+        
+    }
+    
+    /**
+     * edit model
+     */
+    public void EditModel(){
+        
+    }
+    
+    /**
+     * deletes model
+     */
+    public void DeleteModel(){
+        
+    }
+
     /**
      * This is the default constructor for CrudUserModel
      */

@@ -14,6 +14,11 @@ package ResearchController;
 public class ResearchController {
     
     /**
+     * the url for the page
+     */
+    private String siteLink[];
+    
+    /**
      * This is the default constructor for ResearchController
      */
     

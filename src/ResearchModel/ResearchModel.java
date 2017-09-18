@@ -14,7 +14,18 @@ package ResearchModel;
 public class ResearchModel {
     
     /**
-     * This is the default
+     * the site's url
      */
+    private String siteLink[];
+
+    
+    
+    /**
+     * This is the default constructor for ResearchModel
+     */
+    
+    public ResearchModel(){
+        
+    }
     
 }
