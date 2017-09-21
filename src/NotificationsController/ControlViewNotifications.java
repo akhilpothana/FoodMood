@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package control_ViewNotifications;
-import model_ViewNotifications.ModelViewNotifications;
-import view_Notifications.ViewNotifications;
+package NotificationsController;
+import NotificationsModel.ModelViewNotifications;
+import NotificationsView.ViewNotifications;
 
 /**
  * This class correspond to the View within the MVC structure. This is where view of this use case
