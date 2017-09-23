@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package crud_mood_control;
+package CrudMoodController;
 
-import crud_mood_model.crud_mood_model;
-import crud_mood_view.crud_mood_view;
+import CrudMoodModel.crud_mood_model;
+import CrudMoodView.crud_mood_view;
 
 /**
  *

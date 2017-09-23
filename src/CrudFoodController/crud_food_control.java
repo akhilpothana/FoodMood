@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package crud_food_control;
+package CrudFoodController;
 
-import crud_food_model.crud_food_model;
-import crud_food_view.crud_food_view;
-import view_FoodMoodHistory_model.FoodMoodHistory_model;
+import CrudFoodModel.crud_food_model;
+import CrudFoodView.crud_food_view;
+import HistoryModel.FoodMoodHistory_model;
 
 /**
  *

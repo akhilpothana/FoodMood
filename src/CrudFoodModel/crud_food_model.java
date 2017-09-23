@@ -3,25 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package HistoryView;
+package CrudFoodModel;
 
 /**
  *
  * @author Akhil
  */
-public class Controller {
+public class crud_food_model {
     
     private String food;
-    private String mood;
     
-    /**
-     * 
-     * @param v - the passed instance of the view class
-     */
-    Controller(View v)
+    public crud_food_model(String f)
     {
-        
-    }
+        food = f;
+    } 
 
     /**
      * @return the food
@@ -31,11 +26,9 @@ public class Controller {
     }
 
     /**
-     * @return the mood
+     * @param food the food to set
      */
-    public String getMood() {
-        return mood;
+    public void setFood(String food) {
+        this.food = food;
     }
-    
-    
 }

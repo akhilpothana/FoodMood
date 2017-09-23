@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view_FoodMoodHistory_control;
+package HistoryController;
 
-import view_FoodMoodHistory_model.FoodMoodHistory_model;
-import view_FoodMoodHistory_view.FoodMoodHistory_view;
+import HistoryModel.FoodMoodHistory_model;
+import HistoryView.FoodMoodHistory_view;
 
 /**
  *
