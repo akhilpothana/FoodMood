@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model_ViewFood_correlation;
+package CorrelationModel;
 
-import controller_ViewFood_correlation.ControllerFoodMoodCorrelation;
+import CorrelationController.ControllerFoodMoodCorrelation;
 import userprofilemodel.User;
 
 /**

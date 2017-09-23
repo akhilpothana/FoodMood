@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller_ViewFood_correlation;
+package CorrelationController;
 
-import model_ViewFood_correlation.ModelFoodMoodCorrelation;
-import view_FoodMood_correlation.ViewFoodMoodCorrelation;
+import CorrelationModel.ModelFoodMoodCorrelation;
+import CorrelationView.ViewFoodMoodCorrelation;
 
 /**
  * This class correspond to the Controller within the MVC structure. This is where the main control of
