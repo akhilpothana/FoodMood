@@ -14,6 +14,13 @@ package CrudUserView;
 public class CrudUserView {
     
     /**
+     * Displays the user page
+     */
+    public void DisplayView(){
+        
+    }
+    
+    /**
      * This is the default constructor for CrudUserView
      */
     public CrudUserView(){

@@ -14,6 +14,36 @@ package CrudUserController;
 public class CrudUserController {
     
     /**
+     * username data
+     */
+    private String username[];
+    /**
+     * password data string
+     */
+    private String password[];
+    
+    /**
+     * create a new user
+     */
+    public void CreateUser(){
+        
+    }
+    
+    /**
+     * edit user settings
+     */
+    public void EditUser(){
+        
+    }
+    
+    /**
+     * deletes user information
+     */
+    public void DeleteUser(){
+        
+    }
+    
+    /**
      * This is the default constructor for CrudUserController
      */
     public CrudUserController(){
