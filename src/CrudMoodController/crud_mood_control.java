@@ -1,12 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * This class handles creating, reading, updating or deleting a mood entry.
+ * There is no View class because these different actions will take place 
+ * across the application and not within a single UI.
  */
 package CrudMoodController;
 
 import CrudMoodModel.crud_mood_model;
-import CrudMoodView.crud_mood_view;
 
 /**
  *
@@ -16,13 +15,11 @@ public class crud_mood_control {
     
     String mood;
     crud_mood_model cmm;
-    crud_mood_view cmv;
     
     crud_mood_control(String m)
     {
         mood = m;
         cmm = new crud_mood_model(m);
-        cmv = new crud_mood_view(m);
     }
     
     /**

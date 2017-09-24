@@ -1,13 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This class handles creating, reading, updating or deleting a food entry.
+ * There is no View class because these different actions will take place 
+ * across the application and not within a single UI.
  */
 package CrudFoodController;
 
 import CrudFoodModel.crud_food_model;
-import CrudFoodView.crud_food_view;
-import HistoryModel.FoodMoodHistory_model;
 
 /**
  *
@@ -17,13 +15,11 @@ public class crud_food_control {
     
     String food;
     crud_food_model cfm;
-    crud_food_view cfv;
     
     crud_food_control(String f)
     {
         food = f;
         cfm = new crud_food_model(f);
-        cfv = new crud_food_view(f);
     }
     
     /**
