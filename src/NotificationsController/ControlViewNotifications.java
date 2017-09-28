@@ -5,7 +5,7 @@
  */
 package NotificationsController;
 import NotificationsModel.ModelViewNotifications;
-import NotificationsView.ViewNotifications;
+import NotificationsView.ViewNotificationsUI;
 
 /**
  * This class correspond to the View within the MVC structure. This is where view of this use case
@@ -16,7 +16,7 @@ import NotificationsView.ViewNotifications;
 public class ControlViewNotifications {
 // FIELDS
     private ModelViewNotifications viewNofitications_model;
-    private ViewNotifications notifications_viewDisplay;
+    private ViewNotificationsUI notifications_viewDisplay;
     
     /**
      * This is the default constructor for the ControlViewNotifications class
@@ -38,7 +38,7 @@ public class ControlViewNotifications {
      * This class is going to return the model for the view notification use case
      * @return the notifications_viewDisplay
      */
-    public ViewNotifications getNotifications_viewDisplay() {
+    public ViewNotificationsUI getNotifications_viewDisplay() {
         return notifications_viewDisplay;
     }
 }
