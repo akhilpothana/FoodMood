@@ -13,10 +13,10 @@ import CrudMoodModel.crud_mood_model;
  */
 public class crud_mood_control {
     
-    String mood;
-    crud_mood_model cmm;
+    private String mood;
+    private crud_mood_model cmm;
     
-    crud_mood_control(String m)
+    public crud_mood_control(String m)
     {
         mood = m;
         cmm = new crud_mood_model(m);

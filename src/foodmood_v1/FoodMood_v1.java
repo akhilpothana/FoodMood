@@ -20,8 +20,9 @@ public class FoodMood_v1 {
 class TestHarness {
     //FIELDS
     //Classes
-    private FoodMoodMaxController testAkhilHarness;
+    private FoodMoodAkhilController testAkhilHarness;
     private crud_food_control foodControlHarness;
+    
     //Other types
     private String food = "dog food";
     
