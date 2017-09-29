@@ -10,18 +10,21 @@ package CrudFoodModel;
  * @author Akhil
  */
 public class crud_food_model {
-    
+    //FIELDS
     private String food;
     
+    //CONSTRUCTOR
     public crud_food_model(String f)
     {
         food = f;
     } 
 
+    //METHODS
     /**
      * @return the food
      */
     public String getFood() {
+        System.out.println("Test food model class");
         return food;
     }
 

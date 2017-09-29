@@ -12,11 +12,10 @@ import CrudFoodModel.crud_food_model;
  * @author Akhil
  */
 public class crud_food_control {
+    private String food;
+    private crud_food_model cfm;
     
-    String food;
-    crud_food_model cfm;
-    
-    crud_food_control(String f)
+    public crud_food_control(String f)
     {
         food = f;
         cfm = new crud_food_model(f);

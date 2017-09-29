@@ -10,14 +10,16 @@ package CrudMoodModel;
  * @author Akhil
  */
 public class crud_mood_model {
-    
+    //FIELDS
     private String mood;
     
+    //CONSTRUCTOR
     public crud_mood_model(String m)
     {
         mood = m;  
     }
 
+    //METHODS
     /**
      * @return the mood
      */

@@ -6,6 +6,7 @@
 package CorrelationModel;
 
 import CorrelationController.ControllerFoodMoodCorrelation;
+import CrudUserModel.CrudUserModel;
 //import userprofilemodel.User;
 
 /**
@@ -18,7 +19,7 @@ public class ModelFoodMoodCorrelation {
     private ControllerFoodMoodCorrelation foodMoodCo_controller;
     private String [] mood;
     private String recordFood;
-//    private User usernameID;
+    private CrudUserModel usernameID;
     
     /**
      * This is the default constructor for the ModelFoodMoodCorrelation class
@@ -51,9 +52,9 @@ public class ModelFoodMoodCorrelation {
      * the system
      * @return the usernameID
      */
-//    public User getUsernameID() {
-//        return usernameID;
-//    }
+    public CrudUserModel getUsernameID() {
+        return usernameID;
+    }
     
     /**
      * This class is supposed to return the a string which is going to be the food that users record in 
