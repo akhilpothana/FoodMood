@@ -31,25 +31,30 @@ public class StatsController {
     }
     
     /**
-     * Create a new Chart (Model).
+     * Create a new Chart.
      */
-    public void createChart()
+    public void createDashboard()
+    {
+        
+    }
+    
+    public void readDashboard()
     {
         
     }
     
     /**
-     * Update a current Chart (Model).
+     * Update a current Chart.
      */
-    public void updateChart()
+    public void updateDashboard()
     {
         
     }
     
     /**
-     * Delete a current Chart (Model).
+     * Delete a current Chart.
      */
-    public void deleteChart()
+    public void deleteDashboard()
     {
         
     }
