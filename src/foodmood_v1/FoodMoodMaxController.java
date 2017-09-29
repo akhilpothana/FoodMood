@@ -10,5 +10,7 @@ package foodmood_v1;
  * @author edgardoreinoso
  */
 public class FoodMoodMaxController {
+    public FoodMoodMaxController(){
     
+    }
 }
