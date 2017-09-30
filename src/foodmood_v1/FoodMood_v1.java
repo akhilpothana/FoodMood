@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package foodmood_v1;
 
-import CrudFoodController.crud_food_control;
+import CrudFoodController.CRUDFoodController;
 
 /**
  * This class is the initiator of the application
@@ -17,16 +12,24 @@ public class FoodMood_v1 {
     }
 }
 
-class TestHarness {
-    //FIELDS
-    //Classes
+/**
+ * The TestHarness class instantiates the individual harness classes
+ * Each of these harness classes tests 
+ * @author Akhil
+ */
+class TestHarness{
+    
+    //Instantiating 
     private FoodMoodAkhilController testAkhilHarness;
-    private crud_food_control foodControlHarness;
+    private FoodMoodMaxController testMaxHarness;
+    private FoodMoodShawnController testShawnHarness;
+    private FoodMoodEdController testEdHarness;
     
-    //Other types
-    private String food = "dog food";
-    
+    //This constructor intializes all the sub-test harnesses
     public TestHarness(){
         testAkhilHarness = new FoodMoodAkhilController();
+        testMaxHarness = new FoodMoodMaxController();  //Tests StatsView, StatsController, ChartsViewBackend, ChartsControllerBackend
+        testShawnHarness = new FoodMoodShawnController();
+        testEdHarness = new FoodMoodEdController();    
     }
 }

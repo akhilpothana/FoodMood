@@ -6,7 +6,9 @@
 package foodmood_v1;
 
 /**
- * 
+ * Use Cases: View Notifications and View Food/Mood Correlations
+ * Each of these use cases has a view and a controller
+ * The controller sends and retrieves values from the database for the view
  * @author edgardoreinoso
  */
 public class FoodMoodEdController {

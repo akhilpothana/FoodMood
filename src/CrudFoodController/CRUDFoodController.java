@@ -5,20 +5,20 @@
  */
 package CrudFoodController;
 
-import CrudFoodModel.crud_food_model;
+import CrudFoodModel.CRUDFoodModel;
 
 /**
  *
  * @author Akhil
  */
-public class crud_food_control {
+public class CRUDFoodController {
     private String food;
-    private crud_food_model cfm;
+    private CRUDFoodModel cfm;
     
-    public crud_food_control(String f)
+    public CRUDFoodController(String f)
     {
         food = f;
-        cfm = new crud_food_model(f);
+        cfm = new CRUDFoodModel(f);
     }
     
     /**

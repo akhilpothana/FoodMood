@@ -5,18 +5,42 @@
  */
 package HistoryView;
 
+import java.awt.BorderLayout;
 import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
  * @author Akhil
  */
-public class FoodMoodHistory_view {
+public class FoodMoodHistory_view extends JFrame
+{
+    
+    private JTable historyTable;
+            
+    public FoodMoodHistory_view()
+    {
+        Object rowData[][] = { { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
+        { "Row2-Column1", "Row2-Column2", "Row2-Column3" } };
+        Object columnNames[] = { "Food", "How you felt", "Misc" };
+        JTable table = new JTable(rowData, columnNames);
+
+        JScrollPane scrollPane = new JScrollPane(table);
+        this.add(scrollPane, BorderLayout.CENTER);
+        this.setSize(300, 150);
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+    }
     
     /**
      * The method returns the values for food and mood
      * @param fd - received list of foods
-     * @return fd
+     * @return fd 
      */
     public ArrayList<String> displayFood(ArrayList<String> fd)
     {
@@ -31,5 +55,11 @@ public class FoodMoodHistory_view {
     public ArrayList<String> displayMood(ArrayList<String> md)
     {
         return md;
+    }
+
+    private void initTable() {
+        
+    
+        
     }
 }
