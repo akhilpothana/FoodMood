@@ -5,14 +5,40 @@
  */
 package foodmood_v1;
 
+import ChartsControllerBackend.ChartsControllerBackend;
+import StatsController.StatsController;
+
 /**
- *
- * @author edgardoreinoso
+ * Use Cases: Charts on Analysis app and Stats (Dashboard) on Mobile app
+ * Each of these use cases has a view and a controller
+ * The controller sends and retrieves values from the database for the view
+ * @author mlh5614 
  */
 public class FoodMoodMaxController {
     
     
     public FoodMoodMaxController(){
+        ChartsControllerBackend ccbe = new ChartsControllerBackend();
+        StatsController sc1 = new StatsController();
         
+        testStats(sc1);
+        testCharts(ccbe);
     }
+    
+    public void testStats(StatsController sc1)
+    {
+        sc1.createDashboard();
+        sc1.deleteStats();
+        sc1.reorganizeDashboard(1, 2); //move the object in position 1 to position 2
+        sc1.refreshView();
+    }
+    
+    public void testCharts(ChartsControllerBackend ccbe)
+    {
+        ccbe.createChart(null, null, null, null);
+        ccbe.deleteChart(null, null, null, null);
+        ccbe.updateChart(null, null, null, null);
+        ccbe.refreshView();
+    }
+    
 }
