@@ -26,6 +26,7 @@ public class crud_mood_control {
      * @return the food
      */
     public String getMood() {
+        System.out.println("Test mood model class");
         return cmm.getMood();
     }
 

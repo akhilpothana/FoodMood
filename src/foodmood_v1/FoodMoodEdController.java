@@ -6,9 +6,13 @@
 package foodmood_v1;
 
 /**
- *
+ * 
  * @author edgardoreinoso
  */
 public class FoodMoodEdController {
     
+    
+    public FoodMoodEdController(){
+        
+    }
 }
