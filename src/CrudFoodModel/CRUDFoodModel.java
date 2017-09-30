@@ -9,12 +9,12 @@ package CrudFoodModel;
  *
  * @author Akhil
  */
-public class crud_food_model {
+public class CRUDFoodModel {
     //FIELDS
     private String food;
     
     //CONSTRUCTOR
-    public crud_food_model(String f)
+    public CRUDFoodModel(String f)
     {
         food = f;
     } 
@@ -24,7 +24,6 @@ public class crud_food_model {
      * @return the food
      */
     public String getFood() {
-        System.out.println("Test food model class");
         return food;
     }
 

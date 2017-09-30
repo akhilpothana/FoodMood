@@ -16,19 +16,16 @@ public class FoodMoodHistory_control {
     
     private String food;
     private String mood;
-    FoodMoodHistory_model fmhModel;
-    FoodMoodHistory_view fmhView;
+    FoodMoodHistory_model historyModel;
+    FoodMoodHistory_view historyView;
     
     /**
      * 
-     * @param v - the passed instance of the view class
-     * @param f - received value for food
-     * @param m - received value for mood
      */
-    FoodMoodHistory_control(FoodMoodHistory_view v, String f, String m)
+    public FoodMoodHistory_control()
     {
-        food = f;
-        mood = m;
+        historyModel = new FoodMoodHistory_model();
+        historyView = new FoodMoodHistory_view();        
     }
 
     /**
@@ -52,8 +49,8 @@ public class FoodMoodHistory_control {
      */
     public void addToHistory(String f, String m)
     {
-        fmhModel.getFoodList().add(f);
-        fmhModel.getMoodList().add(m);
+        historyModel.getFoodList().add(f);
+        historyModel.getMoodList().add(m);
     }
     
     /**
@@ -63,7 +60,7 @@ public class FoodMoodHistory_control {
      */
     public void removeFromHistory(String f, String m)
     {
-        fmhModel.getFoodList().remove(f);
-        fmhModel.getMoodList().remove(m);
+        historyModel.getFoodList().remove(f);
+        historyModel.getMoodList().remove(m);
     }
 }

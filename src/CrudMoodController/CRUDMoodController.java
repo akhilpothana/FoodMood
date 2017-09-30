@@ -11,12 +11,12 @@ import CrudMoodModel.crud_mood_model;
  *
  * @author Akhil
  */
-public class crud_mood_control {
+public class CRUDMoodController {
     
     private String mood;
     private crud_mood_model cmm;
     
-    public crud_mood_control(String m)
+    public CRUDMoodController(String m)
     {
         mood = m;
         cmm = new crud_mood_model(m);
