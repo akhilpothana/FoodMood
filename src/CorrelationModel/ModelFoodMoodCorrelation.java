@@ -35,6 +35,7 @@ public class ModelFoodMoodCorrelation {
      * @return the mood
      */
     public String[] getMood() {
+        System.out.println("Test get mood");
         return mood;
     }
 
@@ -53,6 +54,7 @@ public class ModelFoodMoodCorrelation {
      * @return the usernameID
      */
     public CrudUserModel getUsernameID() {
+        System.out.println("Test get username id");
         return usernameID;
     }
     
@@ -62,6 +64,7 @@ public class ModelFoodMoodCorrelation {
      * @return the recordFood
      */
     public String getRecordFood() {
+        System.out.println("Test get record food");
         return recordFood;
     }
 

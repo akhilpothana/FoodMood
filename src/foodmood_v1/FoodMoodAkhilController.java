@@ -29,8 +29,6 @@ public class FoodMoodAkhilController {
         moodControlHarness = new CRUDMoodController(mood);
         dataHistoryHarness = new FoodMoodHistory_control();
         
-        foodControlHarness = new crud_food_control(food);
-        moodControlHarness = new crud_mood_control(mood);
         TestCRUDFood();
         TestCRUDMood();
         TestCRUDFood();

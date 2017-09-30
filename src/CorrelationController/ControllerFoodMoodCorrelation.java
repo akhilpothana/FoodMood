@@ -31,6 +31,7 @@ public class ControllerFoodMoodCorrelation {
      * @return the foodMoodCo_view
      */
     public ViewFoodMoodCorrelation getFoodMoodCo_view() {
+        System.out.println("Test get food/mood view");
         return foodMoodCo_view;
     }
 
@@ -39,6 +40,7 @@ public class ControllerFoodMoodCorrelation {
      * @return the foodMoodCo_model
      */
     public ModelFoodMoodCorrelation getFoodMoodCo_model() {
+        System.out.println("Test get food/mood model");
         return foodMoodCo_model;
     }
 }

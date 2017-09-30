@@ -31,6 +31,7 @@ public class ControlViewNotifications {
      * @return the viewNofitications_model
      */
     public ModelViewNotifications getViewNofitications_model() {
+        System.out.println("Test get view notification model");
         return viewNofitications_model;
     }
 
@@ -39,6 +40,7 @@ public class ControlViewNotifications {
      * @return the notifications_viewDisplay
      */
     public ViewNotificationsUI getNotifications_viewDisplay() {
+        System.out.println("Test get the view notification display");
         return notifications_viewDisplay;
     }
 }

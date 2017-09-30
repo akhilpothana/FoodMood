@@ -15,11 +15,16 @@ import StatsController.StatsController;
  * @author mlh5614 
  */
 public class FoodMoodMaxController {
-    
+    /**
+     * Fields
+     * Classes
+     */
+    private ChartsControllerBackend ccbe;
+    private StatsController sc1;
     
     public FoodMoodMaxController(){
-        ChartsControllerBackend ccbe = new ChartsControllerBackend();
-        StatsController sc1 = new StatsController();
+        ccbe = new ChartsControllerBackend();
+        sc1 = new StatsController();
         
         testStats(sc1);
         testCharts(ccbe);
