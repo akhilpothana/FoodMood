@@ -27,11 +27,6 @@ class TestHarness {
     private String food = "dog food";
     
     public TestHarness(){
-        foodControlHarness = new crud_food_control(food);
-        TestCRUDFood();
-    }
-    
-    public void TestCRUDFood() {
-        foodControlHarness.getFood();
+        testAkhilHarness = new FoodMoodAkhilController();
     }
 }
