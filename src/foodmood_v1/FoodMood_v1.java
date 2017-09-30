@@ -28,7 +28,7 @@ class TestHarness{
     //This constructor intializes all the sub-test harnesses
     public TestHarness(){
         testAkhilHarness = new FoodMoodAkhilController();
-        testMaxHarness = new FoodMoodMaxController();
+        testMaxHarness = new FoodMoodMaxController();  //Tests StatsView, StatsController, ChartsViewBackend, ChartsControllerBackend
         testShawnHarness = new FoodMoodShawnController();
         testEdHarness = new FoodMoodEdController();    
     }

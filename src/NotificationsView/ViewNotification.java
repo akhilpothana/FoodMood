@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ChartsViewBackend;
+package NotificationsView;
 
 /**
  *
  * @author mlh5614
  */
-public class ViewChartsBackend extends javax.swing.JFrame {
+public class ViewNotification extends javax.swing.JFrame {
 
     /**
-     * Creates new form ViewChartsBackend
+     * Creates new form ViewNotification
      */
-    public ViewChartsBackend() {
+    public ViewNotification() {
         initComponents();
     }
 
@@ -60,45 +60,24 @@ public class ViewChartsBackend extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewChartsBackend.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewNotification.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewChartsBackend.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewNotification.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewChartsBackend.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewNotification.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewChartsBackend.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewNotification.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewChartsBackend().setVisible(true);
+                new ViewNotification().setVisible(true);
             }
         });
     }
 
-    /**
-* Maintain the current version of the view to know when it is out of sync with the model and controller.
-*/
-private int version;    
-
-    /**
-     * Add a Chart to the frame.
-     */
-    public void retrieveChart()
-    {
-        
-    }
-    
-    /**
-     * Grab the most recent Chart for the view.
-     */    
-    public void refreshView()
-    {
-        
-    }
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }

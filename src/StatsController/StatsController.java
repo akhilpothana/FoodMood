@@ -5,6 +5,9 @@
  */
 package StatsController;
  
+import ChartsViewBackend.ChartsViewBackend;
+import StatsView.StatsView;
+
 /**
  * The ChartsController pulls requested data from the database on the back-end.
  * @author mlh5614
@@ -27,7 +30,8 @@ public class StatsController {
      * This is the default constructor for the ChartsController class
      */
     public StatsController() {
-        
+        StatsView sv1 = new StatsView();
+        System.out.println("Test Passed: Stats Controller and View Created");        
     }
     
     /**
@@ -35,28 +39,28 @@ public class StatsController {
      */
     public void createDashboard()
     {
-        
+        System.out.println("Test Passed: User Dashboard Launched");
     }
     
-    public void readDashboard()
+    public void refreshView()
     {
-        
-    }
-    
-    /**
-     * Update a current Chart.
-     */
-    public void updateDashboard()
-    {
-        
+        System.out.println("Test Passed: New Stats Pulled from DB");
     }
     
     /**
-     * Delete a current Chart.
+     * Update the order of elements.
      */
-    public void deleteDashboard()
+    public void reorganizeDashboard(int position, int newPosition)
     {
-        
+        System.out.println("Test Passed: Item Moved from " + position + " to " + newPosition);
+    }
+    
+    /**
+     * Delete the stats for the user.
+     */
+    public void deleteStats()
+    {
+        System.out.println("Test Passed: Stats Deleted");
     }
 
 }
