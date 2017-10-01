@@ -26,8 +26,8 @@ public class FoodMoodShawnController {
         research.GetSiteLink();
         System.out.println("Your Recommended food product is: " +
                 recommend.GetRecommendation() + ".");
-        System.out.println(crudUser.ViewUserName());
-        System.out.println(crudUser.ViewPassword());
+        System.out.println("Username: " + crudUser.ViewUserName() +
+                " Password: " + crudUser.ViewPassword());
         
     }
 }
