@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package foodmood_v1;
+package TestHarness;
 
 import CorrelationController.ControllerFoodMoodCorrelation;
 import CorrelationModel.ModelFoodMoodCorrelation;

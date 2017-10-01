@@ -1,4 +1,4 @@
-package foodmood_v1;
+package TestHarness;
 
 import CrudFoodController.CRUDFoodController;
 import CrudMoodController.CRUDMoodController;
