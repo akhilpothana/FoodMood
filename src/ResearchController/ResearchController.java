@@ -26,4 +26,8 @@ public class ResearchController {
         
     }
     
+    public void GetSiteLink(){
+        System.out.println("This is the link for the research site.");
+    }
+    
 }

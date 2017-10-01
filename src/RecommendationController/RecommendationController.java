@@ -13,7 +13,7 @@ package RecommendationController;
  */
 public class RecommendationController {
     
-    private String reccommendation[];
+    private String recommendation = "strawberries";
     
     /**
      * Retrieves the recommended food
@@ -28,8 +28,8 @@ public class RecommendationController {
      * This is the default constructor for the RecommendationController
      * class
      */
-    public RecommendationController(){
-        
+    public String GetRecommendation(){
+        return recommendation;
     }
     
 }

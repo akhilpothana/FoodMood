@@ -16,11 +16,11 @@ public class CrudUserController {
     /**
      * username data
      */
-    private String username[];
+    private String username = "FoodLover87";
     /**
      * password data string
      */
-    private String password[];
+    private String password = "Luncheon";
     
     /**
      * create a new user
@@ -34,6 +34,14 @@ public class CrudUserController {
      */
     public void EditUser(){
         
+    }
+    
+    public String ViewUserName(){
+        return username;
+    }
+    
+    public String ViewPassword(){
+        return password;
     }
     
     /**
