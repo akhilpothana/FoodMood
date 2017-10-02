@@ -28,6 +28,7 @@ public class FoodMoodEdController {
     
     
     public FoodMoodEdController(){
+        System.out.println("___________START OF OUTPUT FOR ED'S TEST___________");        
         controlNotificationHarness = new ControlViewNotifications();
         modelNotificationHarness = new ModelViewNotifications();
         controlCorrelationHarness = new ControllerFoodMoodCorrelation();
@@ -35,6 +36,7 @@ public class FoodMoodEdController {
         
         TestViewNotifications();
         TestCorrelation();
+        System.out.println("___________END OF OUTPUT FOR ED'S TEST___________\n");
     }
     
     /**

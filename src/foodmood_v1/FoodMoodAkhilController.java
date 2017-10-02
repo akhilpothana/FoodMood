@@ -18,43 +18,41 @@ public class FoodMoodAkhilController {
     private CRUDMoodController moodControlHarness;
     private FoodMoodHistory_control dataHistoryHarness;
     
+    //Sample inputs that will be set by the user
     private String food = "pineapples";
     private String mood = "euphoria";
 
     /**
      * 
      */
-    public FoodMoodAkhilController(){ 
-        foodControlHarness = new CRUDFoodController(food);
-        moodControlHarness = new CRUDMoodController(mood);
-        dataHistoryHarness = new FoodMoodHistory_control();
-        
-        TestCRUDFood();
-        TestCRUDMood();
+    public FoodMoodAkhilController(){
+        System.out.println("___________START OF OUTPUT FOR AKHIL'S TEST___________");        
         TestCRUDFood();
         TestCRUDMood();
         TestViewFoodMoodHistory();
+        System.out.println("___________END OF OUTPUT FOR AKHIL'S TEST___________\n");
     }
     
     /**
      * Run the CRUDFood test
      */
     public void TestCRUDFood(){
-        System.out.println(foodControlHarness.getFood());
+        foodControlHarness = new CRUDFoodController(food);
+        System.out.println("The food is: " + foodControlHarness.getFood());
     }
     
     /**
      * Run the CRUDMood test
      */
     public void TestCRUDMood(){
-        System.out.println(moodControlHarness.getMood());
+        moodControlHarness = new CRUDMoodController(mood);
+        System.out.println("The mood is: " + moodControlHarness.getMood());
     }
     
     /**
      * Run the TestViewFoodMoodHistory test
      */
     public void TestViewFoodMoodHistory(){
-        System.out.println("Testing this class by displaying a sample table");
-        
+        dataHistoryHarness = new FoodMoodHistory_control();        
     }
 }

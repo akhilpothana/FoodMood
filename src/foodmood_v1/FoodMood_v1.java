@@ -19,7 +19,7 @@ public class FoodMood_v1 {
  */
 class TestHarness{
     
-    //Instantiating 
+    //Declaring individual controller objects 
     private FoodMoodAkhilController testAkhilHarness;
     private FoodMoodMaxController testMaxHarness;
     private FoodMoodShawnController testShawnHarness;

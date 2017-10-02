@@ -23,11 +23,13 @@ public class FoodMoodMaxController {
     private StatsController sc1;
     
     public FoodMoodMaxController(){
+        System.out.println("___________START OF OUTPUT FOR MAX'S TEST___________"); 
         ccbe = new ChartsControllerBackend();
         sc1 = new StatsController();
         
         testStats(sc1);
         testCharts(ccbe);
+        System.out.println("___________END OF OUTPUT FOR MAX'S TEST___________\n"); 
     }
     
     public void testStats(StatsController sc1)
