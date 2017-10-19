@@ -1,6 +1,7 @@
 package TestHarness;
 
 import CrudFoodController.CRUDFoodController;
+import Login.LoginController;
 
 /**
  * This class is the initiator of the application
@@ -8,7 +9,9 @@ import CrudFoodController.CRUDFoodController;
  */
 public class FoodMood_v1 {
     public static void main(String[] args) {
-        TestHarness test = new TestHarness();
+//        TestHarness test = new TestHarness();
+    
+        LoginController loginToApp = new LoginController();
     }
 }
 

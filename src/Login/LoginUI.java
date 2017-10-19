@@ -14,7 +14,7 @@ public class LoginUI extends javax.swing.JFrame {
     /**
      * Creates new form LoginUI
      */
-    public LoginUI() {
+    public LoginUI(LoginController loginController) {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -150,13 +150,6 @@ public class LoginUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(LoginUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LoginUI().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

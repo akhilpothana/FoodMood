@@ -5,14 +5,23 @@
  */
 package Login;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author akhil
  */
 public class LoginController {
+    LoginUI loginView;
+    //Model: userlist, user, loginModel, serialized collection class
     
-    public LoginController()
-    {
-        LoginUI.main(null);
+    public LoginController() {
+        System.out.println("Test: made it login controller; Passed!:) Good job Max");
+        loginView = new LoginUI(this);
+        loginView.setTitle("FoodMood");
+        loginView.setLocationRelativeTo(null);
+        loginView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        loginView.setVisible(true);
+                
     }
 }
