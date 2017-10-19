@@ -16,8 +16,7 @@ import CrudUserModel.CrudUserModel;
  */
 public class ModelViewNotifications {
 // FIELD
-    private CrudUserModel usernameID;
-    private CrudUserModel userEmail; //assumingt that there would be a string class with email inside the User class
+    private CrudUserModel usernameID, userEmail;
     private boolean emailFrequency;
     
     /**
