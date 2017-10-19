@@ -22,8 +22,15 @@ public class FoodMoodHistory_view extends JFrame
 {
     
     private JTable historyTable;
+    private TableModel tableModel;
             
-    public FoodMoodHistory_view()
+    public FoodMoodHistory_view(TableModel t)
+    {
+        tableModel = t;
+        initTable();
+    }
+    
+    private void initTable()
     {
         Object rowData[][] = { { "Row1-Column1", "Row1-Column2", "Row1-Column3" },
         { "Row2-Column1", "Row2-Column2", "Row2-Column3" } };
@@ -35,6 +42,9 @@ public class FoodMoodHistory_view extends JFrame
         this.setSize(300, 150);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        
+        System.out.println("Testing the FoodMoodHistory_view class by displaying a sample table");
+
     }
     
     /**
@@ -55,11 +65,5 @@ public class FoodMoodHistory_view extends JFrame
     public ArrayList<String> displayMood(ArrayList<String> md)
     {
         return md;
-    }
-
-    private void initTable() {
-        
-    
-        
     }
 }

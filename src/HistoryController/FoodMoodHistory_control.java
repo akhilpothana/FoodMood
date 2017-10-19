@@ -7,6 +7,7 @@ package HistoryController;
 
 import HistoryModel.FoodMoodHistory_model;
 import HistoryView.FoodMoodHistory_view;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -18,6 +19,7 @@ public class FoodMoodHistory_control {
     private String mood;
     FoodMoodHistory_model historyModel;
     FoodMoodHistory_view historyView;
+    TableModel tableModel;
     
     /**
      * 
@@ -25,7 +27,7 @@ public class FoodMoodHistory_control {
     public FoodMoodHistory_control()
     {
         historyModel = new FoodMoodHistory_model();
-        historyView = new FoodMoodHistory_view();        
+        historyView = new FoodMoodHistory_view(tableModel);        
     }
 
     /**
