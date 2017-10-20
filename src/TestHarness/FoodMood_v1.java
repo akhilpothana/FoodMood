@@ -2,8 +2,6 @@ package TestHarness;
 
 import Login.LoginController;
 
-import CrudUserModel.UserList;
-
 /**
  * This class is the initiator of the application
  * @author Akhil
@@ -16,11 +14,6 @@ public class FoodMood_v1 {
     }
 }
 
-/**
- * The TestHarness class instantiates the individual harness classes
- * Each of these harness classes tests 
- * @author Akhil
- */
 class TestHarness{
     
     private FoodMoodAkhilController testAkhilHarness;
