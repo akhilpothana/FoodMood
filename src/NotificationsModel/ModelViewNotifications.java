@@ -6,7 +6,7 @@
 package NotificationsModel;
 //import userprofilemodel.User;
 
-import CrudUserModel.CrudUserModel;
+import CrudUserModel.User;
 
 
 /**
@@ -16,7 +16,7 @@ import CrudUserModel.CrudUserModel;
  */
 public class ModelViewNotifications {
 // FIELD
-    private CrudUserModel usernameID, userEmail;
+    private User usernameID, userEmail;
     private boolean emailFrequency;
     
     /**
@@ -31,7 +31,7 @@ public class ModelViewNotifications {
      * This method will return the email that was set in the setUserEmail
      * @return the userEmail
      */
-    public CrudUserModel getUserEmail() {
+    public User getUserEmail() {
         System.out.println("Test get user email");
         return userEmail;
     }
@@ -41,7 +41,7 @@ public class ModelViewNotifications {
      * It is got from the User class.
      * @param userEmail the userEmail to set
      */
-    public void setUserEmail(CrudUserModel userEmail) {
+    public void setUserEmail(User userEmail) {
         this.userEmail = userEmail;
     }
     

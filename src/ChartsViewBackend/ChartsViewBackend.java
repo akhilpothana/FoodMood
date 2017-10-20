@@ -5,8 +5,8 @@
  */
 package ChartsViewBackend;
 
-import CrudFoodModel.CRUDFoodModel;
-import CrudMoodModel.crud_mood_model;
+import CrudFoodModel.FoodList;
+import CrudMoodModel.MoodList;
 import java.util.Date;
 
 /**
@@ -91,7 +91,7 @@ private int version;
     /**
      * Add a Chart to the frame.
      */
-    public void createChart(CRUDFoodModel f, crud_mood_model m, Date start, Date end)
+    public void createChart(FoodList f, MoodList m, Date start, Date end)
     {
         System.out.println("Test Passed: Chart Created, date = " + start + " to " + end + ", food = " + f + ", mood = " + m);
     }
@@ -104,12 +104,12 @@ private int version;
         System.out.println("Test Passed: Refresh the View");
     }
     
-    public void updateChart(CRUDFoodModel f, crud_mood_model m, Date start, Date end)
+    public void updateChart(FoodList f, MoodList m, Date start, Date end)
     {
         System.out.println("Test Passed: Chart Updated, date = " + start + " to " + end + ", food = " + f + ", mood = " + m);
     }
     
-    public void deleteChart(CRUDFoodModel f, crud_mood_model m, Date start, Date end)
+    public void deleteChart(FoodList f, MoodList m, Date start, Date end)
     {
         System.out.println("Test Passed: Chart Deleted, date = " + start + " to " + end + ", food = " + f + ", mood = " + m);
     }

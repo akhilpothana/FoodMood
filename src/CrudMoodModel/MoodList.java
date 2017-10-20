@@ -3,34 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CrudFoodModel;
+package CrudMoodModel;
 
 /**
  *
  * @author Akhil
  */
-public class CRUDFoodModel {
+public class MoodList {
     //FIELDS
-    private String food;
+    private String mood;
     
     //CONSTRUCTOR
-    public CRUDFoodModel(String f)
+    public MoodList(String m)
     {
-        food = f;
-    } 
+        mood = m;  
+    }
 
     //METHODS
     /**
-     * @return the food
+     * @return the mood
      */
-    public String getFood() {
-        return food;
+    public String getMood() {
+        return mood;
     }
 
     /**
-     * @param food the food to set
+     * @param mood the mood to set
      */
-    public void setFood(String food) {
-        this.food = food;
+    public void setMood(String mood) {
+        this.mood = mood;
     }
+    
 }

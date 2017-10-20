@@ -5,7 +5,7 @@
  */
 package CrudMoodController;
 
-import CrudMoodModel.crud_mood_model;
+import CrudMoodModel.MoodList;
 
 /**
  *
@@ -14,12 +14,12 @@ import CrudMoodModel.crud_mood_model;
 public class CRUDMoodController {
     
     private String mood;
-    private crud_mood_model cmm;
+    private MoodList cmm;
     
     public CRUDMoodController(String m)
     {
         mood = m;
-        cmm = new crud_mood_model(m);
+        cmm = new MoodList(m);
     }
     
     /**

@@ -5,42 +5,18 @@
  */
 package CrudFoodController;
 
-import CrudFoodModel.CRUDFoodModel;
+import CrudFoodModel.FoodList;
 
 /**
  *
  * @author Akhil
  */
 public class CRUDFoodController {
-    private String food;
-    private CRUDFoodModel cfm;
-    
-    public CRUDFoodController(String f)
-    {
-        food = f;
-        cfm = new CRUDFoodModel(f);
-    }
-    
-    /**
-     * @return the food
-     */
-    public String getFood() {
-        return cfm.getFood();
-    }
 
-    /**
-     * @param food the food to set, provided by user
-     */
-    public void setFood(String food) {
-        cfm.setFood(food);
-    }
+    private FoodList cfm;
     
-    /**
-     * 
-     * Delete the food entry
-     */
-    public void deleteFood()
+    public CRUDFoodController()
     {
-        
+        cfm = new FoodList();
     }
 }

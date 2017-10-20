@@ -6,9 +6,8 @@
 package CorrelationModel;
 
 import CorrelationController.ControllerFoodMoodCorrelation;
-import CrudUserModel.CrudUserModel;
+import CrudUserModel.User;
 //import userprofilemodel.User;
-
 /**
  * This class correspond to the Model within the MVC structure. This is where the data of this use case
  * Functionality will be stored and reused.
@@ -19,7 +18,7 @@ public class ModelFoodMoodCorrelation {
     private ControllerFoodMoodCorrelation foodMoodCo_controller;
     private String [] mood;
     private String recordFood;
-    private CrudUserModel usernameID;
+    private User usernameID;
     
     /**
      * This is the default constructor for the ModelFoodMoodCorrelation class
@@ -53,7 +52,7 @@ public class ModelFoodMoodCorrelation {
      * the system
      * @return the usernameID
      */
-    public CrudUserModel getUsernameID() {
+    public User getUsernameID() {
         System.out.println("Test get username id");
         return usernameID;
     }

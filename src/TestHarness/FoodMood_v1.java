@@ -1,7 +1,8 @@
 package TestHarness;
 
-import CrudFoodController.CRUDFoodController;
 import Login.LoginController;
+
+import CrudUserModel.UserList;
 
 /**
  * This class is the initiator of the application
@@ -22,7 +23,6 @@ public class FoodMood_v1 {
  */
 class TestHarness{
     
-    //Instantiating 
     private FoodMoodAkhilController testAkhilHarness;
     private FoodMoodMaxController testMaxHarness;
     private FoodMoodShawnController testShawnHarness;
@@ -31,7 +31,9 @@ class TestHarness{
     //This constructor intializes all the sub-test harnesses
     public TestHarness(){
         testAkhilHarness = new FoodMoodAkhilController();
-        testMaxHarness = new FoodMoodMaxController();  //Tests StatsView, StatsController, ChartsViewBackend, ChartsControllerBackend
+        
+        //Tests StatsView, StatsController, ChartsViewBackend, ChartsControllerBackend
+        testMaxHarness = new FoodMoodMaxController();  
         testShawnHarness = new FoodMoodShawnController();
         testEdHarness = new FoodMoodEdController();    
     }
