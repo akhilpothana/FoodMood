@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ChartsViewBackend;
+package ChartsView;
 
 import CrudFoodModel.FoodList;
 import CrudMoodModel.MoodList;
@@ -13,12 +13,12 @@ import java.util.Date;
  *
  * @author mlh5614
  */
-public class ChartsViewBackend extends javax.swing.JFrame {
+public class ChartsView extends javax.swing.JFrame {
 
     /**
      * Creates new form ViewChartsBackend
      */
-    public ChartsViewBackend() {
+    public ChartsView() {
         initComponents();
     }
 
@@ -64,21 +64,23 @@ public class ChartsViewBackend extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ChartsViewBackend.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChartsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ChartsViewBackend.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChartsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ChartsViewBackend.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChartsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ChartsViewBackend.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChartsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ChartsViewBackend().setVisible(true);
+                new ChartsView().setVisible(true);
             }
         });
     }

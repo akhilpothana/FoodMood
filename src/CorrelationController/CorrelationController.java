@@ -5,23 +5,23 @@
  */
 package CorrelationController;
 
-import CorrelationModel.ModelFoodMoodCorrelation;
-import CorrelationView.ViewFoodMoodCorrelation;
+import CorrelationModel.CorrelationModel;
+import CorrelationView.CorrelationUI;
 
 /**
  * This class correspond to the Controller within the MVC structure. This is where the main control of
  * The functionality will take place. This class will connect both the model with the view
  * @author edgardoreinoso
  */
-public class ControllerFoodMoodCorrelation {
+public class CorrelationController {
 // FIELDS
-    private ViewFoodMoodCorrelation foodMoodCo_view;
-    private ModelFoodMoodCorrelation foodMoodCo_model;
+    private CorrelationUI foodMoodCo_view;
+    private CorrelationModel foodMoodCo_model;
     
     /**
      * This is the default constructor for the ControllerFoodMoodCorrelation class
      */
-    public ControllerFoodMoodCorrelation(){
+    public CorrelationController(){
     
     }
     
@@ -30,7 +30,7 @@ public class ControllerFoodMoodCorrelation {
      * This class is going to return the instance of the view food/mood correlation
      * @return the foodMoodCo_view
      */
-    public ViewFoodMoodCorrelation getFoodMoodCo_view() {
+    public CorrelationUI getFoodMoodCo_view() {
         System.out.println("Test get food/mood view");
         return foodMoodCo_view;
     }
@@ -39,7 +39,7 @@ public class ControllerFoodMoodCorrelation {
      * This class is going to return the instance of the model food/mood correlation
      * @return the foodMoodCo_model
      */
-    public ModelFoodMoodCorrelation getFoodMoodCo_model() {
+    public CorrelationModel getFoodMoodCo_model() {
         System.out.println("Test get food/mood model");
         return foodMoodCo_model;
     }

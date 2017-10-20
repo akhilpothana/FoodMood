@@ -7,25 +7,28 @@ package Login;
 
 import CrudUserModel.User;
 import CrudUserModel.UserList;
-import javax.swing.JFrame;
-
+import MainMenu.MainMenuController;
+        
 /**
  *
  * @author akhil
  */
 public class LoginController {
     LoginUI loginView;
+    
+    //User data
     UserList userList;
     User user1, user2, user3, user4;
+    
+    //Opening the main menu upon successful login
+    MainMenuController mainMenu;
     
     //Model: userlist, user, loginModel, serialized collection class
     
     public LoginController() {
-        System.out.println("Test: made it login controller; Passed!:) Good job Max");
+        System.out.println("Test: made it login controller");
         loginView = new LoginUI(this);
-        loginView.setTitle("FoodMood");
         loginView.setLocationRelativeTo(null);
-        loginView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         loginView.setVisible(true);  
         
         userList = new UserList();
@@ -46,21 +49,19 @@ public class LoginController {
      * 
      * @param user - The entered username value
      * @param pass - The entered password value
-     * @return - Whether or not the user has been successfully authenticated
+     * @return - Whether the credentials match with a registered user
      */
-    public void validateUser(String user, String pass)
+    public boolean validateUser(String user, String pass)
     {
         for(int i = 0; i < userList.getUserList().size(); i++)
         {
             if(user.equals(userList.getUserList().get(i).getUsername()) && pass.equals(userList.getUserList().get(i).getPassword()))
             {
-                System.out.println("Successfully logged in " +  userList.getUserList().get(i).getUsername());
-                break;
-            }
-            else if(i == userList.getUserList().size()-1)
-            {
-                System.out.println("Invalid username or password");
+                loginView.setVisible(false);
+                return true;
             }
         }
+        System.out.println("Incorrect username or password");
+        return false;
     }
 }

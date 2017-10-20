@@ -5,8 +5,8 @@
  */
 package TestHarness;
 
-import CorrelationController.ControllerFoodMoodCorrelation;
-import CorrelationModel.ModelFoodMoodCorrelation;
+import CorrelationController.CorrelationController;
+import CorrelationModel.CorrelationModel;
 import NotificationsController.ControlViewNotifications;
 import NotificationsModel.ModelViewNotifications;
 
@@ -23,15 +23,15 @@ public class FoodMoodEdController {
      */
     private ControlViewNotifications controlNotificationHarness;
     private ModelViewNotifications modelNotificationHarness;
-    private ControllerFoodMoodCorrelation controlCorrelationHarness;
-    private ModelFoodMoodCorrelation modelCorrelationHarness;
+    private CorrelationController controlCorrelationHarness;
+    private CorrelationModel modelCorrelationHarness;
     
     
     public FoodMoodEdController(){
         controlNotificationHarness = new ControlViewNotifications();
         modelNotificationHarness = new ModelViewNotifications();
-        controlCorrelationHarness = new ControllerFoodMoodCorrelation();
-        modelCorrelationHarness = new ModelFoodMoodCorrelation();
+        controlCorrelationHarness = new CorrelationController();
+        modelCorrelationHarness = new CorrelationModel();
         
         TestViewNotifications();
         TestCorrelation();

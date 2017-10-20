@@ -5,7 +5,7 @@
  */
 package StatsController;
  
-import ChartsViewBackend.ChartsViewBackend;
+import ChartsView.ChartsView;
 import StatsView.StatsView;
 
 /**

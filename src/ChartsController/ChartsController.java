@@ -1,24 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ChartsControllerBackend;
+package ChartsController;
 
-import ChartsViewBackend.ChartsViewBackend;
+import ChartsView.ChartsView;
 import CrudFoodModel.FoodList;
 import CrudMoodModel.MoodList;
 import java.util.Date;
 
-/**
- *
- * @author mlh5614
- */
-public class ChartsControllerBackend {
+public class ChartsController {
     
-    public ChartsControllerBackend()
+    public ChartsController()
     {
-        ChartsViewBackend cvbe = new ChartsViewBackend();
+        ChartsView cvbe = new ChartsView();
         System.out.println("Test Passed: Charts Controller and View Created");
     }
     

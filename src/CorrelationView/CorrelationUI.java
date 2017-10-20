@@ -9,12 +9,12 @@ package CorrelationView;
  *
  * @author edgardoreinoso
  */
-public class ViewFoodMoodCorrelation extends javax.swing.JFrame {
+public class CorrelationUI extends javax.swing.JFrame {
 
     /**
      * Creates new form ViewFoodMoodCorrelation
      */
-    public ViewFoodMoodCorrelation() {
+    public CorrelationUI() {
         initComponents();
     }
 
@@ -60,20 +60,21 @@ public class ViewFoodMoodCorrelation extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewFoodMoodCorrelation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CorrelationUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewFoodMoodCorrelation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CorrelationUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewFoodMoodCorrelation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CorrelationUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewFoodMoodCorrelation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CorrelationUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewFoodMoodCorrelation().setVisible(true);
+                new CorrelationUI().setVisible(true);
             }
         });
     }

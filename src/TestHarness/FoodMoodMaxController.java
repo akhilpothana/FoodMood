@@ -1,6 +1,6 @@
 package TestHarness;
 
-import ChartsControllerBackend.ChartsControllerBackend;
+import ChartsController.ChartsController;
 import StatsController.StatsController;
 
 /**
@@ -14,11 +14,11 @@ public class FoodMoodMaxController {
      * Fields
      * Classes
      */
-    private ChartsControllerBackend ccbe;
+    private ChartsController ccbe;
     private StatsController sc1;
     
     public FoodMoodMaxController(){
-        ccbe = new ChartsControllerBackend();
+        ccbe = new ChartsController();
         sc1 = new StatsController();
         
         testStats(sc1);
@@ -33,7 +33,7 @@ public class FoodMoodMaxController {
         sc1.refreshView();
     }
     
-    public void testCharts(ChartsControllerBackend ccbe)
+    public void testCharts(ChartsController ccbe)
     {
         ccbe.createChart(null, null, null, null);
         ccbe.deleteChart(null, null, null, null);

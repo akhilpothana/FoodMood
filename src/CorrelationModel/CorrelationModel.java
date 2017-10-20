@@ -5,7 +5,7 @@
  */
 package CorrelationModel;
 
-import CorrelationController.ControllerFoodMoodCorrelation;
+import CorrelationController.CorrelationController;
 import CrudUserModel.User;
 //import userprofilemodel.User;
 /**
@@ -13,9 +13,9 @@ import CrudUserModel.User;
  * Functionality will be stored and reused.
  * @author edgardoreinoso
  */
-public class ModelFoodMoodCorrelation {
+public class CorrelationModel {
 // FIELD
-    private ControllerFoodMoodCorrelation foodMoodCo_controller;
+    private CorrelationController foodMoodCo_controller;
     private String [] mood;
     private String recordFood;
     private User usernameID;
@@ -23,7 +23,7 @@ public class ModelFoodMoodCorrelation {
     /**
      * This is the default constructor for the ModelFoodMoodCorrelation class
      */
-    public ModelFoodMoodCorrelation(){
+    public CorrelationModel(){
     
     }
 
