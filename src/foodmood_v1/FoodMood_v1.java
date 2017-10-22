@@ -1,6 +1,10 @@
-package TestHarness;
+package foodmood_v1;
 
 import Login.LoginController;
+import TestHarness.FoodMoodAkhilController;
+import TestHarness.FoodMoodEdController;
+import TestHarness.FoodMoodMaxController;
+import TestHarness.FoodMoodShawnController;
 
 /**
  * This class is the initiator of the application

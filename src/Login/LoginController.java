@@ -42,7 +42,6 @@ public class LoginController {
         userList.addUser(user2);
         userList.addUser(user3);
         userList.addUser(user4);
-
     }
     
     /**
