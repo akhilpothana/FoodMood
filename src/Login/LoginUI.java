@@ -7,11 +7,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class LoginUI extends javax.swing.JFrame {
-
     private JLabel backgroundImageLabel;
     private ImageIcon backgroundImage;
-    
-    LoginController loginCtrl;
+    private LoginController loginCtrl;
+
     /**
      * Creates new form LoginUI
      */
@@ -52,6 +51,7 @@ public class LoginUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        loginPanel.setAutoscrolls(true);
         loginPanel.setPreferredSize(new java.awt.Dimension(375, 667));
 
         usernameField.setMinimumSize(new java.awt.Dimension(10, 10));
@@ -84,16 +84,23 @@ public class LoginUI extends javax.swing.JFrame {
             }
         });
 
-        login_button.setBackground(new java.awt.Color(255, 255, 255));
+        login_button.setBackground(new java.awt.Color(204, 102, 0));
+        login_button.setForeground(new java.awt.Color(255, 255, 255));
         login_button.setText("Login");
+        login_button.setBorderPainted(false);
+        login_button.setName(""); // NOI18N
+        login_button.setOpaque(true);
         login_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 login_buttonActionPerformed(evt);
             }
         });
 
-        newAccount_button.setBackground(new java.awt.Color(255, 255, 255));
+        newAccount_button.setBackground(new java.awt.Color(204, 204, 204));
+        newAccount_button.setForeground(new java.awt.Color(255, 255, 255));
         newAccount_button.setText("New Account");
+        newAccount_button.setBorderPainted(false);
+        newAccount_button.setOpaque(true);
         newAccount_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newAccount_buttonActionPerformed(evt);
@@ -185,6 +192,9 @@ public class LoginUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_passwordFieldFocusLost
 
+    /*
+    Get rid off if not using
+    */
     private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameFieldActionPerformed
