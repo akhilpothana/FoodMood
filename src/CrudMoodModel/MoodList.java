@@ -1,37 +1,43 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package CrudMoodModel;
 
-/**
- *
- * @author Akhil
- */
+import java.util.ArrayList;
+
 public class MoodList {
     //FIELDS
-    private String mood;
+    private ArrayList<String> mood;
     
     //CONSTRUCTOR
-    public MoodList(String m)
+    public MoodList()
     {
-        mood = m;  
+        mood = new ArrayList<>();  
     }
 
     //METHODS
     /**
-     * @return the mood
+     * @return the historical mood data
      */
-    public String getMood() {
+    public ArrayList<String> getMoodList() {
         return mood;
     }
 
     /**
-     * @param mood the mood to set
+     * @param mo - the mood to set
      */
-    public void setMood(String mood) {
-        this.mood = mood;
+    public void addMood(String mo) {
+        mood.add(mo);
+    }
+    
+    public void removeFood(int i)
+    {
+        mood.remove(i);
+    }
+
+    /**
+     * @param i - the index at which the desired food is located
+     * @return - the desired food
+     */
+    public String getMoodAt(int i) {
+        return mood.get(i);
     }
     
 }

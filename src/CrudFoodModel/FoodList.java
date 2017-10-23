@@ -34,4 +34,8 @@ public class FoodList {
     {
         foodList.remove(f);
     }
+
+    public ArrayList<String> getFoodList() {
+        return foodList;
+    }
 }

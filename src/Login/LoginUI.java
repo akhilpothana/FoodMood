@@ -43,10 +43,10 @@ public class LoginUI extends javax.swing.JFrame {
 
         loginPanel = new javax.swing.JPanel();
         usernameField = new javax.swing.JTextField();
-        passwordField = new javax.swing.JTextField();
         login_button = new javax.swing.JButton();
         newAccount_button = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        passwordField = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -61,26 +61,6 @@ public class LoginUI extends javax.swing.JFrame {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 usernameFieldFocusLost(evt);
-            }
-        });
-        usernameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameFieldActionPerformed(evt);
-            }
-        });
-
-        passwordField.setMinimumSize(new java.awt.Dimension(10, 10));
-        passwordField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                passwordFieldFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                passwordFieldFocusLost(evt);
-            }
-        });
-        passwordField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordFieldActionPerformed(evt);
             }
         });
 
@@ -110,32 +90,42 @@ public class LoginUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 22)); // NOI18N
         jLabel1.setText("<html><div style='text-align: center;'>A simple and great<br> way to monitor your<br> health</div></html>");
 
+        passwordField.setText("jPasswordField1");
+        passwordField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                passwordFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                passwordFieldFocusLost(evt);
+            }
+        });
+
         javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
         loginPanel.setLayout(loginPanelLayout);
         loginPanelLayout.setHorizontalGroup(
             loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginPanelLayout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(usernameField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(passwordField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanelLayout.createSequentialGroup()
                 .addContainerGap(71, Short.MAX_VALUE)
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanelLayout.createSequentialGroup()
-                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(newAccount_button)
-                            .addComponent(login_button, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(login_button, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                            .addComponent(newAccount_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(120, 120, 120))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanelLayout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(54, 54, 54))))
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(usernameField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(passwordField))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         loginPanelLayout.setVerticalGroup(
             loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanelLayout.createSequentialGroup()
-                .addContainerGap(339, Short.MAX_VALUE)
+                .addContainerGap(341, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(44, 44, 44)
                 .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -178,19 +168,19 @@ public class LoginUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_usernameFieldFocusLost
 
-    private void passwordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusGained
+    private void passwordFieldFocusGained(java.awt.event.FocusEvent evt) {                                          
         if(passwordField.getText().equals("Password"))
         {
             passwordField.setText("");
         }
-    }//GEN-LAST:event_passwordFieldFocusGained
+    }                                         
 
-    private void passwordFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusLost
+    private void passwordFieldFocusLost(java.awt.event.FocusEvent evt) {                                        
         if(passwordField.getText().isEmpty())
         {
             passwordField.setText("Password");
         }
-    }//GEN-LAST:event_passwordFieldFocusLost
+    }                                       
 
     /*
     Get rid off if not using
@@ -214,14 +204,25 @@ public class LoginUI extends javax.swing.JFrame {
         loginCtrl.userList.addUser(new User(usernameField.getText(), passwordField.getText()));
         System.out.println(usernameField.getText() + " has been successfully registered.");
     }//GEN-LAST:event_newAccount_buttonActionPerformed
+/*
+    private void passwordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusGained
+            passwordField.setText("");
+    }//GEN-LAST:event_passwordFieldFocusGained
 
+    private void passwordFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusLost
+        if(passwordField.getPassword().length == 0)
+        {
+            passwordField.setText("Password");
+        }
+    }//GEN-LAST:event_passwordFieldFocusLost
+*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JButton login_button;
     private javax.swing.JButton newAccount_button;
-    private javax.swing.JTextField passwordField;
+    private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField usernameField;
     // End of variables declaration//GEN-END:variables
 }

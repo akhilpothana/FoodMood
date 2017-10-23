@@ -26,8 +26,6 @@ public class FoodMoodAkhilController {
      */
     public FoodMoodAkhilController(){ 
         foodControlHarness = new CRUDFoodController();
-        moodControlHarness = new CRUDMoodController(mood);
-        dataHistoryHarness = new FoodMoodHistory_control();
         
         TestCRUDFood();
         TestCRUDMood();
@@ -47,7 +45,6 @@ public class FoodMoodAkhilController {
      * Run the CRUDMood test
      */
     public void TestCRUDMood(){
-        System.out.println(moodControlHarness.getMood());
     }
     
     /**

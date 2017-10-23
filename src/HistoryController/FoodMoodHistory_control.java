@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package HistoryController;
 
-import HistoryModel.FoodMoodHistory_model;
+import CrudFoodModel.FoodList;
+import CrudMoodModel.MoodList;
 import HistoryView.FoodMoodHistory_view;
 import javax.swing.table.TableModel;
 
@@ -15,32 +11,31 @@ import javax.swing.table.TableModel;
  */
 public class FoodMoodHistory_control {
     
-    private String food;
-    private String mood;
-    FoodMoodHistory_model historyModel;
-    FoodMoodHistory_view historyView;
-    TableModel tableModel;
+    private FoodList food;
+    private MoodList mood;
     
-    /**
-     * 
-     */
-    public FoodMoodHistory_control()
+    FoodMoodHistory_view historyView;
+    
+    TableModel tableModel;
+
+    FoodMoodHistory_control()
     {
-        historyModel = new FoodMoodHistory_model();
-        historyView = new FoodMoodHistory_view(tableModel);        
+        historyView = new FoodMoodHistory_view(tableModel); 
+        food = new FoodList();
+        mood = new MoodList();
     }
 
     /**
      * @return the food
      */
-    public String getFood() {
+    public FoodList getFood() {
         return food;
     }
 
     /**
      * @return the mood
      */
-    public String getMood() {
+    public MoodList getMood() {
         return mood;
     }
     
@@ -51,8 +46,8 @@ public class FoodMoodHistory_control {
      */
     public void addToHistory(String f, String m)
     {
-        historyModel.getFoodList().add(f);
-        historyModel.getMoodList().add(m);
+        food.getFoodList().add(f);
+        mood.getMoodList().add(m);
     }
     
     /**
@@ -62,7 +57,7 @@ public class FoodMoodHistory_control {
      */
     public void removeFromHistory(String f, String m)
     {
-        historyModel.getFoodList().remove(f);
-        historyModel.getMoodList().remove(m);
+        food.getFoodList().remove(f);
+        mood.getMoodList().remove(m);
     }
 }

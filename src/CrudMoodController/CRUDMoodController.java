@@ -13,35 +13,10 @@ import CrudMoodModel.MoodList;
  */
 public class CRUDMoodController {
     
-    private String mood;
     private MoodList cmm;
     
-    public CRUDMoodController(String m)
+    public CRUDMoodController()
     {
-        mood = m;
-        cmm = new MoodList(m);
-    }
-    
-    /**
-     * @return the food
-     */
-    public String getMood() {
-        return cmm.getMood();
-    }
-
-    /**
-     * @param food the food to set, provided by user
-     */
-    public void setMood(String food) {
-        cmm.setMood(food);
-    }
-
-    /**
-     * 
-     * @param mo stores the received value of the mood to be removed
-     */
-    public void deleteMood(String mo)
-    {
-        mo = cmm.getMood();
+        cmm = new MoodList();
     }
 }
