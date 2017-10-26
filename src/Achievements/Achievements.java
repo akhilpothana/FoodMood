@@ -17,7 +17,9 @@ public class Achievements {
     
     public Achievements()
     {
-        
+        foodieLevel = "noob";
+        moodieLevel = "noob";
+        loginStreak = "noob";
     }
     
     public void checkFoodieLevel()
