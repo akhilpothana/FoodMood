@@ -33,7 +33,8 @@ Scene scene;
         stage.setHeight(500);
         
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-        new PieChart.Data("Default", 50));
+        new PieChart.Data("Default 1", 50),
+        new PieChart.Data("Default 2", 50));
         //new PieChart.Data("Strawberry", 50));
     
     PieChart chart = new PieChart(pieChartData);
@@ -127,7 +128,6 @@ Scene scene;
             }
         }
         addSlice(chart, name, value);
-       // pieChartData.add(new Data("Pear", 50));
     }
     
    public static void main(String[] args) {
