@@ -1,0 +1,6 @@
+# FoodMood
+A list of each implemented design pattern along with the classes that implement this design and the person that wrote the code
+
+Achievements [Max Hamill] - This design pattern is implemented in the Achievements class. The class has checks for milestones for a few areas of progress that the user can make in the app. The persistent data was not quite ready when I coded this so I just need to link up the variables to the persisted data for the checks to be valid and the achievements will be fully complete.
+
+Chart Prototype [Max Hamill] - This design pattern is implemented in the PieChartModel class. This class is a JavaFX application that is currently launched by calling the createChart() method in the chartsController class. When the class is launched it stages a Pie Chart prototype split 50/50 into 2 default values. The prototype data can be accessed using getChart() method that I implemented so we can use this prototype as a base for all of our pie charts. Still trying to learn JavaFX but to see my current model just create a chartsController and call createChart().
