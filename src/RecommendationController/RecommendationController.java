@@ -13,7 +13,7 @@ package RecommendationController;
  */
 public class RecommendationController {
     
-    private String recommendation = "strawberries";
+    private String recommendation = "nothing... yet!";
     
     /**
      * Retrieves the recommended food
@@ -29,6 +29,18 @@ public class RecommendationController {
      * class
      */
     public String GetRecommendation(){
+        
+        /**
+         * parseFood(), sortFood(), retrieveInfo() would be the most likely
+         * methods to make and use for this step, and then an if statement to
+         * check for empty food lists, something like this:
+         * if(recommendation != null){
+         * return recommendation
+         * }
+         * else{
+         * return "nothing... yet!";
+         * }
+         */
         return recommendation;
     }
     

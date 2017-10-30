@@ -6,19 +6,19 @@ package CrudUserModel;
  * @author Shawn
  */
 public class User {
-    private String username, password, firstName, lastName, email;
+    private String username, password, lastName, email;
 
     /**
      * This is the default constructor for CrudUserModel
      */
     public User(String name, String pass){
         this.password = pass;
-        this.firstName = name;
+        this.username = name;
     }
 //    Ed's change
 //    public User(String user, String name, String last, String emailAddress){
 //        this.password = pass;
-//        this.firstName = name;
+//        this.userName = name;
 //        this.lastName = last;
 //        this.email = emailAddress;
 //        this.username = user;
@@ -49,11 +49,11 @@ public class User {
     }
 
     public String getName() {
-        return firstName;
+        return username;
     }
 
     public void setName(String name) {
-        this.firstName = name;
+        this.username = name;
     }
     
     public String getLastName() {
@@ -65,6 +65,6 @@ public class User {
     }
     
     public String toString(){
-        return "User [first name: "+firstName+", last name: "+lastName+", email: "+email+", username: "+username+" ]";
+        return "User [first name: "+username+", last name: "+lastName+", email: "+email+", username: "+username+" ]";
     }
 }
