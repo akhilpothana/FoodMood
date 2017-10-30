@@ -11,9 +11,9 @@ public class User {
     /**
      * This is the default constructor for CrudUserModel
      */
-    public User(String name, String pass){
+    public User(String username, String pass){
         this.password = pass;
-        this.firstName = name;
+        this.username = username;
     }
 //    Ed's change
 //    public User(String user, String name, String last, String emailAddress){
@@ -64,7 +64,7 @@ public class User {
         this.lastName = lastName;
     }
     
-    public String toString(){
-        return "User [first name: "+firstName+", last name: "+lastName+", email: "+email+", username: "+username+" ]";
-    }
+//    public String toString(){
+//        return "User [first name: "+firstName+", last name: "+lastName+", email: "+email+", username: "+username+" ]";
+//    }
 }
