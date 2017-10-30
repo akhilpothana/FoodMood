@@ -35,7 +35,7 @@ public class FoodMoodMaxController {
     
     public void testCharts(ChartsController ccbe)
     {
-        ccbe.createChart(null, null, null, null);
+        ccbe.createChart();
         ccbe.deleteChart(null, null, null, null);
         ccbe.updateChart(null, null, null, null);
         ccbe.refreshView();
