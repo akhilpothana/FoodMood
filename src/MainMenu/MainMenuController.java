@@ -17,9 +17,18 @@ public class MainMenuController {
         foodData = new FoodList();
         moodData = new MoodList();
         
-        mainUI = new MainMenuUI();
+        mainUI = new MainMenuUI(this);
         mainUI.setLocationRelativeTo(null);
         mainUI.setVisible(true);       
+    }
+    
+    public void getJTableData(){
+        
+        for(int i = 0; i < 4; i++)
+        {
+            System.out.println((String) mainUI.getTable().getValueAt(i,0));
+            System.out.println((String) mainUI.getTable().getValueAt(i,1));
+        }       
     }
  
 }

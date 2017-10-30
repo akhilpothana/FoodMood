@@ -189,7 +189,7 @@ public class LoginUI extends javax.swing.JFrame {
     }
     
     /*
-    Get rid off if not using
+    Get rid of if not using
     */
     private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
         // TODO add your handling code here:
@@ -221,7 +221,7 @@ public class LoginUI extends javax.swing.JFrame {
 //        } catch (FileNotFoundException ex) {
 //            Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-        
+
         if(loginCtrl.validateUser(usernameField.getText(), passwordField.getText()))
         {
             loginCtrl.mainMenu = new MainMenuController();

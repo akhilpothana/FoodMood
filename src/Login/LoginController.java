@@ -1,70 +1,70 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Login;
 
 import CrudUserModel.User;
 import CrudUserModel.UserList;
 import MainMenu.MainMenuController;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.json.simple.parser.ParseException;
-        
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
- *
+ * This class handles logging in as well as creating new users
  * @author akhil
  */
+
 public class LoginController {
     private LoginUI loginView;
     private CreateNewAccUI newAccView;
+    
     //Opening the main menu upon successful login
     MainMenuController mainMenu;
     
     //User data
     private UserList theUserList;
     private boolean validUser;
-    //To be deleted
-    User user1, user2, user3, user4;
     
     public LoginController() throws IOException {
-        System.out.println("Test: made it login controller");
         validUser = false;
         loginView = new LoginUI(this);
         
-        loginUI();
-        
-        
-        theUserList = new UserList();
-        
-        //Creating a list of sample users and adding them to the UserList
-        user1 = new User("ed", "bubbles");
-        user2 = new User("max", "trees");
-        user3 = new User("akhil", "onions");
-        user4 = new User("shawn", "password");
-        theUserList.addUser(user1);
-        theUserList.addUser(user2);
-        theUserList.addUser(user3);
-        theUserList.addUser(user4);
+        showLoginUI();
     }
     
     /**
      * 
-     * @param user - The entered username value
-     * @param pass - The entered password value
+     * @param username - The entered username value
+     * @param password - The entered password value
      * @return - Whether the credentials match with a registered user
      */
-    public boolean validateUser(String user, String pass) {
-        for(int i = 0; i < theUserList.getUserList().size(); i++)
-        {
-            if(user.equals(theUserList.getUserList().get(i).getUsername()) && pass.equals(theUserList.getUserList().get(i).getPassword()))
-            {
-                loginView.setVisible(false);
-                return true;
+    public boolean validateUser(String username, String password) {
+        try{
+            File file = new File("src/users.txt");
+            Scanner fileScanner = new Scanner(file);
+
+            //Reading through the file line by line
+            while(fileScanner.hasNextLine()) {
+                String user = fileScanner.nextLine();
+                String userData[] = user.split(";");
+
+                if(username.equals(userData[0]) && password.equals(userData[4]))
+                {
+                    loginView.setVisible(false);
+                    System.out.println("Logged in!");
+                    return true;
+                }
             }
-        }
-        System.out.println("Incorrect username or password");
+            }catch(FileNotFoundException e) {
+	        System.out.print("FileNotFoundException");
+    	}
+        System.out.println("Incorrect username or password.");
         return false;
     }
 
@@ -74,9 +74,57 @@ public class LoginController {
         newAccView.setVisible(true);
     }
     
-    public void loginUI(){
+    public void showLoginUI(){
         loginView.setLocationRelativeTo(null);
         loginView.setVisible(true);
+    }
+
+    public void readUserfromFile()
+    {
+        try{
+            File file = new File("src/users.txt");
+            Scanner fileScanner = new Scanner(file);
+
+            while(fileScanner.hasNextLine()){
+                String user = fileScanner.nextLine();
+                String userData[] = user.split(";");
+                System.out.println(userData[4]);
+            }
+            }catch(FileNotFoundException e) {
+	        System.out.print("FileNotFoundException");
+    	}
+    }
+    
+    /**
+     * This method is called when the user clicks on the "Sign Up" button in CreateNewAccUI
+     * @param uname - username
+     * @param fname - first name
+     * @param lname - last name
+     * @param email - email
+     * @param password - password
+     */
+    public void writeUserToFile(String uname, String fname, String lname, String email, String password)
+    {
+        try
+        {
+            PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("src/users.txt", true)));
+            out.print(uname + ";");
+            out.print(fname + ";");
+            out.print(lname + ";");
+            out.print(email + ";");
+            out.print(password);
+            out.println();
+            out.close();
+        }
+        catch (FileNotFoundException e) {
+        System.out.print("FileNotFoundException: ");
+        System.out.println(e.getMessage());
+        } 
+        catch (IOException ex) {
+        System.out.print("IOException");
+        }
+        
+        
     }
     
 //    public void createUserDb(String first, String last, String email, String username) throws IOException{

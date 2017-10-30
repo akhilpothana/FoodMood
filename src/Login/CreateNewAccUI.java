@@ -61,7 +61,7 @@ public class CreateNewAccUI extends javax.swing.JFrame {
         passwordField = new javax.swing.JTextField();
         signUpButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         firstNameField.setText("First Name");
         firstNameField.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -83,7 +83,7 @@ public class CreateNewAccUI extends javax.swing.JFrame {
             }
         });
 
-        emailAddressField.setText("Email Address");
+        emailAddressField.setText("Email");
         emailAddressField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 emailAddressFieldFocusGained(evt);
@@ -108,7 +108,6 @@ public class CreateNewAccUI extends javax.swing.JFrame {
         signUpButton.setBackground(new java.awt.Color(204, 102, 0));
         signUpButton.setText("Sign Up");
         signUpButton.setBorderPainted(false);
-        signUpButton.setOpaque(true);
         signUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signUpButtonActionPerformed(evt);
@@ -226,6 +225,10 @@ public class CreateNewAccUI extends javax.swing.JFrame {
         String lastName = lastNameField.getText();
         String emailAddress = emailAddressField.getText();
         String username = usernameField.getText();
+        String password = passwordField.getText();
+        
+        loginCtrl.writeUserToFile(username, firstName, lastName, emailAddress, password);
+        loginCtrl.readUserfromFile();
         
 //        CODE FOR CREATING USER
 //        if(firstName.equals("")|| lastName.equals("") || emailAddress.equals("") || username.equals("")){
@@ -237,12 +240,12 @@ public class CreateNewAccUI extends javax.swing.JFrame {
 //                Logger.getLogger(CreateNewAccUI.class.getName()).log(Level.SEVERE, null, ex);
 //            }
 //            JOptionPane.showMessageDialog(null,"User created!");
-//            loginCtrl.loginUI();
+//            loginCtrl.showLoginUI();
 //            this.setVisible(false);         
 //        }
 
         JOptionPane.showMessageDialog(null,"User created!");
-        loginCtrl.loginUI();
+        loginCtrl.showLoginUI();
         this.setVisible(false);
     }//GEN-LAST:event_signUpButtonActionPerformed
 

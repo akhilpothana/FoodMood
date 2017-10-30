@@ -12,8 +12,8 @@ public class User {
      * This is the default constructor for CrudUserModel
      */
     public User(String name, String pass){
-        this.password = pass;
         this.username = name;
+        this.password = pass;
     }
 //    Ed's change
 //    public User(String user, String name, String last, String emailAddress){
