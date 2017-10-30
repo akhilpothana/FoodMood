@@ -8,40 +8,45 @@ package Login;
 import CrudUserModel.User;
 import CrudUserModel.UserList;
 import MainMenu.MainMenuController;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import org.json.simple.parser.ParseException;
         
 /**
  *
  * @author akhil
  */
 public class LoginController {
-    LoginUI loginView;
-    
-    //User data
-    UserList userList;
-    User user1, user2, user3, user4;
-    
+    private LoginUI loginView;
+    private CreateNewAccUI newAccView;
     //Opening the main menu upon successful login
     MainMenuController mainMenu;
     
-    //Model: userlist, user, loginModel, serialized collection class
+    //User data
+    private UserList theUserList;
+    private boolean validUser;
+    //To be deleted
+    User user1, user2, user3, user4;
     
-    public LoginController() {
+    public LoginController() throws IOException {
         System.out.println("Test: made it login controller");
+        validUser = false;
         loginView = new LoginUI(this);
-        loginView.setLocationRelativeTo(null);
-        loginView.setVisible(true);  
         
-        userList = new UserList();
+        loginUI();
+        
+        
+        theUserList = new UserList();
         
         //Creating a list of sample users and adding them to the UserList
         user1 = new User("ed", "bubbles");
         user2 = new User("max", "trees");
         user3 = new User("akhil", "onions");
         user4 = new User("shawn", "password");
-        userList.addUser(user1);
-        userList.addUser(user2);
-        userList.addUser(user3);
-        userList.addUser(user4);
+        theUserList.addUser(user1);
+        theUserList.addUser(user2);
+        theUserList.addUser(user3);
+        theUserList.addUser(user4);
     }
     
     /**
@@ -50,11 +55,10 @@ public class LoginController {
      * @param pass - The entered password value
      * @return - Whether the credentials match with a registered user
      */
-    public boolean validateUser(String user, String pass)
-    {
-        for(int i = 0; i < userList.getUserList().size(); i++)
+    public boolean validateUser(String user, String pass) {
+        for(int i = 0; i < theUserList.getUserList().size(); i++)
         {
-            if(user.equals(userList.getUserList().get(i).getUsername()) && pass.equals(userList.getUserList().get(i).getPassword()))
+            if(user.equals(theUserList.getUserList().get(i).getUsername()) && pass.equals(theUserList.getUserList().get(i).getPassword()))
             {
                 loginView.setVisible(false);
                 return true;
@@ -63,4 +67,31 @@ public class LoginController {
         System.out.println("Incorrect username or password");
         return false;
     }
+
+    public void createUserUI(){
+        newAccView = new CreateNewAccUI(this);
+        newAccView.setLocationRelativeTo(null);
+        newAccView.setVisible(true);
+    }
+    
+    public void loginUI(){
+        loginView.setLocationRelativeTo(null);
+        loginView.setVisible(true);
+    }
+    
+//    public void createUserDb(String first, String last, String email, String username) throws IOException{
+//        theUserList.addUser(first, last, email, username);
+//    }
+    
+//    public void mainMenuUI(){
+//        mainMenu = new MainMenuController();        
+//    }
+//    
+//    //instant purposes this will be reader
+//    public void authenticaUser(String username, String password) throws IOException, ParseException{
+//        theUserList.authenticate(username, password);
+//
+//        validUser = theUserList.authenticate(username, password);
+//        return validUser;
+//    }
 }

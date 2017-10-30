@@ -5,13 +5,14 @@ import TestHarness.FoodMoodAkhilController;
 import TestHarness.FoodMoodEdController;
 import TestHarness.FoodMoodMaxController;
 import TestHarness.FoodMoodShawnController;
+import java.io.IOException;
 
 /**
  * This class is the initiator of the application
  * @author Akhil
  */
 public class FoodMood_v1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 //        TestHarness test = new TestHarness();
     
         LoginController loginToApp = new LoginController();
