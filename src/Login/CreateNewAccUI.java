@@ -38,7 +38,7 @@ public class CreateNewAccUI extends javax.swing.JFrame {
         usernameField.setText("Username");
         
         
-        backgroundImage = new ImageIcon("src/Images/loginView2.png");
+        backgroundImage = new ImageIcon("src/Images/loginView.png");
         backgroundImageLabel = new JLabel(backgroundImage);
         backgroundImageLabel.setBounds(0, 0, 375, 667);
         createUserPanel.add(backgroundImageLabel);
@@ -60,6 +60,7 @@ public class CreateNewAccUI extends javax.swing.JFrame {
         usernameField = new javax.swing.JTextField();
         passwordField = new javax.swing.JTextField();
         signUpButton = new javax.swing.JButton();
+        back_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -109,9 +110,23 @@ public class CreateNewAccUI extends javax.swing.JFrame {
         signUpButton.setForeground(new java.awt.Color(255, 255, 255));
         signUpButton.setText("Sign Up");
         signUpButton.setBorderPainted(false);
+        signUpButton.setLocation(new java.awt.Point(-32514, -32151));
+        signUpButton.setOpaque(true);
         signUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signUpButtonActionPerformed(evt);
+            }
+        });
+
+        back_button.setBackground(new java.awt.Color(204, 204, 204));
+        back_button.setForeground(new java.awt.Color(255, 255, 255));
+        back_button.setText("Back");
+        back_button.setBorderPainted(false);
+        back_button.setLocation(new java.awt.Point(-32746, -32151));
+        back_button.setOpaque(true);
+        back_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_buttonActionPerformed(evt);
             }
         });
 
@@ -120,18 +135,20 @@ public class CreateNewAccUI extends javax.swing.JFrame {
         createUserPanelLayout.setHorizontalGroup(
             createUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(createUserPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 85, Short.MAX_VALUE)
                 .addGroup(createUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(emailAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(firstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
             .addGroup(createUserPanelLayout.createSequentialGroup()
                 .addGap(140, 140, 140)
-                .addComponent(signUpButton)
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addGroup(createUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(signUpButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(back_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         createUserPanelLayout.setVerticalGroup(
             createUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,9 +163,11 @@ public class CreateNewAccUI extends javax.swing.JFrame {
                 .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(signUpButton)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(back_button)
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -250,6 +269,11 @@ public class CreateNewAccUI extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_signUpButtonActionPerformed
 
+    private void back_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_buttonActionPerformed
+        loginCtrl.showLoginUI();
+        this.setVisible(false);
+    }//GEN-LAST:event_back_buttonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -279,6 +303,7 @@ public class CreateNewAccUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back_button;
     private javax.swing.JPanel createUserPanel;
     private javax.swing.JTextField emailAddressField;
     private javax.swing.JTextField firstNameField;

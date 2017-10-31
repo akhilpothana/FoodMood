@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 
 /**
  * This class handles logging in as well as creating new users
@@ -34,7 +35,7 @@ public class LoginController {
     public LoginController() throws IOException {
         validUser = false;
         loginView = new LoginUI(this);
-        
+        newAccView = new CreateNewAccUI(this);
         showLoginUI();
     }
     
@@ -64,18 +65,20 @@ public class LoginController {
             }catch(FileNotFoundException e) {
 	        System.out.print("FileNotFoundException");
     	}
-        System.out.println("Incorrect username or password.");
         return false;
     }
 
     public void createUserUI(){
-        newAccView = new CreateNewAccUI(this);
+        newAccView.setTitle("FoodMood");
         newAccView.setLocationRelativeTo(null);
+        newAccView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         newAccView.setVisible(true);
     }
     
     public void showLoginUI(){
+        loginView.setTitle("FoodMood");
         loginView.setLocationRelativeTo(null);
+        loginView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         loginView.setVisible(true);
     }
 

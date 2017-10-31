@@ -31,7 +31,7 @@ public class LoginUI extends javax.swing.JFrame {
        this.getRootPane().setDefaultButton(login_button);
        login_button.requestFocus();
        
-       backgroundImage = new ImageIcon("src/Images/loginView2.png");
+       backgroundImage = new ImageIcon("src/Images/loginView.png");
        backgroundImageLabel = new JLabel(backgroundImage);
        backgroundImageLabel.setBounds(0, 0, 375, 667);
        loginPanel.add(backgroundImageLabel);
@@ -48,10 +48,10 @@ public class LoginUI extends javax.swing.JFrame {
 
         loginPanel = new javax.swing.JPanel();
         usernameField = new javax.swing.JTextField();
-        login_button = new javax.swing.JButton();
-        newAccount_button = new javax.swing.JButton();
         welcomingJlabel = new javax.swing.JLabel();
         passwordField = new javax.swing.JPasswordField();
+        login_button = new javax.swing.JButton();
+        newAccount_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -70,27 +70,6 @@ public class LoginUI extends javax.swing.JFrame {
             }
         });
 
-        login_button.setBackground(new java.awt.Color(204, 102, 0));
-        login_button.setForeground(new java.awt.Color(255, 255, 255));
-        login_button.setText("Login");
-        login_button.setBorderPainted(false);
-        login_button.setName(""); // NOI18N
-        login_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                login_buttonActionPerformed(evt);
-            }
-        });
-
-        newAccount_button.setBackground(new java.awt.Color(204, 204, 204));
-        newAccount_button.setForeground(new java.awt.Color(255, 255, 255));
-        newAccount_button.setText("New Account");
-        newAccount_button.setBorderPainted(false);
-        newAccount_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newAccount_buttonActionPerformed(evt);
-            }
-        });
-
         welcomingJlabel.setFont(new java.awt.Font("Lucida Sans", 1, 22)); // NOI18N
         welcomingJlabel.setText("<html><div style='text-align: center;'>A simple and great<br> way to monitor your<br> health</div></html>");
 
@@ -104,42 +83,64 @@ public class LoginUI extends javax.swing.JFrame {
             }
         });
 
+        login_button.setBackground(new java.awt.Color(204, 102, 0));
+        login_button.setForeground(new java.awt.Color(255, 255, 255));
+        login_button.setText("Login");
+        login_button.setBorderPainted(false);
+        login_button.setOpaque(true);
+        login_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                login_buttonActionPerformed(evt);
+            }
+        });
+
+        newAccount_button.setBackground(new java.awt.Color(204, 204, 204));
+        newAccount_button.setForeground(new java.awt.Color(255, 255, 255));
+        newAccount_button.setText("Sign Up");
+        newAccount_button.setBorderPainted(false);
+        newAccount_button.setOpaque(true);
+        newAccount_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newAccount_buttonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
         loginPanel.setLayout(loginPanelLayout);
         loginPanelLayout.setHorizontalGroup(
             loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanelLayout.createSequentialGroup()
                 .addContainerGap(71, Short.MAX_VALUE)
-                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanelLayout.createSequentialGroup()
-                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(login_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(newAccount_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(120, 120, 120))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanelLayout.createSequentialGroup()
-                        .addComponent(welcomingJlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54))))
+                .addComponent(welcomingJlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54))
             .addGroup(loginPanelLayout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(usernameField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(passwordField))
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(usernameField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(passwordField)))
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addGap(138, 138, 138)
+                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(newAccount_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(login_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         loginPanelLayout.setVerticalGroup(
             loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanelLayout.createSequentialGroup()
-                .addContainerGap(341, Short.MAX_VALUE)
+                .addContainerGap(359, Short.MAX_VALUE)
                 .addComponent(welcomingJlabel)
                 .addGap(44, 44, 44)
                 .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(login_button, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(newAccount_button, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68))
+                .addComponent(login_button)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(newAccount_button)
+                .addGap(74, 74, 74))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -197,42 +198,6 @@ public class LoginUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordFieldActionPerformed
 
-    private void login_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_buttonActionPerformed
-//        try {
-//            loginCtrl.authenticaUser(usernameField.getText(), passwordField.getText());
-//        } catch (IOException ex) {
-//            Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (ParseException ex) {
-//            Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-        
-//        Ed's
-//        try {
-//            validUser = loginCtrl.authenticaUser(usernameField.getText(), passwordField.getText());
-//            if (validUser == true){
-//                JOptionPane.showMessageDialog(null,"Authenticated");
-//                loginCtrl.mainMenuUI();
-//            } else {
-//                JOptionPane.showMessageDialog(null,"Try again!");
-//            }
-//        
-//        } catch (FileNotFoundException ex) {
-//            Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-
-        if(loginCtrl.validateUser(usernameField.getText(), passwordField.getText()))
-        {
-            loginCtrl.mainMenu = new MainMenuController();
-        }
-    }//GEN-LAST:event_login_buttonActionPerformed
-
-    private void newAccount_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newAccount_buttonActionPerformed
-        loginCtrl.createUserUI();
-        
-//        loginCtrl.theUserList.addUser(new User(usernameField.getText(), passwordField.getText()));
-//        System.out.println(usernameField.getText() + " has been successfully registered.");
-    }//GEN-LAST:event_newAccount_buttonActionPerformed
-
 /*
     Delete this extra code
     private void passwordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusGained
@@ -246,6 +211,21 @@ public class LoginUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_passwordFieldFocusLost
 */
+    private void login_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_buttonActionPerformed
+        if(loginCtrl.validateUser(usernameField.getText(), passwordField.getText()))
+        {
+            loginCtrl.mainMenu = new MainMenuController();
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"Incorrect username or password. Please try again!");
+        }
+    }//GEN-LAST:event_login_buttonActionPerformed
+
+    private void newAccount_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newAccount_buttonActionPerformed
+        loginCtrl.createUserUI();
+        this.setVisible(false);
+    }//GEN-LAST:event_newAccount_buttonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel loginPanel;
