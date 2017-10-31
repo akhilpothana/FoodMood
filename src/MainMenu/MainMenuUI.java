@@ -87,9 +87,8 @@ public class MainMenuUI extends javax.swing.JFrame {
         });
 
         viewUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/crud_user_lines.png"))); // NOI18N
-        viewUserButton.setPreferredSize(new java.awt.Dimension(38, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/line2.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/line.png"))); // NOI18N
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/foodmood_button.png"))); // NOI18N
         jButton2.setBorderPainted(false);
@@ -103,7 +102,7 @@ public class MainMenuUI extends javax.swing.JFrame {
                 .addGroup(mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainMenuPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(viewUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(viewUserButton)
                         .addGap(71, 71, 71)
                         .addComponent(titleLabel)
                         .addGap(57, 57, 57)
@@ -151,7 +150,7 @@ public class MainMenuUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 667, Short.MAX_VALUE)
+            .addComponent(mainMenuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 728, Short.MAX_VALUE)
         );
 
         pack();
