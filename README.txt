@@ -7,6 +7,12 @@ Chart Prototype [Max Hamill] - This design pattern is implemented in the PieChar
 
 Drop-down Menu[Shawn Foreman] - This design pattern is located in the MainMenuUI class. This pattern allows the user to move across the screens of the application through a single bar located at the top of the application. There are a few pages within the application, but they are not yet fully developed or processed. The group will need to talk more about these pages and how the application will be divided still, and then more pages for the menu will be able to be created.
 
+Recommendations [Shawn Foreman] - This design pattern is located in the Recommendation modules. This pattern creates a recommendation for the user based on their food preferences. This pattern is extremely dependant on data persistence, which has of this writing not been yet completed. For this step in the process I will create a method that will show what would be present for new users that do not have any favorite foods yet. So the group needs to settle on a type of data persistence that allows us to parse and sort the data, and then this pattern will be completed.
+
+Facade [Akhil Pothana] - In the facade design pattern, a single class represents an underlying subsystem that is abstracted from the user. A facade class provides a unified interface to a set of interfaces in a system. This pattern is implemented using the MainMenuController class and its associated UI.
+
+Input prompt [Akhil Pothana] - This design pattern is quite simple. Prompts for user input can be written into the JTextField. This allows for a cleaner UI and slightly simplified code since JLabels don't need to be created. I implemented this in LoginUI, but we will use this pattern wherever user input is necessary throughout the application.
+
 Object Oriented Pattern: CHECKS [Ed Reinoso]
 For this pattern, I decided to implementation this in the CRUD User section. This is specifically shown in the Sign Up view when the user is trying to create a new profile. The way it works is that when users try to input something that is erroneous, then the application will check whether the input is valid depending on certain parameters. Those parameters are the following:
 1.	Password: it should be longer than 5 characters to make it secure
@@ -27,3 +33,4 @@ b.	Last Name
 c.	Email Address
 d.	Username
 e.	Password
+

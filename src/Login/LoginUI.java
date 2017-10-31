@@ -75,7 +75,6 @@ public class LoginUI extends javax.swing.JFrame {
         login_button.setText("Login");
         login_button.setBorderPainted(false);
         login_button.setName(""); // NOI18N
-        login_button.setOpaque(true);
         login_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 login_buttonActionPerformed(evt);
@@ -86,7 +85,6 @@ public class LoginUI extends javax.swing.JFrame {
         newAccount_button.setForeground(new java.awt.Color(255, 255, 255));
         newAccount_button.setText("New Account");
         newAccount_button.setBorderPainted(false);
-        newAccount_button.setOpaque(true);
         newAccount_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newAccount_buttonActionPerformed(evt);
@@ -189,7 +187,7 @@ public class LoginUI extends javax.swing.JFrame {
     }
     
     /*
-    Get rid off if not using
+    Get rid of if not using
     */
     private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
         // TODO add your handling code here:
@@ -221,7 +219,7 @@ public class LoginUI extends javax.swing.JFrame {
 //        } catch (FileNotFoundException ex) {
 //            Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-        
+
         if(loginCtrl.validateUser(usernameField.getText(), passwordField.getText()))
         {
             loginCtrl.mainMenu = new MainMenuController();
