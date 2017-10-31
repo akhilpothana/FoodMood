@@ -82,6 +82,9 @@ public class LoginController {
         loginView.setVisible(true);
     }
 
+    /**
+     * Reading user profile data from the text file
+     */
     public void readUserfromFile()
     {
         try{
