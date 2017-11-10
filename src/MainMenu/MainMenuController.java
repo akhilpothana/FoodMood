@@ -13,12 +13,12 @@ import javax.swing.table.DefaultTableModel;
 
 public class MainMenuController {
     
-    MainMenuUI mainMenuUI;
+    private MainMenuUI mainMenuUI;
     
     //These will be the only instances of these class and will be 
     //passed around as necessary
-    FoodList foodData;
-    MoodList moodData;
+    private FoodList foodData;
+    private MoodList moodData;
     
     public MainMenuController()
     {
