@@ -1,15 +1,19 @@
 package MainMenu;
 
+//our code
 import CrudFoodModel.FoodList;
 import CrudMoodModel.MoodList;
+
+//java libraries
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.JPanel;
 
 public class MainMenuController {
     
@@ -19,6 +23,8 @@ public class MainMenuController {
     //passed around as necessary
     private FoodList foodData;
     private MoodList moodData;
+    
+    private ArrayList<JPanel> foodMoodPanelsList = new ArrayList<>();
     
     public MainMenuController()
     {
@@ -47,6 +53,7 @@ public class MainMenuController {
     
     /**
      * A method to write the given food and mood to the text file
+     * This will occur either when a new entry is made, or when an existing card is edited
      * @param food
      * @param mood
      */
@@ -93,13 +100,4 @@ public class MainMenuController {
 //	        System.out.print("FileNotFoundException");
 //    	}
     }
-    
-    /**
-     * Add a new row to the table
-     */
-//    public void addRowToTable()
-//    {
-//        DefaultTableModel model = (DefaultTableModel) mainMenuUI.getTable().getModel();
-//        model.addRow(new Object[]{"", ""});
-//    }
 }
