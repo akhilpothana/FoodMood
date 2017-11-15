@@ -26,6 +26,7 @@ public class MainMenuController {
         moodData = new MoodList();
         
         mainMenuUI = new MainMenuUI(this);
+        mainMenuUI.setTitle("FoodMood");
         mainMenuUI.setLocationRelativeTo(null);
         mainMenuUI.setVisible(true);       
     }
@@ -35,13 +36,13 @@ public class MainMenuController {
      */
     public void getJTableData(){
         
-        for(int i = 0; i < mainMenuUI.getTable().getRowCount(); i++)
-        {
-            System.out.println((String) mainMenuUI.getTable().getValueAt(i,0));
-            System.out.println((String) mainMenuUI.getTable().getValueAt(i,1));
-            
-        //    writeFoodMoodToFile((String) mainMenuUI.getTable().getValueAt(i,0), (String) mainMenuUI.getTable().getValueAt(i,1));
-        }  
+//        for(int i = 0; i < mainMenuUI.getTable().getRowCount(); i++)
+//        {
+//            System.out.println((String) mainMenuUI.getTable().getValueAt(i,0));
+//            System.out.println((String) mainMenuUI.getTable().getValueAt(i,1));
+//            
+//        //    writeFoodMoodToFile((String) mainMenuUI.getTable().getValueAt(i,0), (String) mainMenuUI.getTable().getValueAt(i,1));
+//        }  
     }
     
     /**
@@ -76,30 +77,29 @@ public class MainMenuController {
     {
         int rowCounter = 0;
         
-        try{
-            File file = new File("src/food_mood_data.txt");
-            Scanner fileScanner = new Scanner(file);
-
-            while(fileScanner.hasNextLine()){
-                String foodAndMood = fileScanner.nextLine();
-                String foodMood[] = foodAndMood.split(";");
-                
-                mainMenuUI.getTable().setValueAt(foodMood[0], rowCounter, 0);
-                mainMenuUI.getTable().setValueAt(foodMood[1], rowCounter, 1);
-                rowCounter++;
-            }
-            }catch(FileNotFoundException e) {
-	        System.out.print("FileNotFoundException");
-    	}
+//        try{
+//            File file = new File("src/food_mood_data.txt");
+//            Scanner fileScanner = new Scanner(file);
+//
+//            while(fileScanner.hasNextLine()){
+//                String foodAndMood = fileScanner.nextLine();
+//                String foodMood[] = foodAndMood.split(";");
+//                
+//                mainMenuUI.getTable().setValueAt(foodMood[0], rowCounter, 0);
+//                mainMenuUI.getTable().setValueAt(foodMood[1], rowCounter, 1);
+//                rowCounter++;
+//            }
+//            }catch(FileNotFoundException e) {
+//	        System.out.print("FileNotFoundException");
+//    	}
     }
     
     /**
      * Add a new row to the table
      */
-    public void addRowToTable()
-    {
-        DefaultTableModel model = (DefaultTableModel) mainMenuUI.getTable().getModel();
-        model.addRow(new Object[]{"", ""});
-    }
- 
+//    public void addRowToTable()
+//    {
+//        DefaultTableModel model = (DefaultTableModel) mainMenuUI.getTable().getModel();
+//        model.addRow(new Object[]{"", ""});
+//    }
 }

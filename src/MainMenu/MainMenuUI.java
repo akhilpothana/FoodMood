@@ -1,13 +1,15 @@
 package MainMenu;
 
 import RecommendationController.RecommendationController;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTable;
 
 public class MainMenuUI extends javax.swing.JFrame {
-    RecommendationController recommend = new RecommendationController();
+    private RecommendationController recommend = new RecommendationController();
+    private MainMenuController mmc;
+    private JPanel foodMoodEntries;
     
-    MainMenuController mmc;
-
     /**
      * Creates new form MainMenuUI
      */
@@ -15,7 +17,7 @@ public class MainMenuUI extends javax.swing.JFrame {
     
         this.mmc = mmc;
         initComponents();
-        changeRecommendation();
+//        changeRecommendation();
     }
 
     /**
@@ -32,17 +34,9 @@ public class MainMenuUI extends javax.swing.JFrame {
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jMenu1 = new javax.swing.JMenu();
         mainMenuPanel = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        print_data = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         titleLabel = new javax.swing.JLabel();
         notificationsButton = new javax.swing.JButton();
         viewUserButton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        show_data = new javax.swing.JButton();
-        add_row = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         goToChartButton = new javax.swing.JButton();
         goToFoodMoodButton = new javax.swing.JButton();
@@ -50,6 +44,21 @@ public class MainMenuUI extends javax.swing.JFrame {
         foodEnterField = new javax.swing.JTextField();
         moodEnterField = new javax.swing.JTextField();
         enterFoodMoodButton = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        newFoodMoodScrollPane = new javax.swing.JScrollPane();
+        backgroundFoodModoPane = new javax.swing.JPanel();
+        firstEntryFoodMood = new javax.swing.JPanel();
+        foodLabel1 = new javax.swing.JLabel();
+        moodLabel1 = new javax.swing.JLabel();
+        dateLabel1 = new javax.swing.JLabel();
+        deleteButton1 = new javax.swing.JButton();
+        editButton1 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        foodLabel2 = new javax.swing.JLabel();
+        moodLabel2 = new javax.swing.JLabel();
+        dateLabel2 = new javax.swing.JLabel();
+        editButton2 = new javax.swing.JButton();
+        deleteButton2 = new javax.swing.JButton();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -67,36 +76,6 @@ public class MainMenuUI extends javax.swing.JFrame {
         mainMenuPanel.setBackground(new java.awt.Color(255, 255, 255));
         mainMenuPanel.setPreferredSize(new java.awt.Dimension(375, 667));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Food", "Mood"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
-
-        print_data.setText("Print data");
-        print_data.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                print_dataActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Your new recommendation");
-
         titleLabel.setFont(new java.awt.Font("Lucida Sans", 0, 30)); // NOI18N
         titleLabel.setText("FoodMood");
 
@@ -110,35 +89,31 @@ public class MainMenuUI extends javax.swing.JFrame {
 
         viewUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/crud_user_lines.png"))); // NOI18N
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/line.png"))); // NOI18N
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/foodmood_button.png"))); // NOI18N
-        jButton2.setBorderPainted(false);
-
-        show_data.setText("Show data");
-        show_data.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                show_dataActionPerformed(evt);
-            }
-        });
-
-        add_row.setText("Add row");
-        add_row.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_rowActionPerformed(evt);
-            }
-        });
-
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.setPreferredSize(new java.awt.Dimension(375, 56));
 
         goToChartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pie-chart.png"))); // NOI18N
+        goToChartButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goToChartButtonActionPerformed(evt);
+            }
+        });
 
         goToFoodMoodButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cutlery_1.png"))); // NOI18N
         goToFoodMoodButton.setLocation(new java.awt.Point(-32649, -32050));
+        goToFoodMoodButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goToFoodMoodButtonActionPerformed(evt);
+            }
+        });
 
         goToRecommButton.setBackground(new java.awt.Color(204, 204, 204));
         goToRecommButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/recommended.png"))); // NOI18N
+        goToRecommButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goToRecommButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -147,21 +122,21 @@ public class MainMenuUI extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addComponent(goToChartButton)
-                .addGap(60, 60, 60)
+                .addGap(62, 62, 62)
                 .addComponent(goToFoodMoodButton)
-                .addGap(60, 60, 60)
+                .addGap(58, 58, 58)
                 .addComponent(goToRecommButton)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(goToRecommButton)
+                    .addComponent(goToChartButton)
                     .addComponent(goToFoodMoodButton)
-                    .addComponent(goToChartButton))
-                .addContainerGap())
+                    .addComponent(goToRecommButton))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         foodEnterField.setBackground(new java.awt.Color(204, 204, 204));
@@ -186,133 +161,210 @@ public class MainMenuUI extends javax.swing.JFrame {
             }
         });
 
+        enterFoodMoodButton.setBackground(new java.awt.Color(204, 102, 0));
+        enterFoodMoodButton.setForeground(new java.awt.Color(255, 255, 255));
         enterFoodMoodButton.setText("Enter");
+        enterFoodMoodButton.setBorderPainted(false);
+        enterFoodMoodButton.setOpaque(true);
+        enterFoodMoodButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enterFoodMoodButtonActionPerformed(evt);
+            }
+        });
+
+        jSeparator1.setForeground(new java.awt.Color(51, 51, 51));
+
+        newFoodMoodScrollPane.setBorder(null);
+        newFoodMoodScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        newFoodMoodScrollPane.setViewportView(backgroundFoodModoPane);
+
+        backgroundFoodModoPane.setBackground(new java.awt.Color(255, 255, 255));
+        backgroundFoodModoPane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        foodLabel1.setText("Food:");
+
+        moodLabel1.setText("Mood:");
+
+        dateLabel1.setText("Date:");
+
+        deleteButton1.setText("Delete");
+
+        editButton1.setText("Edit");
+
+        javax.swing.GroupLayout firstEntryFoodMoodLayout = new javax.swing.GroupLayout(firstEntryFoodMood);
+        firstEntryFoodMood.setLayout(firstEntryFoodMoodLayout);
+        firstEntryFoodMoodLayout.setHorizontalGroup(
+            firstEntryFoodMoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, firstEntryFoodMoodLayout.createSequentialGroup()
+                .addContainerGap(151, Short.MAX_VALUE)
+                .addComponent(editButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deleteButton1)
+                .addContainerGap())
+            .addGroup(firstEntryFoodMoodLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(firstEntryFoodMoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(foodLabel1)
+                    .addComponent(moodLabel1)
+                    .addComponent(dateLabel1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        firstEntryFoodMoodLayout.setVerticalGroup(
+            firstEntryFoodMoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(firstEntryFoodMoodLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(foodLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(moodLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dateLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(firstEntryFoodMoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(editButton1)
+                    .addComponent(deleteButton1))
+                .addGap(0, 10, Short.MAX_VALUE))
+        );
+
+        foodLabel2.setText("Food:");
+
+        moodLabel2.setText("Mood:");
+
+        dateLabel2.setText("Date:");
+
+        editButton2.setText("Edit");
+
+        deleteButton2.setText("Delete");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(editButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(deleteButton2))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(dateLabel2)
+                            .addComponent(moodLabel2)
+                            .addComponent(foodLabel2))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(foodLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(moodLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dateLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(editButton2)
+                    .addComponent(deleteButton2))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout backgroundFoodModoPaneLayout = new javax.swing.GroupLayout(backgroundFoodModoPane);
+        backgroundFoodModoPane.setLayout(backgroundFoodModoPaneLayout);
+        backgroundFoodModoPaneLayout.setHorizontalGroup(
+            backgroundFoodModoPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundFoodModoPaneLayout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addGroup(backgroundFoodModoPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(firstEntryFoodMood, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(13, 13, 13))
+        );
+        backgroundFoodModoPaneLayout.setVerticalGroup(
+            backgroundFoodModoPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundFoodModoPaneLayout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(firstEntryFoodMood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(256, Short.MAX_VALUE))
+        );
+
+        newFoodMoodScrollPane.setViewportView(backgroundFoodModoPane);
 
         javax.swing.GroupLayout mainMenuPanelLayout = new javax.swing.GroupLayout(mainMenuPanel);
         mainMenuPanel.setLayout(mainMenuPanelLayout);
         mainMenuPanelLayout.setHorizontalGroup(
             mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(mainMenuPanelLayout.createSequentialGroup()
                 .addGroup(mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainMenuPanelLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(show_data)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(add_row, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(print_data))
                     .addGroup(mainMenuPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(mainMenuPanelLayout.createSequentialGroup()
-                                .addComponent(viewUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(titleLabel)
-                                .addGap(63, 63, 63)
-                                .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addComponent(viewUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(titleLabel)
+                        .addGap(63, 63, 63)
+                        .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8))
+                    .addComponent(jSeparator1)
                     .addGroup(mainMenuPanelLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(mainMenuPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(118, 118, 118))
+                        .addGap(38, 38, 38)
+                        .addGroup(mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(enterFoodMoodButton)
+                            .addGroup(mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(moodEnterField, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(foodEnterField, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
             .addGroup(mainMenuPanelLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(mainMenuPanelLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(enterFoodMoodButton)
-                    .addGroup(mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(moodEnterField, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(foodEnterField, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap()
+                .addComponent(newFoodMoodScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
         );
         mainMenuPanelLayout.setVerticalGroup(
             mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainMenuPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(14, 14, 14)
                 .addGroup(mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(viewUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(titleLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(30, 30, 30)
+                    .addComponent(viewUserButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(notificationsButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(titleLabel, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addComponent(foodEnterField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(moodEnterField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(enterFoodMoodButton)
-                .addGap(117, 117, 117)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(print_data)
-                    .addComponent(show_data)
-                    .addComponent(add_row))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(296, 296, 296))
+                .addComponent(newFoodMoodScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(mainMenuPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 750, Short.MAX_VALUE)
+            .addComponent(mainMenuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void print_dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_dataActionPerformed
-        mmc.getJTableData();
-    }//GEN-LAST:event_print_dataActionPerformed
-
-    private void notificationsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificationsButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_notificationsButtonActionPerformed
-
-    private void show_dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show_dataActionPerformed
-        mmc.populateTableFromFile();
-    }//GEN-LAST:event_show_dataActionPerformed
-
-    private void add_rowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_rowActionPerformed
-        mmc.addRowToTable();
-    }//GEN-LAST:event_add_rowActionPerformed
-
-    private void foodEnterFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_foodEnterFieldFocusGained
-        if(foodEnterField.getText().equals("Capture Food"))
-        {
-            foodEnterField.setText("");
-        }
-    }//GEN-LAST:event_foodEnterFieldFocusGained
-
-    private void foodEnterFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_foodEnterFieldFocusLost
-        if(foodEnterField.getText().isEmpty())
-        {
-            foodEnterField.setText("Capture Food");
-        }
-    }//GEN-LAST:event_foodEnterFieldFocusLost
-
-    private void moodEnterFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_moodEnterFieldFocusGained
-        if(moodEnterField.getText().equals("Capture Mood"))
-        {
-            moodEnterField.setText("");
-        }
-    }//GEN-LAST:event_moodEnterFieldFocusGained
+    private void enterFoodMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterFoodMoodButtonActionPerformed
+        JOptionPane.showMessageDialog(null,"Entry created!");
+        foodMoodEntries = createNewJPanel(); //creating a new JPanel view
+        //        foodMoodScrollPane.add(foodMoodEntries); //adding that JPanel view to the ScrollPanel
+    }//GEN-LAST:event_enterFoodMoodButtonActionPerformed
 
     private void moodEnterFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_moodEnterFieldFocusLost
         if(moodEnterField.getText().isEmpty())
@@ -321,39 +373,96 @@ public class MainMenuUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_moodEnterFieldFocusLost
 
+    private void moodEnterFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_moodEnterFieldFocusGained
+        if(moodEnterField.getText().equals("Capture Mood"))
+        {
+            moodEnterField.setText("");
+        }
+    }//GEN-LAST:event_moodEnterFieldFocusGained
+
+    private void foodEnterFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_foodEnterFieldFocusLost
+        if(foodEnterField.getText().isEmpty())
+        {
+            foodEnterField.setText("Capture Food");
+        }
+    }//GEN-LAST:event_foodEnterFieldFocusLost
+
+    private void foodEnterFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_foodEnterFieldFocusGained
+        if(foodEnterField.getText().equals("Capture Food"))
+        {
+            foodEnterField.setText("");
+        }
+    }//GEN-LAST:event_foodEnterFieldFocusGained
+
+    private void goToRecommButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToRecommButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_goToRecommButtonActionPerformed
+
+    private void goToFoodMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToFoodMoodButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_goToFoodMoodButtonActionPerformed
+
+    private void goToChartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToChartButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_goToChartButtonActionPerformed
+
+    private void notificationsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificationsButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_notificationsButtonActionPerformed
+    
+    /**
+     * This method is supposed to create a card view of the food and mood created by the user
+     * It creates the JPanel and do something else...
+     * @return addANewFoodMood
+     */
+
+    public JPanel createNewJPanel(){
+        System.out.println("Test");
+        JPanel addANewFoodMood = new JPanel();      
+        addANewFoodMood.setSize(200,150);
+        return addANewFoodMood;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton add_row;
+    private javax.swing.JPanel backgroundFoodModoPane;
+    private javax.swing.JLabel dateLabel1;
+    private javax.swing.JLabel dateLabel2;
+    private javax.swing.JButton deleteButton1;
+    private javax.swing.JButton deleteButton2;
+    private javax.swing.JButton editButton1;
+    private javax.swing.JButton editButton2;
     private javax.swing.JButton enterFoodMoodButton;
+    private javax.swing.JPanel firstEntryFoodMood;
     private javax.swing.JTextField foodEnterField;
+    private javax.swing.JLabel foodLabel1;
+    private javax.swing.JLabel foodLabel2;
     private javax.swing.JButton goToChartButton;
     private javax.swing.JButton goToFoodMoodButton;
     private javax.swing.JButton goToRecommButton;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel mainMenuPanel;
     private javax.swing.JTextField moodEnterField;
+    private javax.swing.JLabel moodLabel1;
+    private javax.swing.JLabel moodLabel2;
+    private javax.swing.JScrollPane newFoodMoodScrollPane;
     private javax.swing.JButton notificationsButton;
-    private javax.swing.JButton print_data;
-    private javax.swing.JButton show_data;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JButton viewUserButton;
     // End of variables declaration//GEN-END:variables
 
-    private void changeRecommendation(){
-        jLabel1.setText("Your new recommendation is: " + 
-                recommend.GetRecommendation());
-    }
-    
-    public JTable getTable()
-    {
-        return jTable1;
-    }
+//    private void changeRecommendation(){
+//        jLabel1.setText("Your new recommendation is: " + 
+//                recommend.GetRecommendation());
+//    }
+//    
+//    public JTable getTable()
+//    {
+//        return jTable1;
+//    }
 }
