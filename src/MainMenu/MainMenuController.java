@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 
 public class MainMenuController {
     
-    private MainMenuUI mainMenuUI;
+    private MainMenuUI mainMenuUI;≥
     
     //These will be the only instances of these class and will be 
     //passed around as necessary
