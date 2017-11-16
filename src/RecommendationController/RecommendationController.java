@@ -5,6 +5,8 @@
  */
 package RecommendationController;
 
+import RecommendationView.RecommendationView;
+
 /**
  *This is the RecommendationController class that manages all processes in the
  * Recommendations page
@@ -12,15 +14,15 @@ package RecommendationController;
  * @author Shawn
  */
 public class RecommendationController {
-    
+    private RecommendationView recommendationUI;
     private String recommendation = "nothing... yet!";
     
-    /**
-     * Retrieves the recommended food
-     */
-    
-    public void RetrieveInfo(){
-        
+    public RecommendationController(){
+        System.out.println("Made it to Recommendation Controller");
+        recommendationUI = new RecommendationView();
+        recommendationUI.setTitle("FoodMood");
+        recommendationUI.setLocationRelativeTo(null);
+        recommendationUI.setVisible(true);
     }
     
     

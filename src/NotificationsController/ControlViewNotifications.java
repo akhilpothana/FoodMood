@@ -22,7 +22,12 @@ public class ControlViewNotifications {
      * This is the default constructor for the ControlViewNotifications class
      */
     public ControlViewNotifications(){
-    
+        //Test Harness pritning line
+        System.out.println("Made it to Notification Controller");
+        notifications_viewDisplay = new ViewNotificationsUI();
+        notifications_viewDisplay.setTitle("FoodMood");
+        notifications_viewDisplay.setLocationRelativeTo(null);
+        notifications_viewDisplay.setVisible(true);
     }
     
 // METHOD

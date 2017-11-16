@@ -242,6 +242,8 @@ public class MainMenuUI extends javax.swing.JFrame {
             .addComponent(mainMenuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        getAccessibleContext().setAccessibleName("FoodMood");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -280,15 +282,15 @@ public class MainMenuUI extends javax.swing.JFrame {
     }//GEN-LAST:event_foodEnterFieldFocusGained
 
     private void goToRecommButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToRecommButtonActionPerformed
-        // TODO add your handling code here:
+        mmc.toRecommendationCntrl();
     }//GEN-LAST:event_goToRecommButtonActionPerformed
 
     private void goToFoodMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToFoodMoodButtonActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_goToFoodMoodButtonActionPerformed
 
     private void goToChartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToChartButtonActionPerformed
-        mmc.toStatsMaxUseCase();
+        mmc.toStatsCntrl();
     }//GEN-LAST:event_goToChartButtonActionPerformed
 
     private void notificationsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificationsButtonActionPerformed
@@ -300,7 +302,6 @@ public class MainMenuUI extends javax.swing.JFrame {
      * It creates the JPanel and do something else...
      * @return addANewFoodMood
      */
-
     public JPanel createNewJPanel(){
         System.out.println("New entry panel created");
         FoodMoodCardsPanel addANewFoodMood = new FoodMoodCardsPanel();      

@@ -4,6 +4,8 @@ package MainMenu;
 import CrudFoodModel.FoodList;
 import CrudMoodModel.MoodList;
 import NotificationsController.ControlViewNotifications;
+import RecommendationController.RecommendationController;
+import StatsController.StatsController;
 
 //java libraries
 import java.io.BufferedWriter;
@@ -20,6 +22,8 @@ public class MainMenuController {
     
     private MainMenuUI mainMenuUI;
     private ControlViewNotifications notificationsCntrl;
+    private StatsController statsCntrl;
+    private RecommendationController recommendationCntrl;
     
     //These will be the only instances of these class and will be 
     //passed around as necessary
@@ -30,6 +34,7 @@ public class MainMenuController {
     
     public MainMenuController()
     {
+        System.out.println("Made it to Main Menu Controller");
         foodData = new FoodList();
         moodData = new MoodList();
         
@@ -37,20 +42,6 @@ public class MainMenuController {
         mainMenuUI.setTitle("FoodMood");
         mainMenuUI.setLocationRelativeTo(null);
         mainMenuUI.setVisible(true);       
-    }
-    
-    /**
-     * Called when the "Print data" button is pressed
-     */
-    public void getJTableData(){
-        
-//        for(int i = 0; i < mainMenuUI.getTable().getRowCount(); i++)
-//        {
-//            System.out.println((String) mainMenuUI.getTable().getValueAt(i,0));
-//            System.out.println((String) mainMenuUI.getTable().getValueAt(i,1));
-//            
-//        //    writeFoodMoodToFile((String) mainMenuUI.getTable().getValueAt(i,0), (String) mainMenuUI.getTable().getValueAt(i,1));
-//        }  
     }
     
     /**
@@ -80,41 +71,23 @@ public class MainMenuController {
     }
     
     /**
-     * Populate the JTable with the food and mood data from the text file
-     */
-    public void populateTableFromFile()
-    {
-        int rowCounter = 0;
-        
-//        try{
-//            File file = new File("src/food_mood_data.txt");
-//            Scanner fileScanner = new Scanner(file);
-//
-//            while(fileScanner.hasNextLine()){
-//                String foodAndMood = fileScanner.nextLine();
-//                String foodMood[] = foodAndMood.split(";");
-//                
-//                mainMenuUI.getTable().setValueAt(foodMood[0], rowCounter, 0);
-//                mainMenuUI.getTable().setValueAt(foodMood[1], rowCounter, 1);
-//                rowCounter++;
-//            }
-//            }catch(FileNotFoundException e) {
-//	        System.out.print("FileNotFoundException");
-//    	}
-    }
-    
-    /**
      * Here is where the UI of Stats is going to be called.
      */
-    public void toStatsMaxUseCase(){
-        
+    public void toStatsCntrl(){
+        statsCntrl = new StatsController();
     }
     
     /**
      * Here is where the UI of notifications is going to be called.
      */
     public void toNotificationCntrl(){
-    
+        notificationsCntrl = new ControlViewNotifications();
     }
-            
+    
+    /**
+     * Here is where the UI of recommendations is going to be called.
+     */
+    public void toRecommendationCntrl(){
+        recommendationCntrl = new RecommendationController();        
+    }
 }

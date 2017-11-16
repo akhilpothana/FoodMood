@@ -13,6 +13,7 @@ import StatsView.StatsView;
  * @author mlh5614
  */
 public class StatsController {
+    private StatsView statsUI;
     /**
      * Maintain the current version of the controller to know when it is out of sync with the model and the view.
      */
@@ -30,8 +31,13 @@ public class StatsController {
      * This is the default constructor for the ChartsController class
      */
     public StatsController() {
-        StatsView sv1 = new StatsView();
-        System.out.println("Test Passed: Stats Controller and View Created");        
+//        StatsView sv1 = new StatsView();
+//        System.out.println("Test Passed: Stats Controller and View Created");        
+        System.out.println("Made it to Stats Controller");
+        statsUI = new StatsView();
+        statsUI.setTitle("FoodMood");
+        statsUI.setLocationRelativeTo(null);
+        statsUI.setVisible(true);
     }
     
     /**
