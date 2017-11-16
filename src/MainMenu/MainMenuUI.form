@@ -107,7 +107,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
-              <Component id="footerPanel" alignment="0" pref="382" max="32767" attributes="0"/>
+              <Component id="footerPanel" alignment="0" pref="390" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -197,7 +197,7 @@
                           <Component id="goToFoodMoodButton" min="-2" max="-2" attributes="0"/>
                           <Component id="goToRecommButton" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                      <EmptySpace pref="13" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -219,9 +219,6 @@
                   <Image iconType="3" name="/Images/cutlery_1.png"/>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="goToFoodMoodButtonActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="goToRecommButton">
               <Properties>
@@ -272,7 +269,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Add"/>
             <Property name="borderPainted" type="boolean" value="false"/>
-            <Property name="opaque" type="boolean" value="true"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addFoodMoodButtonActionPerformed"/>

@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package RecommendationController;
 
+import MainMenu.MainMenuController;
 import RecommendationView.RecommendationView;
 
 /**
@@ -15,11 +11,14 @@ import RecommendationView.RecommendationView;
  */
 public class RecommendationController {
     private RecommendationView recommendationUI;
-    private String recommendation = "nothing... yet!";
+    private final String recommendation = "Nothing... yet!";
+    private MainMenuController mmc;
     
-    public RecommendationController(){
+    public RecommendationController(MainMenuController mmc){
+       this.mmc = mmc;
+        
         System.out.println("Made it to Recommendation Controller");
-        recommendationUI = new RecommendationView();
+        recommendationUI = new RecommendationView(this);
         recommendationUI.setTitle("FoodMood");
         recommendationUI.setLocationRelativeTo(null);
         recommendationUI.setVisible(true);
@@ -44,6 +43,11 @@ public class RecommendationController {
          * }
          */
         return recommendation;
+    }
+    
+    public MainMenuController getMMC()
+    {
+        return mmc;
     }
     
 }

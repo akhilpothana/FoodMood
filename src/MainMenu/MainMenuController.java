@@ -88,6 +88,11 @@ public class MainMenuController {
      * Here is where the UI of recommendations is going to be called.
      */
     public void toRecommendationCntrl(){
-        recommendationCntrl = new RecommendationController();        
+        recommendationCntrl = new RecommendationController(this);        
+    }
+    
+    public MainMenuUI getmmUI()
+    {
+        return mainMenuUI;
     }
 }

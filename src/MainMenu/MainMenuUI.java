@@ -3,10 +3,9 @@ package MainMenu;
 import RecommendationController.RecommendationController;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTable;
 
 public class MainMenuUI extends javax.swing.JFrame {
-    private RecommendationController recommend = new RecommendationController();
+    private RecommendationController recommend;
     private MainMenuController mmc;
     
     /**
@@ -87,11 +86,6 @@ public class MainMenuUI extends javax.swing.JFrame {
         });
 
         goToFoodMoodButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cutlery_1.png"))); // NOI18N
-        goToFoodMoodButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                goToFoodMoodButtonActionPerformed(evt);
-            }
-        });
 
         goToRecommButton.setBackground(new java.awt.Color(204, 204, 204));
         goToRecommButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/recommended.png"))); // NOI18N
@@ -122,7 +116,7 @@ public class MainMenuUI extends javax.swing.JFrame {
                     .addComponent(goToChartButton)
                     .addComponent(goToFoodMoodButton)
                     .addComponent(goToRecommButton))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         foodEnterField.setBackground(new java.awt.Color(204, 204, 204));
@@ -151,7 +145,6 @@ public class MainMenuUI extends javax.swing.JFrame {
         addFoodMoodButton.setForeground(new java.awt.Color(255, 255, 255));
         addFoodMoodButton.setText("Add");
         addFoodMoodButton.setBorderPainted(false);
-        addFoodMoodButton.setOpaque(true);
         addFoodMoodButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addFoodMoodButtonActionPerformed(evt);
@@ -207,7 +200,7 @@ public class MainMenuUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addComponent(footerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
+            .addComponent(footerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE)
         );
         mainMenuPanelLayout.setVerticalGroup(
             mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,7 +228,7 @@ public class MainMenuUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMenuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
+            .addComponent(mainMenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 382, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,11 +276,8 @@ public class MainMenuUI extends javax.swing.JFrame {
 
     private void goToRecommButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToRecommButtonActionPerformed
         mmc.toRecommendationCntrl();
+        this.setVisible(false);
     }//GEN-LAST:event_goToRecommButtonActionPerformed
-
-    private void goToFoodMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToFoodMoodButtonActionPerformed
-        
-    }//GEN-LAST:event_goToFoodMoodButtonActionPerformed
 
     private void goToChartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToChartButtonActionPerformed
         mmc.toStatsCntrl();
