@@ -31,7 +31,7 @@ public class RecommendationView extends javax.swing.JFrame {
         titleLabel = new javax.swing.JLabel();
         notificationsButton = new javax.swing.JButton();
         viewUserButton = new javax.swing.JButton();
-        backgroundAppPanel = new javax.swing.JPanel();
+        footerPanel = new javax.swing.JPanel();
         goToChartButton = new javax.swing.JButton();
         goToFoodMoodButton = new javax.swing.JButton();
         goToRecommButton = new javax.swing.JButton();
@@ -55,8 +55,8 @@ public class RecommendationView extends javax.swing.JFrame {
 
         viewUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/crud_user_lines.png"))); // NOI18N
 
-        backgroundAppPanel.setBackground(new java.awt.Color(102, 102, 102));
-        backgroundAppPanel.setPreferredSize(new java.awt.Dimension(375, 56));
+        footerPanel.setBackground(new java.awt.Color(102, 102, 102));
+        footerPanel.setPreferredSize(new java.awt.Dimension(375, 56));
 
         goToChartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pie-chart.png"))); // NOI18N
         goToChartButton.addActionListener(new java.awt.event.ActionListener() {
@@ -80,11 +80,11 @@ public class RecommendationView extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout backgroundAppPanelLayout = new javax.swing.GroupLayout(backgroundAppPanel);
-        backgroundAppPanel.setLayout(backgroundAppPanelLayout);
-        backgroundAppPanelLayout.setHorizontalGroup(
-            backgroundAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backgroundAppPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout footerPanelLayout = new javax.swing.GroupLayout(footerPanel);
+        footerPanel.setLayout(footerPanelLayout);
+        footerPanelLayout.setHorizontalGroup(
+            footerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(footerPanelLayout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addComponent(goToChartButton)
                 .addGap(62, 62, 62)
@@ -93,15 +93,15 @@ public class RecommendationView extends javax.swing.JFrame {
                 .addComponent(goToRecommButton)
                 .addContainerGap(58, Short.MAX_VALUE))
         );
-        backgroundAppPanelLayout.setVerticalGroup(
-            backgroundAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backgroundAppPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(backgroundAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        footerPanelLayout.setVerticalGroup(
+            footerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(footerPanelLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(footerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(goToChartButton)
                     .addComponent(goToFoodMoodButton)
                     .addComponent(goToRecommButton))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         splitterTopFromBottom.setForeground(new java.awt.Color(51, 51, 51));
@@ -119,7 +119,7 @@ public class RecommendationView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addComponent(backgroundAppPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(footerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
         );
         recommendationsPanelLayout.setVerticalGroup(
             recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,8 +131,8 @@ public class RecommendationView extends javax.swing.JFrame {
                     .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(splitterTopFromBottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 533, Short.MAX_VALUE)
-                .addComponent(backgroundAppPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 531, Short.MAX_VALUE)
+                .addComponent(footerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -201,7 +201,7 @@ public class RecommendationView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel backgroundAppPanel;
+    private javax.swing.JPanel footerPanel;
     private javax.swing.JButton goToChartButton;
     private javax.swing.JButton goToFoodMoodButton;
     private javax.swing.JButton goToRecommButton;

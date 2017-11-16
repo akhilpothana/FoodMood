@@ -3,6 +3,7 @@ package MainMenu;
 //our code
 import CrudFoodModel.FoodList;
 import CrudMoodModel.MoodList;
+import NotificationsController.ControlViewNotifications;
 
 //java libraries
 import java.io.BufferedWriter;
@@ -18,6 +19,7 @@ import javax.swing.JPanel;
 public class MainMenuController {
     
     private MainMenuUI mainMenuUI;
+    private ControlViewNotifications notificationsCntrl;
     
     //These will be the only instances of these class and will be 
     //passed around as necessary
@@ -107,4 +109,12 @@ public class MainMenuController {
     public void toStatsMaxUseCase(){
         
     }
+    
+    /**
+     * Here is where the UI of notifications is going to be called.
+     */
+    public void toNotificationCntrl(){
+    
+    }
+            
 }

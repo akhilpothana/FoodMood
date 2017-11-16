@@ -22,11 +22,19 @@ import javax.swing.JFrame;
  */
 
 public class LoginController {
+
+    /**
+     * @return the mainMenu
+     */
+    public MainMenuController getMainMenu() {
+        return mainMenu;
+    }
+    
     private LoginUI loginView;
     private CreateNewAccUI newAccView;
     
     //Opening the main menu upon successful login
-    MainMenuController mainMenu;
+    private MainMenuController mainMenu;
     
     //User data
     private UserList theUserList;
@@ -68,6 +76,10 @@ public class LoginController {
         return false;
     }
 
+    public void toMainMenuUICntrl(){
+        mainMenu = new MainMenuController();
+    }
+    
     public void createUserUI(){
         newAccView.setTitle("FoodMood");
         newAccView.setLocationRelativeTo(null);

@@ -212,7 +212,7 @@ public class LoginUI extends javax.swing.JFrame {
     private void login_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_buttonActionPerformed
         if(loginCtrl.validateUser(usernameField.getText(), passwordField.getText()))
         {
-            loginCtrl.mainMenu = new MainMenuController();
+            loginCtrl.toMainMenuUICntrl();
         }
         else {
             JOptionPane.showMessageDialog(null,"Incorrect username or password. Please try again!");
