@@ -27,21 +27,143 @@ public class RecommendationView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        recommendationsPanel = new javax.swing.JPanel();
+        titleLabel = new javax.swing.JLabel();
+        notificationsButton = new javax.swing.JButton();
+        viewUserButton = new javax.swing.JButton();
+        backgroundAppPanel = new javax.swing.JPanel();
+        goToChartButton = new javax.swing.JButton();
+        goToFoodMoodButton = new javax.swing.JButton();
+        goToRecommButton = new javax.swing.JButton();
+        splitterTopFromBottom = new javax.swing.JSeparator();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        recommendationsPanel.setBackground(new java.awt.Color(255, 255, 255));
+        recommendationsPanel.setPreferredSize(new java.awt.Dimension(375, 667));
+
+        titleLabel.setFont(new java.awt.Font("Lucida Sans", 0, 30)); // NOI18N
+        titleLabel.setText("FoodMood");
+
+        notificationsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/alarm.png"))); // NOI18N
+        notificationsButton.setPreferredSize(new java.awt.Dimension(30, 38));
+        notificationsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                notificationsButtonActionPerformed(evt);
+            }
+        });
+
+        viewUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/crud_user_lines.png"))); // NOI18N
+
+        backgroundAppPanel.setBackground(new java.awt.Color(102, 102, 102));
+        backgroundAppPanel.setPreferredSize(new java.awt.Dimension(375, 56));
+
+        goToChartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pie-chart.png"))); // NOI18N
+        goToChartButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goToChartButtonActionPerformed(evt);
+            }
+        });
+
+        goToFoodMoodButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cutlery_1.png"))); // NOI18N
+        goToFoodMoodButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goToFoodMoodButtonActionPerformed(evt);
+            }
+        });
+
+        goToRecommButton.setBackground(new java.awt.Color(204, 204, 204));
+        goToRecommButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/recommended.png"))); // NOI18N
+        goToRecommButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goToRecommButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout backgroundAppPanelLayout = new javax.swing.GroupLayout(backgroundAppPanel);
+        backgroundAppPanel.setLayout(backgroundAppPanelLayout);
+        backgroundAppPanelLayout.setHorizontalGroup(
+            backgroundAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundAppPanelLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(goToChartButton)
+                .addGap(62, 62, 62)
+                .addComponent(goToFoodMoodButton)
+                .addGap(58, 58, 58)
+                .addComponent(goToRecommButton)
+                .addContainerGap(58, Short.MAX_VALUE))
+        );
+        backgroundAppPanelLayout.setVerticalGroup(
+            backgroundAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundAppPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(backgroundAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(goToChartButton)
+                    .addComponent(goToFoodMoodButton)
+                    .addComponent(goToRecommButton))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
+        splitterTopFromBottom.setForeground(new java.awt.Color(51, 51, 51));
+
+        javax.swing.GroupLayout recommendationsPanelLayout = new javax.swing.GroupLayout(recommendationsPanel);
+        recommendationsPanel.setLayout(recommendationsPanelLayout);
+        recommendationsPanelLayout.setHorizontalGroup(
+            recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(splitterTopFromBottom)
+            .addGroup(recommendationsPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(viewUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67)
+                .addComponent(titleLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addComponent(backgroundAppPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        recommendationsPanelLayout.setVerticalGroup(
+            recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(recommendationsPanelLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(viewUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(titleLabel)
+                    .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(splitterTopFromBottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 533, Short.MAX_VALUE)
+                .addComponent(backgroundAppPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(recommendationsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(recommendationsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void notificationsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificationsButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_notificationsButtonActionPerformed
+
+    private void goToChartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToChartButtonActionPerformed
+        
+    }//GEN-LAST:event_goToChartButtonActionPerformed
+
+    private void goToFoodMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToFoodMoodButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_goToFoodMoodButtonActionPerformed
+
+    private void goToRecommButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToRecommButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_goToRecommButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +201,14 @@ public class RecommendationView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel backgroundAppPanel;
+    private javax.swing.JButton goToChartButton;
+    private javax.swing.JButton goToFoodMoodButton;
+    private javax.swing.JButton goToRecommButton;
+    private javax.swing.JButton notificationsButton;
+    private javax.swing.JPanel recommendationsPanel;
+    private javax.swing.JSeparator splitterTopFromBottom;
+    private javax.swing.JLabel titleLabel;
+    private javax.swing.JButton viewUserButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,2 +1,4 @@
 pizza;happy
 Capture Food;Capture Mood
+What you ate;How you feel
+What you ate;How you feel
