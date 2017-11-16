@@ -100,4 +100,11 @@ public class MainMenuController {
 //	        System.out.print("FileNotFoundException");
 //    	}
     }
+    
+    /**
+     * Here is where the UI of Stats is going to be called.
+     */
+    public void toStatsMaxUseCase(){
+        
+    }
 }
