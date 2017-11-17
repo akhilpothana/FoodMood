@@ -19,20 +19,6 @@ import java.util.Scanner;
 import javax.swing.JPanel;
 
 public class MainMenuController {
-
-    /**
-     * @return the mainMenuUI
-     */
-    public MainMenuUI getMainMenuUI() {
-        return mainMenuUI;
-    }
-
-    /**
-     * @param mainMenuUI the mainMenuUI to set
-     */
-    public void setMainMenuUI(MainMenuUI mainMenuUI) {
-        this.mainMenuUI = mainMenuUI;
-    }
     private MainMenuUI mainMenuUI;
     private ControlViewNotifications notificationsCntrl;
     private StatsController statsCntrl;
@@ -104,8 +90,17 @@ public class MainMenuController {
         recommendationCntrl = new RecommendationController();        
     }
     
-    public MainMenuUI getmmUI()
-    {
-        return getMainMenuUI();
+    /**
+     * @return the mainMenuUI
+     */
+    public MainMenuUI getMainMenuUI() {
+        return mainMenuUI;
+    }
+
+    /**
+     * @param mainMenuUI the mainMenuUI to set
+     */
+    public void setMainMenuUI(MainMenuUI mainMenuUI) {
+        this.mainMenuUI = mainMenuUI;
     }
 }

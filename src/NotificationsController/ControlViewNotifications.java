@@ -44,7 +44,6 @@ public class ControlViewNotifications {
     }
     
     public void toStatsCntrl () {
-        System.out.println("This method is being called");
         statsCntrl = new StatsController();
     }
 }

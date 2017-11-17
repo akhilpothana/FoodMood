@@ -1,16 +1,26 @@
 package MainMenu;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.util.Date;
+import javax.swing.Timer;
+
 /**
  * This class represent a single FoodMood entry card
  * These cars will be added as the user chooses to do so
  * @author Akhil
  */
 public class FoodMoodCardsPanel extends javax.swing.JPanel {
-
+    private MainMenuController mmc;
+    private String food, mood;
+    
+    
     /**
      * Creates new form FoodMoodCardsPanel
      */
-    public FoodMoodCardsPanel() {
+    public FoodMoodCardsPanel(MainMenuController mmc) {
+        this.mmc = mmc;
         initComponents();
     }
 
@@ -24,94 +34,142 @@ public class FoodMoodCardsPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         firstEntryFoodMood = new javax.swing.JPanel();
-        foodLabel1 = new javax.swing.JLabel();
-        moodLabel1 = new javax.swing.JLabel();
-        dateLabel1 = new javax.swing.JLabel();
-        deleteButton1 = new javax.swing.JButton();
-        editButton1 = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
+        editButton = new javax.swing.JButton();
+        foodLabel = new javax.swing.JLabel();
+        moodLabel = new javax.swing.JLabel();
+        dateLabel = new javax.swing.JLabel();
+        dateShownLabel = new javax.swing.JLabel();
+        foodEnterByUser = new javax.swing.JTextField();
+        moodEnterByUser = new javax.swing.JTextField();
 
-        foodLabel1.setText("Food:");
+        setSize(new java.awt.Dimension(335, 113));
 
-        moodLabel1.setText("Mood:");
+        firstEntryFoodMood.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
-        dateLabel1.setText("Date:");
+        deleteButton.setText("Delete");
 
-        deleteButton1.setText("Delete");
-
-        editButton1.setText("Edit");
-        editButton1.addActionListener(new java.awt.event.ActionListener() {
+        editButton.setText("Edit");
+        editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editButton1ActionPerformed(evt);
+                editButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout firstEntryFoodMoodLayout = new javax.swing.GroupLayout(firstEntryFoodMood);
-        firstEntryFoodMood.setLayout(firstEntryFoodMoodLayout);
-        firstEntryFoodMoodLayout.setHorizontalGroup(
-            firstEntryFoodMoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(firstEntryFoodMoodLayout.createSequentialGroup()
-                .addGroup(firstEntryFoodMoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, firstEntryFoodMoodLayout.createSequentialGroup()
-                        .addContainerGap(124, Short.MAX_VALUE)
-                        .addComponent(editButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(deleteButton1))
-                    .addGroup(firstEntryFoodMoodLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(firstEntryFoodMoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(moodLabel1)
-                            .addComponent(foodLabel1)
-                            .addComponent(dateLabel1))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        firstEntryFoodMoodLayout.setVerticalGroup(
-            firstEntryFoodMoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(firstEntryFoodMoodLayout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addComponent(foodLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(moodLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dateLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(firstEntryFoodMoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(editButton1)
-                    .addComponent(deleteButton1)))
-        );
+        foodLabel.setText("Food:");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(firstEntryFoodMood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(firstEntryFoodMood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        moodLabel.setText("Mood:");
+
+        dateLabel.setText("Date:");
+
+        dateShownLabel.setText("");
+        //tickTock();
+        //
+        //Timer timer = new Timer(500, new ActionListener() {
+            //    @Override
+            //    public void actionPerformed(ActionEvent e) {
+                //        tickTock();
+                //    }
+            //});
+    //timer.setRepeats(true);
+    //timer.setCoalesce(true);
+    //timer.setInitialDelay(0);
+    //timer.start();
+
+    foodEnterByUser.setText(mmc.getMainMenuUI().foodTextFieldToString());
+    foodEnterByUser.setEnabled(false);
+
+    moodEnterByUser.setText(mmc.getMainMenuUI().moodTextFieldToString());
+    moodEnterByUser.setEnabled(false);
+
+    javax.swing.GroupLayout firstEntryFoodMoodLayout = new javax.swing.GroupLayout(firstEntryFoodMood);
+    firstEntryFoodMood.setLayout(firstEntryFoodMoodLayout);
+    firstEntryFoodMoodLayout.setHorizontalGroup(
+        firstEntryFoodMoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(firstEntryFoodMoodLayout.createSequentialGroup()
+            .addGap(22, 22, 22)
+            .addGroup(firstEntryFoodMoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(firstEntryFoodMoodLayout.createSequentialGroup()
+                    .addComponent(moodLabel)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(moodEnterByUser))
+                .addGroup(firstEntryFoodMoodLayout.createSequentialGroup()
+                    .addComponent(foodLabel)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(foodEnterByUser, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(firstEntryFoodMoodLayout.createSequentialGroup()
+                    .addComponent(dateLabel)
+                    .addGap(18, 18, 18)
+                    .addComponent(dateShownLabel)))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+            .addGroup(firstEntryFoodMoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(editButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(deleteButton, javax.swing.GroupLayout.Alignment.TRAILING))
+            .addGap(40, 40, 40))
+    );
+    firstEntryFoodMoodLayout.setVerticalGroup(
+        firstEntryFoodMoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(firstEntryFoodMoodLayout.createSequentialGroup()
+            .addGap(12, 12, 12)
+            .addGroup(firstEntryFoodMoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(foodLabel)
+                .addComponent(foodEnterByUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(editButton))
+            .addGroup(firstEntryFoodMoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(firstEntryFoodMoodLayout.createSequentialGroup()
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(firstEntryFoodMoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(moodLabel)
+                        .addComponent(moodEnterByUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(10, 10, 10)
+                    .addGroup(firstEntryFoodMoodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(dateShownLabel)
+                        .addComponent(dateLabel)))
+                .addGroup(firstEntryFoodMoodLayout.createSequentialGroup()
+                    .addGap(17, 17, 17)
+                    .addComponent(deleteButton)))
+            .addGap(25, 25, 25))
+    );
+
+    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+    this.setLayout(layout);
+    layout.setHorizontalGroup(
+        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(firstEntryFoodMood, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    layout.setVerticalGroup(
+        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(firstEntryFoodMood, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void editButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButton1ActionPerformed
-        if(editButton1.getText().equals("Edit")){
-            editButton1.setText("Done");
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
+        if(editButton.getText().equals("Edit")){
+            editButton.setText("Save");
+            foodEnterByUser.enable(true);
+            moodEnterByUser.enable(true);
         }
-        else
-        editButton1.setText("Edit");
-
-    }//GEN-LAST:event_editButton1ActionPerformed
-
-
+        else{
+            editButton.setText("Edit");
+            foodEnterByUser.enable(false);
+            moodEnterByUser.enable(false);
+        }
+        
+    }//GEN-LAST:event_editButtonActionPerformed
+    
+    public void tickTock(){
+        dateShownLabel.setText(DateFormat.getDateTimeInstance().format(new Date()));
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel dateLabel1;
-    private javax.swing.JButton deleteButton1;
-    private javax.swing.JButton editButton1;
+    private javax.swing.JLabel dateLabel;
+    private javax.swing.JLabel dateShownLabel;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JButton editButton;
     private javax.swing.JPanel firstEntryFoodMood;
-    private javax.swing.JLabel foodLabel1;
-    private javax.swing.JLabel moodLabel1;
+    private javax.swing.JTextField foodEnterByUser;
+    private javax.swing.JLabel foodLabel;
+    private javax.swing.JTextField moodEnterByUser;
+    private javax.swing.JLabel moodLabel;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,21 +1,25 @@
 package MainMenu;
 
 import RecommendationController.RecommendationController;
+import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.border.MatteBorder;
 
 public class MainMenuUI extends javax.swing.JFrame {
-    private RecommendationController recommend;
     private MainMenuController mmc;
+    private FoodMoodCardsPanel addANewFoodMood;
+    private String food, mood;
     
     /**
      * Creates new form MainMenuUI
      */
     public MainMenuUI(MainMenuController mmc) {
-    
         this.mmc = mmc;
         initComponents();
-//        changeRecommendation();
     }
 
     /**
@@ -43,8 +47,8 @@ public class MainMenuUI extends javax.swing.JFrame {
         moodEnterField = new javax.swing.JTextField();
         addFoodMoodButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        newFoodMoodScrollPane = new javax.swing.JScrollPane();
-        backgroundFoodMoodPane = new javax.swing.JPanel();
+        newScrollPane = new javax.swing.JScrollPane();
+        backgroundPanel = new javax.swing.JPanel(new GridBagLayout());
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -100,13 +104,13 @@ public class MainMenuUI extends javax.swing.JFrame {
         footerPanelLayout.setHorizontalGroup(
             footerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(footerPanelLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addGap(44, 44, 44)
                 .addComponent(goToChartButton)
-                .addGap(62, 62, 62)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(goToFoodMoodButton)
-                .addGap(58, 58, 58)
+                .addGap(77, 77, 77)
                 .addComponent(goToRecommButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(38, 38, 38))
         );
         footerPanelLayout.setVerticalGroup(
             footerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +120,7 @@ public class MainMenuUI extends javax.swing.JFrame {
                     .addComponent(goToChartButton)
                     .addComponent(goToFoodMoodButton)
                     .addComponent(goToRecommButton))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         foodEnterField.setBackground(new java.awt.Color(204, 204, 204));
@@ -145,6 +149,7 @@ public class MainMenuUI extends javax.swing.JFrame {
         addFoodMoodButton.setForeground(new java.awt.Color(255, 255, 255));
         addFoodMoodButton.setText("Add");
         addFoodMoodButton.setBorderPainted(false);
+        addFoodMoodButton.setOpaque(true);
         addFoodMoodButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addFoodMoodButtonActionPerformed(evt);
@@ -153,54 +158,48 @@ public class MainMenuUI extends javax.swing.JFrame {
 
         jSeparator1.setForeground(new java.awt.Color(51, 51, 51));
 
-        newFoodMoodScrollPane.setBorder(null);
-        newFoodMoodScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-        newFoodMoodScrollPane.setPreferredSize(new java.awt.Dimension(362, 542));
+        newScrollPane.setBorder(null);
+        newScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        newScrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        backgroundFoodMoodPane.setBackground(new java.awt.Color(255, 255, 255));
-        backgroundFoodMoodPane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        backgroundFoodMoodPane.setPreferredSize(new java.awt.Dimension(363, 527));
-
-        javax.swing.GroupLayout backgroundFoodMoodPaneLayout = new javax.swing.GroupLayout(backgroundFoodMoodPane);
-        backgroundFoodMoodPane.setLayout(backgroundFoodMoodPaneLayout);
-        backgroundFoodMoodPaneLayout.setHorizontalGroup(
-            backgroundFoodMoodPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 359, Short.MAX_VALUE)
-        );
-        backgroundFoodMoodPaneLayout.setVerticalGroup(
-            backgroundFoodMoodPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 523, Short.MAX_VALUE)
-        );
-
-        newFoodMoodScrollPane.setViewportView(backgroundFoodMoodPane);
+        backgroundPanel.setBackground(new java.awt.Color(255, 255, 255));
+        backgroundPanel.setLayout(new java.awt.GridBagLayout());
+        GridBagConstraints gridFoodMood = new GridBagConstraints();
+        gridFoodMood.gridwidth = GridBagConstraints.REMAINDER;
+        gridFoodMood.weightx = 1;
+        gridFoodMood.weighty = 1;
+        backgroundPanel.add(new JPanel(), gridFoodMood);
+        newScrollPane.setViewportView(backgroundPanel);
 
         javax.swing.GroupLayout mainMenuPanelLayout = new javax.swing.GroupLayout(mainMenuPanel);
         mainMenuPanel.setLayout(mainMenuPanelLayout);
         mainMenuPanelLayout.setHorizontalGroup(
             mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainMenuPanelLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(addFoodMoodButton)
-                    .addGroup(mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(moodEnterField, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(foodEnterField, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jSeparator1)
+            .addComponent(footerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
             .addGroup(mainMenuPanelLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainMenuPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(newFoodMoodScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(mainMenuPanelLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(viewUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67)
+                        .addGap(74, 74, 74)
                         .addComponent(titleLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(mainMenuPanelLayout.createSequentialGroup()
+                        .addGroup(mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mainMenuPanelLayout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addGroup(mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(addFoodMoodButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(moodEnterField, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
+                                        .addComponent(foodEnterField, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE))))
+                            .addGroup(mainMenuPanelLayout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addComponent(newScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 8, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addComponent(footerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE)
         );
         mainMenuPanelLayout.setVerticalGroup(
             mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,15 +211,15 @@ public class MainMenuUI extends javax.swing.JFrame {
                     .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(20, 20, 20)
                 .addComponent(foodEnterField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(moodEnterField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(addFoodMoodButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(newScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(newFoodMoodScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
-                .addGap(9, 9, 9)
                 .addComponent(footerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -228,7 +227,7 @@ public class MainMenuUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 382, Short.MAX_VALUE)
+            .addComponent(mainMenuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,10 +241,39 @@ public class MainMenuUI extends javax.swing.JFrame {
 
     private void addFoodMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFoodMoodButtonActionPerformed
         JOptionPane.showMessageDialog(null,"Entry created!");
-        backgroundFoodMoodPane.add(createNewJPanel()); //creating a new JPanel view
+        backgroundPanel.add(createNewJPanel(),createNewJPanelGrid(),0); //creating a new JPanel view
         mmc.writeFoodMoodToFile(foodEnterField.getText(), moodEnterField.getText()); //write the information to a file
+        validate();
+        repaint();
+        //Once operations are done then
+        foodEnterField.setText("What you ate");
+        moodEnterField.setText("How you feel");        
     }//GEN-LAST:event_addFoodMoodButtonActionPerformed
+    
+    public String foodTextFieldToString (){
+        food = foodEnterField.getText();
+        return food;
+    }
+    
+    public String moodTextFieldToString (){
+        mood = moodEnterField.getText();
+        return mood;
+    }
+    
+    public JPanel createNewJPanel() {
+        addANewFoodMood = new FoodMoodCardsPanel(mmc);
+        return addANewFoodMood;
+    }
+    
+    public GridBagConstraints createNewJPanelGrid() {
+        GridBagConstraints addANewFoodMoodGrid = new GridBagConstraints();
+        addANewFoodMoodGrid.gridwidth = GridBagConstraints.REMAINDER;
+        addANewFoodMoodGrid.weightx = 1;
+        addANewFoodMoodGrid.fill = GridBagConstraints.HORIZONTAL;
+        return addANewFoodMoodGrid;
+    }
 
+    
     private void moodEnterFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_moodEnterFieldFocusLost
         if(moodEnterField.getText().isEmpty())
         {
@@ -274,6 +302,11 @@ public class MainMenuUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_foodEnterFieldFocusGained
 
+    /**
+     * These methods bellow are used to navigate through the application from the
+     * MainMenuUI
+     * @param evt 
+     */
     private void goToRecommButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToRecommButtonActionPerformed
         mmc.toRecommendationCntrl();        
     }//GEN-LAST:event_goToRecommButtonActionPerformed
@@ -285,23 +318,10 @@ public class MainMenuUI extends javax.swing.JFrame {
     private void notificationsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificationsButtonActionPerformed
         mmc.toNotificationCntrl();
     }//GEN-LAST:event_notificationsButtonActionPerformed
-    
-    /**
-     * This method is supposed to create a card view of the food and mood created by the user
-     * It creates the JPanel and do something else...
-     * @return addANewFoodMood
-     */
-    public JPanel createNewJPanel(){
-        System.out.println("New entry panel created");
-        FoodMoodCardsPanel addANewFoodMood = new FoodMoodCardsPanel();      
-        addANewFoodMood.setSize(295,123);
-        
-        return addANewFoodMood;
-    }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addFoodMoodButton;
-    private javax.swing.JPanel backgroundFoodMoodPane;
+    private javax.swing.JPanel backgroundPanel;
     private javax.swing.JTextField foodEnterField;
     private javax.swing.JPanel footerPanel;
     private javax.swing.JButton goToChartButton;
@@ -314,7 +334,7 @@ public class MainMenuUI extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel mainMenuPanel;
     private javax.swing.JTextField moodEnterField;
-    private javax.swing.JScrollPane newFoodMoodScrollPane;
+    private javax.swing.JScrollPane newScrollPane;
     private javax.swing.JButton notificationsButton;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JButton viewUserButton;
