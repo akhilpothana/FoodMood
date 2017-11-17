@@ -20,6 +20,7 @@ public class StatsController {
     private ControlViewNotifications notificationsCntrl;
     private RecommendationController recommendationCntrl;
     private StatsView statsUI;
+    private StatsController sc1;
     /**
      * Maintain the current version of the controller to know when it is out of sync with the model and the view.
      */
@@ -45,6 +46,7 @@ public class StatsController {
         statsUI.setTitle("FoodMood");
         statsUI.setLocationRelativeTo(null);
         statsUI.setVisible(true);
+        sc1 = new StatsController();
     }
     
     public void toNotificationsCntrl (){
@@ -66,8 +68,14 @@ public class StatsController {
         }
     }
     
-    public StatsView getStatsController() {
-        return statsUI;
+    public StatsController getStatsController() {
+        if (sc1 == null)
+        {
+            sc1 = new StatsController();
+            sc1.createDashboard();
+        }
+        
+        return sc1;
     }
     
     public void refreshView()
