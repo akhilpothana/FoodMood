@@ -60,29 +60,20 @@ public class StatsController {
      */
     public void createDashboard()
     {
-        System.out.println("Test Passed: User Dashboard Launched");
+        statsUI = new StatsView(this);
     }
     
     public void refreshView()
     {
-        System.out.println("Test Passed: New Stats Pulled from DB");
+        if (statsUI == null)
+        {
+            createDashboard();
+        }
+        
+        statsUI.refreshView();
     }
     
-    /**
-     * Update the order of elements.
-     */
-    public void reorganizeDashboard(int position, int newPosition)
-    {
-        System.out.println("Test Passed: Item Moved from " + position + " to " + newPosition);
-    }
-    
-    /**
-     * Delete the stats for the user.
-     */
-    public void deleteStats()
-    {
-        System.out.println("Test Passed: Stats Deleted");
-    }
+
 }
 
 

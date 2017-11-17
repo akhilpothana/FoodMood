@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class FoodList {
     
     //FIELDS
-    private ArrayList<String> foodList;
+    private static ArrayList<String> foodList;
     
     //CONSTRUCTOR
     public FoodList()
@@ -35,7 +35,7 @@ public class FoodList {
         foodList.remove(f);
     }
 
-    public ArrayList<String> getFoodList() {
+    public static ArrayList<String> getFoodList() {
         return foodList;
     }
 }

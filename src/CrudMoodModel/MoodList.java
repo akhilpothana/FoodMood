@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MoodList {
     //FIELDS
-    private ArrayList<String> mood;
+    private static ArrayList<String> mood;
     
     //CONSTRUCTOR
     public MoodList()
@@ -16,7 +16,7 @@ public class MoodList {
     /**
      * @return the historical mood data
      */
-    public ArrayList<String> getMoodList() {
+    public static ArrayList<String> getMoodList() {
         return mood;
     }
 
