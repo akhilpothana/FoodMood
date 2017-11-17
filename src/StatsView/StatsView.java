@@ -288,7 +288,7 @@ public class StatsView extends javax.swing.JFrame {
     private int version;
     
     /**
-     * Find the Food/Mood of the day.
+     * Find the Food/Mood of the day. [no dates are being stored yet - need to update when possible]
      */
     public String findFoodOfDay()
     {

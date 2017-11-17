@@ -15,6 +15,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 import javax.swing.JPanel;
 
@@ -28,6 +29,7 @@ public class MainMenuController {
     //passed around as necessary
     private FoodList foodData;
     private MoodList moodData;
+    private Date date;
     
     private ArrayList<JPanel> foodMoodPanelsList = new ArrayList<>();
     
@@ -40,7 +42,8 @@ public class MainMenuController {
         mainMenuUI = new MainMenuUI(this);
         mainMenuUI.setTitle("FoodMood");
         mainMenuUI.setLocationRelativeTo(null);
-        mainMenuUI.setVisible(true);       
+        mainMenuUI.setVisible(true);   
+        date = new Date();
     }
     
     /**
@@ -55,7 +58,8 @@ public class MainMenuController {
         {
             PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("src/food_mood_data.txt", true)));
             out.print(food + ";");
-            out.print(mood);
+            out.print(mood + ";");
+            out.print(date);
             out.println();
             out.close();
         }
@@ -67,6 +71,37 @@ public class MainMenuController {
         System.out.print("IOException");
         System.out.println(ioe.getMessage());
         }
+    }
+    
+    public FoodList getFoodList()
+    {
+        
+        
+        return foodData;
+    }
+    
+    public MoodList getMoodList()
+    {
+        
+        return moodData;
+    }
+    
+    /**
+     * Populate the JTable with the food and mood data from the text file
+     */
+    public void readFromFile()
+    {   
+        try{
+            File file = new File("src/food_mood_data.txt");
+            Scanner fileScanner = new Scanner(file);
+
+            while(fileScanner.hasNextLine()){
+                String foodAndMood = fileScanner.nextLine();
+                String foodMood[] = foodAndMood.split(";");
+            }
+            }catch(FileNotFoundException e) {
+	        System.out.print("FileNotFoundException");
+    	}
     }
     
     /**
