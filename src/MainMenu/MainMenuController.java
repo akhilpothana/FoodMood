@@ -73,7 +73,7 @@ public class MainMenuController {
      * Here is where the UI of Stats is going to be called.
      */
     public void toStatsCntrl(){
-        statsCntrl = new StatsController();
+        statsCntrl = StatsController.getStatsController();
     }
     
     /**
