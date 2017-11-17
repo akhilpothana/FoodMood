@@ -1,7 +1,9 @@
 package RecommendationController;
 
 import MainMenu.MainMenuController;
+import NotificationsController.ControlViewNotifications;
 import RecommendationView.RecommendationView;
+import StatsController.StatsController;
 
 /**
  *This is the RecommendationController class that manages all processes in the
@@ -13,10 +15,17 @@ public class RecommendationController {
     private RecommendationView recommendationUI;
     private final String recommendation = "Nothing... yet!";
     private MainMenuController mmc;
+    private StatsController statsCntrl;
+    private ControlViewNotifications notificationCntrl;
     
-    public RecommendationController(MainMenuController mmc){
-       this.mmc = mmc;
-        
+    /**
+     * Constructor will have this MainMenuController parameter because 
+     * We want user to be able to go back to the previous page instead
+     * Of starting a whole new frame again
+     * @param mmc 
+     */
+    public RecommendationController(){
+//        this.mmc = mmc;
         System.out.println("Made it to Recommendation Controller");
         recommendationUI = new RecommendationView(this);
         recommendationUI.setTitle("FoodMood");
@@ -24,30 +33,13 @@ public class RecommendationController {
         recommendationUI.setVisible(true);
     }
     
-    
-    /**
-     * This is the default constructor for the RecommendationController
-     * class
-     */
-    public String GetRecommendation(){
-        
-        /**
-         * parseFood(), sortFood(), retrieveInfo() would be the most likely
-         * methods to make and use for this step, and then an if statement to
-         * check for empty food lists, something like this:
-         * if(recommendation != null){
-         * return recommendation
-         * }
-         * else{
-         * return "nothing... yet!";
-         * }
-         */
-        return recommendation;
+    public void toNotificationCntrl(){
+        notificationCntrl = new ControlViewNotifications();
     }
     
-    public MainMenuController getMMC()
-    {
-        return mmc;
+    public void toStatsCntrl () {
+        statsCntrl = new StatsController();
     }
-    
 }
+
+

@@ -4,8 +4,11 @@
  * and open the template in the editor.
  */
 package NotificationsController;
+import MainMenu.MainMenuController;
 import NotificationsModel.ModelViewNotifications;
 import NotificationsView.ViewNotificationsUI;
+import RecommendationController.RecommendationController;
+import StatsController.StatsController;
 
 /**
  * This class correspond to the View within the MVC structure. This is where view of this use case
@@ -14,38 +17,34 @@ import NotificationsView.ViewNotificationsUI;
  * @author edgardoreinoso
  */
 public class ControlViewNotifications {
-// FIELDS
+    private MainMenuController mmc;
+    private RecommendationController recommendationsCntrl;
+    private StatsController statsCntrl;
     private ModelViewNotifications viewNofitications_model;
-    private ViewNotificationsUI notifications_viewDisplay;
+    private ViewNotificationsUI notificationsUI;
     
     /**
-     * This is the default constructor for the ControlViewNotifications class
+     * Constructor will have this MainMenuController parameter because 
+     * We want user to be able to go back to the previous page instead
+     * Of starting a whole new frame again
+     * @param mmc 
      */
     public ControlViewNotifications(){
+//        this.mmc = mmc;
         //Test Harness pritning line
         System.out.println("Made it to Notification Controller");
-        notifications_viewDisplay = new ViewNotificationsUI();
-        notifications_viewDisplay.setTitle("FoodMood");
-        notifications_viewDisplay.setLocationRelativeTo(null);
-        notifications_viewDisplay.setVisible(true);
+        notificationsUI = new ViewNotificationsUI(this);
+        notificationsUI.setTitle("FoodMood");
+        notificationsUI.setLocationRelativeTo(null);
+        notificationsUI.setVisible(true);
     }
     
-// METHOD
-    /**
-     * This class is going to return the model for the model notification use case
-     * @return the viewNofitications_model
-     */
-    public ModelViewNotifications getViewNofitications_model() {
-        System.out.println("Test get view notification model");
-        return viewNofitications_model;
+    public void toRecommendationCntrl (){
+        recommendationsCntrl = new RecommendationController();
     }
-
-    /**
-     * This class is going to return the model for the view notification use case
-     * @return the notifications_viewDisplay
-     */
-    public ViewNotificationsUI getNotifications_viewDisplay() {
-        System.out.println("Test get the view notification display");
-        return notifications_viewDisplay;
+    
+    public void toStatsCntrl () {
+        System.out.println("This method is being called");
+        statsCntrl = new StatsController();
     }
 }

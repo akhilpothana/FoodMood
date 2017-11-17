@@ -4,17 +4,20 @@
  * and open the template in the editor.
  */
 package StatsView;
+import StatsController.StatsController;
 
 /**
  *
  * @author mlh5614
  */
 public class StatsView extends javax.swing.JFrame {
-
+    private StatsController statsCntrl;
+    
     /**
      * Creates new form ViewCharts
      */
-    public StatsView() {
+    public StatsView(StatsController statsCntrl) {
+        this.statsCntrl = statsCntrl;
         initComponents();
     }
 
@@ -61,11 +64,6 @@ public class StatsView extends javax.swing.JFrame {
         footerPanel.setPreferredSize(new java.awt.Dimension(375, 56));
 
         goToChartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pie-chart.png"))); // NOI18N
-        goToChartButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                goToChartButtonActionPerformed(evt);
-            }
-        });
 
         goToFoodMoodButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cutlery_1.png"))); // NOI18N
         goToFoodMoodButton.addActionListener(new java.awt.event.ActionListener() {
@@ -152,19 +150,17 @@ public class StatsView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void notificationsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificationsButtonActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        statsCntrl.toNotificationsCntrl();
     }//GEN-LAST:event_notificationsButtonActionPerformed
 
-    private void goToChartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToChartButtonActionPerformed
-
-    }//GEN-LAST:event_goToChartButtonActionPerformed
-
     private void goToFoodMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToFoodMoodButtonActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
     }//GEN-LAST:event_goToFoodMoodButtonActionPerformed
 
     private void goToRecommButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToRecommButtonActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        statsCntrl.toRecommendationCntrl();
     }//GEN-LAST:event_goToRecommButtonActionPerformed
 
     /**
@@ -198,7 +194,6 @@ public class StatsView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StatsView().setVisible(true);
             }
         });
     }
@@ -233,7 +228,6 @@ public class StatsView extends javax.swing.JFrame {
     {
         System.out.println("Refresh the view");
     }
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel footerPanel;
     private javax.swing.JButton goToChartButton;

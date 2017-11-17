@@ -4,17 +4,20 @@
  * and open the template in the editor.
  */
 package NotificationsView;
+import NotificationsController.ControlViewNotifications;
 
 /**
  *
  * @author edgardoreinoso
  */
 public class ViewNotificationsUI extends javax.swing.JFrame {
-
+    private ControlViewNotifications notificationsCntrl;
+    
     /**
      * Creates new form ViewNotificationsUI
      */
-    public ViewNotificationsUI() {
+    public ViewNotificationsUI(ControlViewNotifications notificationsCntrl) {
+        this.notificationsCntrl = notificationsCntrl;
         initComponents();
     }
 
@@ -38,7 +41,6 @@ public class ViewNotificationsUI extends javax.swing.JFrame {
         splitterTopFromBottom = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(382, 667));
         setResizable(false);
 
         notificationsPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -49,11 +51,6 @@ public class ViewNotificationsUI extends javax.swing.JFrame {
 
         notificationsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/alarm.png"))); // NOI18N
         notificationsButton.setPreferredSize(new java.awt.Dimension(30, 38));
-        notificationsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                notificationsButtonActionPerformed(evt);
-            }
-        });
 
         viewUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/crud_user_lines.png"))); // NOI18N
 
@@ -153,20 +150,16 @@ public class ViewNotificationsUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void notificationsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificationsButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_notificationsButtonActionPerformed
-
     private void goToChartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToChartButtonActionPerformed
-
+        notificationsCntrl.toStatsCntrl();
     }//GEN-LAST:event_goToChartButtonActionPerformed
 
     private void goToFoodMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToFoodMoodButtonActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
     }//GEN-LAST:event_goToFoodMoodButtonActionPerformed
 
     private void goToRecommButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToRecommButtonActionPerformed
-        // TODO add your handling code here:
+        notificationsCntrl.toRecommendationCntrl();
     }//GEN-LAST:event_goToRecommButtonActionPerformed
 
     /**
@@ -199,7 +192,6 @@ public class ViewNotificationsUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewNotificationsUI().setVisible(true);
             }
         });
     }

@@ -275,8 +275,7 @@ public class MainMenuUI extends javax.swing.JFrame {
     }//GEN-LAST:event_foodEnterFieldFocusGained
 
     private void goToRecommButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToRecommButtonActionPerformed
-        mmc.toRecommendationCntrl();
-        this.setVisible(false);
+        mmc.toRecommendationCntrl();        
     }//GEN-LAST:event_goToRecommButtonActionPerformed
 
     private void goToChartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToChartButtonActionPerformed

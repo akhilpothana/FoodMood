@@ -81,11 +81,6 @@ public class RecommendationView extends javax.swing.JFrame {
 
         goToRecommButton.setBackground(new java.awt.Color(204, 204, 204));
         goToRecommButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/recommended.png"))); // NOI18N
-        goToRecommButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                goToRecommButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout footerPanelLayout = new javax.swing.GroupLayout(footerPanel);
         footerPanel.setLayout(footerPanelLayout);
@@ -108,7 +103,7 @@ public class RecommendationView extends javax.swing.JFrame {
                     .addComponent(goToChartButton)
                     .addComponent(goToFoodMoodButton)
                     .addComponent(goToRecommButton))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         splitterTopFromBottom.setForeground(new java.awt.Color(51, 51, 51));
@@ -195,22 +190,18 @@ public class RecommendationView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void notificationsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificationsButtonActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        rc.toNotificationCntrl();
     }//GEN-LAST:event_notificationsButtonActionPerformed
 
     private void goToChartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToChartButtonActionPerformed
-        
+        this.setVisible(false);
+        rc.toStatsCntrl();
     }//GEN-LAST:event_goToChartButtonActionPerformed
 
     private void goToFoodMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToFoodMoodButtonActionPerformed
         this.setVisible(false);
-        rc.getMMC().getmmUI().setVisible(true);
-        rc.getMMC().getmmUI().setLocationRelativeTo(null);
     }//GEN-LAST:event_goToFoodMoodButtonActionPerformed
-
-    private void goToRecommButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToRecommButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_goToRecommButtonActionPerformed
 
     private void recommendationsPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recommendationsPanelMousePressed
         recommendationsPanel.setBackground(Color.CYAN);

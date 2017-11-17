@@ -6,6 +6,9 @@
 package StatsController;
  
 import ChartsView.ChartsView;
+import MainMenu.MainMenuController;
+import NotificationsController.ControlViewNotifications;
+import RecommendationController.RecommendationController;
 import StatsView.StatsView;
 
 /**
@@ -13,6 +16,9 @@ import StatsView.StatsView;
  * @author mlh5614
  */
 public class StatsController {
+    private MainMenuController mmc;
+    private ControlViewNotifications notificationsCntrl;
+    private RecommendationController recommendationCntrl;
     private StatsView statsUI;
     /**
      * Maintain the current version of the controller to know when it is out of sync with the model and the view.
@@ -31,13 +37,22 @@ public class StatsController {
      * This is the default constructor for the ChartsController class
      */
     public StatsController() {
+//        this.mmc = mmc;
 //        StatsView sv1 = new StatsView();
 //        System.out.println("Test Passed: Stats Controller and View Created");        
         System.out.println("Made it to Stats Controller");
-        statsUI = new StatsView();
+        statsUI = new StatsView(this);
         statsUI.setTitle("FoodMood");
         statsUI.setLocationRelativeTo(null);
         statsUI.setVisible(true);
+    }
+    
+    public void toNotificationsCntrl (){
+        notificationsCntrl = new ControlViewNotifications();
+    }
+    
+    public void toRecommendationCntrl () {
+        recommendationCntrl = new RecommendationController();
     }
     
     /**
@@ -68,5 +83,7 @@ public class StatsController {
     {
         System.out.println("Test Passed: Stats Deleted");
     }
-
 }
+
+
+
