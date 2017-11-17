@@ -60,7 +60,14 @@ public class StatsController {
      */
     public void createDashboard()
     {
-        statsUI = new StatsView(this);
+        if (statsUI == null)
+        {
+            statsUI = new StatsView(this);
+        }
+    }
+    
+    public StatsView getStatsController() {
+        return statsUI;
     }
     
     public void refreshView()
