@@ -106,9 +106,9 @@ public class MainMenuUI extends javax.swing.JFrame {
             .addGroup(footerPanelLayout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(goToChartButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(51, 51, 51)
                 .addComponent(goToFoodMoodButton)
-                .addGap(77, 77, 77)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(goToRecommButton)
                 .addGap(38, 38, 38))
         );
@@ -120,7 +120,7 @@ public class MainMenuUI extends javax.swing.JFrame {
                     .addComponent(goToChartButton)
                     .addComponent(goToFoodMoodButton)
                     .addComponent(goToRecommButton))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         foodEnterField.setBackground(new java.awt.Color(204, 204, 204));
@@ -149,7 +149,6 @@ public class MainMenuUI extends javax.swing.JFrame {
         addFoodMoodButton.setForeground(new java.awt.Color(255, 255, 255));
         addFoodMoodButton.setText("Add");
         addFoodMoodButton.setBorderPainted(false);
-        addFoodMoodButton.setOpaque(true);
         addFoodMoodButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addFoodMoodButtonActionPerformed(evt);
@@ -198,7 +197,7 @@ public class MainMenuUI extends javax.swing.JFrame {
                             .addGroup(mainMenuPanelLayout.createSequentialGroup()
                                 .addGap(19, 19, 19)
                                 .addComponent(newScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 8, Short.MAX_VALUE)))
+                        .addGap(0, 4, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         mainMenuPanelLayout.setVerticalGroup(
