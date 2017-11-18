@@ -3,6 +3,7 @@ package MainMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.Timer;
 
@@ -48,6 +49,11 @@ public class FoodMoodCardsPanel extends javax.swing.JPanel {
         firstEntryFoodMood.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         deleteButton.setText("Delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
 
         editButton.setText("Edit");
         editButton.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +68,7 @@ public class FoodMoodCardsPanel extends javax.swing.JPanel {
 
         dateLabel.setText("Date:");
 
-        dateShownLabel.setText("");
+        dateShownLabel.setText(settingUpDateToString());
         //tickTock();
         //
         //Timer timer = new Timer(500, new ActionListener() {
@@ -156,11 +162,17 @@ public class FoodMoodCardsPanel extends javax.swing.JPanel {
         }
         
     }//GEN-LAST:event_editButtonActionPerformed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_deleteButtonActionPerformed
     
-    public void tickTock(){
-        dateShownLabel.setText(DateFormat.getDateTimeInstance().format(new Date()));
+    public String settingUpDateToString(){
+        SimpleDateFormat dateFormatToString = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
+        Date dateForCard = new Date();
+        String dateToJLabel = dateFormatToString.format(dateForCard);
+        return dateToJLabel;
     }
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel dateLabel;
     private javax.swing.JLabel dateShownLabel;

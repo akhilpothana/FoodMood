@@ -120,7 +120,7 @@ public class MainMenuUI extends javax.swing.JFrame {
                     .addComponent(goToChartButton)
                     .addComponent(goToFoodMoodButton)
                     .addComponent(goToRecommButton))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         foodEnterField.setBackground(new java.awt.Color(204, 204, 204));
@@ -149,6 +149,7 @@ public class MainMenuUI extends javax.swing.JFrame {
         addFoodMoodButton.setForeground(new java.awt.Color(255, 255, 255));
         addFoodMoodButton.setText("Add");
         addFoodMoodButton.setBorderPainted(false);
+        addFoodMoodButton.setOpaque(true);
         addFoodMoodButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addFoodMoodButtonActionPerformed(evt);
