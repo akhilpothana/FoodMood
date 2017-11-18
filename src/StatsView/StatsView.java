@@ -38,8 +38,8 @@ public class StatsView extends javax.swing.JFrame {
         this.statsCntrl = statsCntrl;
         initComponents();
         date = new Date();
-        foodList = FoodList.getFoodList();
-        moodList = MoodList.getMoodList();
+        foodList = new ArrayList<>();
+        moodList = new ArrayList<>();
         f1 = null;
         m1 = null;
         foods = null;
@@ -299,7 +299,8 @@ public class StatsView extends javax.swing.JFrame {
     public void readFromFile()
     {   
         //mmc1 = MainMenuController.getMMC();
-        
+        if (foodList.isEmpty() || moodList.isEmpty()) 
+        {
         try{
             File file = new File("src/food_mood_data.txt");
             Scanner fileScanner = new Scanner(file);
@@ -313,6 +314,7 @@ public class StatsView extends javax.swing.JFrame {
             }catch(FileNotFoundException e) {
 	        System.out.print("FileNotFoundException");
     	}
+    }
     }
     
     /**
