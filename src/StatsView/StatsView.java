@@ -64,14 +64,14 @@ public class StatsView extends javax.swing.JFrame {
         goToFoodMoodButton = new javax.swing.JButton();
         goToRecommButton = new javax.swing.JButton();
         splitterTopFromBottom = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        FoodOfDayTitle = new javax.swing.JLabel();
+        FoodOfDayValue = new javax.swing.JLabel();
+        MoodOfDayTitle = new javax.swing.JLabel();
+        MoodOfDayValue = new javax.swing.JLabel();
+        FoodsTodayTitle = new javax.swing.JLabel();
+        FoodsTodayValue = new javax.swing.JLabel();
+        MoodsTodayTitle = new javax.swing.JLabel();
+        MoodsTodayValue = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(382, 689));
@@ -139,29 +139,29 @@ public class StatsView extends javax.swing.JFrame {
 
         splitterTopFromBottom.setForeground(new java.awt.Color(51, 51, 51));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Food of the Day:");
+        FoodOfDayTitle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        FoodOfDayTitle.setText("Food of the Day:");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel2.setText("default food");
+        FoodOfDayValue.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        FoodOfDayValue.setText("default food");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Mood of the Day:");
+        MoodOfDayTitle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        MoodOfDayTitle.setText("Mood of the Day:");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel4.setText("default mood");
+        MoodOfDayValue.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        MoodOfDayValue.setText("default mood");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setText("Foods Today:");
+        FoodsTodayTitle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        FoodsTodayTitle.setText("Foods Today:");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel6.setText("0");
+        FoodsTodayValue.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        FoodsTodayValue.setText("0");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setText("Moods Today:");
+        MoodsTodayTitle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        MoodsTodayTitle.setText("Moods Today:");
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel8.setText("0/0");
+        MoodsTodayValue.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        MoodsTodayValue.setText("0/0");
 
         javax.swing.GroupLayout statsPanelLayout = new javax.swing.GroupLayout(statsPanel);
         statsPanel.setLayout(statsPanelLayout);
@@ -180,17 +180,17 @@ public class StatsView extends javax.swing.JFrame {
             .addGroup(statsPanelLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(statsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1)
+                    .addComponent(MoodsTodayTitle)
+                    .addComponent(FoodsTodayTitle)
+                    .addComponent(MoodOfDayTitle)
+                    .addComponent(FoodOfDayTitle)
                     .addGroup(statsPanelLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(statsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel2))))
+                            .addComponent(MoodsTodayValue)
+                            .addComponent(FoodsTodayValue)
+                            .addComponent(MoodOfDayValue)
+                            .addComponent(FoodOfDayValue))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         statsPanelLayout.setVerticalGroup(
@@ -204,21 +204,21 @@ public class StatsView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(splitterTopFromBottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(jLabel1)
+                .addComponent(FoodOfDayTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
+                .addComponent(FoodOfDayValue)
                 .addGap(31, 31, 31)
-                .addComponent(jLabel3)
+                .addComponent(MoodOfDayTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
+                .addComponent(MoodOfDayValue)
                 .addGap(35, 35, 35)
-                .addComponent(jLabel5)
+                .addComponent(FoodsTodayTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
+                .addComponent(FoodsTodayValue)
                 .addGap(31, 31, 31)
-                .addComponent(jLabel7)
+                .addComponent(MoodsTodayTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel8)
+                .addComponent(MoodsTodayValue)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 243, Short.MAX_VALUE)
                 .addComponent(footerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -327,7 +327,7 @@ public class StatsView extends javax.swing.JFrame {
         for (String s: foodList)
         {
             Integer count = foodCount.get(s);
-            System.out.println("food s: " + s);
+            //System.out.println("food s: " + s);
             
             if (count == null) {
                 count = new Integer(0);
@@ -436,24 +436,24 @@ public class StatsView extends javax.swing.JFrame {
         String foods = Integer.toString(p1);
         String moods = Integer.toString(p1) + "/" + Integer.toString(p2);
         
-        jLabel2.setText(f1);
-        jLabel4.setText(m1);
-        jLabel6.setText(foods);
-        jLabel8.setText(moods);
+        FoodOfDayValue.setText(f1);
+        MoodOfDayValue.setText(m1);
+        FoodsTodayValue.setText(foods);
+        MoodsTodayValue.setText(moods);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel FoodOfDayTitle;
+    private javax.swing.JLabel FoodOfDayValue;
+    private javax.swing.JLabel FoodsTodayTitle;
+    private javax.swing.JLabel FoodsTodayValue;
+    private javax.swing.JLabel MoodOfDayTitle;
+    private javax.swing.JLabel MoodOfDayValue;
+    private javax.swing.JLabel MoodsTodayTitle;
+    private javax.swing.JLabel MoodsTodayValue;
     private javax.swing.JPanel footerPanel;
     private javax.swing.JButton goToChartButton;
     private javax.swing.JButton goToFoodMoodButton;
     private javax.swing.JButton goToRecommButton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JButton notificationsButton;
     private javax.swing.JSeparator splitterTopFromBottom;
     private javax.swing.JPanel statsPanel;
