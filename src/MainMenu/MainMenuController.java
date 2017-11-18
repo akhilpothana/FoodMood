@@ -24,6 +24,7 @@ public class MainMenuController {
     private ControlViewNotifications notificationsCntrl;
     private StatsController statsCntrl;
     private RecommendationController recommendationCntrl;
+    private static MainMenuController mmc1;
     
     //These will be the only instances of these class and will be 
     //passed around as necessary
@@ -51,7 +52,18 @@ public class MainMenuController {
      * This will occur either when a new entry is made, or when an existing card is edited
      * @param food
      * @param mood
+     * @return 
      */
+    
+    public static MainMenuController getMMC() {
+        if (mmc1 == null)
+        {
+            mmc1 = new MainMenuController();
+        }
+        
+        return mmc1;
+    }
+    
     public void writeFoodMoodToFile(String food, String mood)
     {
         try
@@ -109,6 +121,8 @@ public class MainMenuController {
      */
     public void toStatsCntrl(){
         statsCntrl = StatsController.getStatsController();
+        statsCntrl.refreshView();
+        statsCntrl.setUIvis();
     }
     
     /**

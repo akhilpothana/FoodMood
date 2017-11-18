@@ -68,6 +68,10 @@ public class StatsController {
         }
     }
     
+    public void setUIvis() {
+        statsUI.setVisible(true);
+    }
+    
     public static StatsController getStatsController() {
         if (sc1 == null)
         {

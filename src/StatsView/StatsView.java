@@ -6,11 +6,15 @@
 package StatsView;
 import CrudFoodModel.FoodList;
 import CrudMoodModel.MoodList;
+import MainMenu.MainMenuController;
 import StatsController.StatsController;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  *
@@ -21,6 +25,7 @@ public class StatsView extends javax.swing.JFrame {
     private Date date;
     private ArrayList<String> foodList;
     private ArrayList<String> moodList;
+    private static MainMenuController mmc1;
     String f1; //food of day
     String m1; //mood of day
     String foods; //most common foods
@@ -287,17 +292,42 @@ public class StatsView extends javax.swing.JFrame {
      */
     private int version;
     
+    
+        /**
+     * Populate the JTable with the food and mood data from the text file
+     */
+    public void readFromFile()
+    {   
+        //mmc1 = MainMenuController.getMMC();
+        
+        try{
+            File file = new File("src/food_mood_data.txt");
+            Scanner fileScanner = new Scanner(file);
+
+            while(fileScanner.hasNextLine()){
+                String foodAndMood = fileScanner.nextLine();
+                String foodMood[] = foodAndMood.split(";");
+                foodList.add(foodMood[0]);
+                moodList.add(foodMood[1]);
+            }
+            }catch(FileNotFoundException e) {
+	        System.out.print("FileNotFoundException");
+    	}
+    }
+    
     /**
      * Find the Food/Mood of the day. [no dates are being stored yet - need to update when possible]
      */
     public String findFoodOfDay()
     {
+        readFromFile();
         String foodMode = new String();
         Map<String, Integer> foodCount = new HashMap<>();
         
         for (String s: foodList)
         {
             Integer count = foodCount.get(s);
+            System.out.println("food s: " + s);
             
             if (count == null) {
                 count = new Integer(0);
@@ -330,6 +360,7 @@ public class StatsView extends javax.swing.JFrame {
     
     public String findMoodOfDay()
     {
+        readFromFile();
         String moodMode = new String();
         Map<String, Integer> moodCount = new HashMap<>();
         
@@ -371,18 +402,22 @@ public class StatsView extends javax.swing.JFrame {
      */
     public int foodsToday()
     {
+        readFromFile();
         int rv = 0;
         
         rv = foodList.size();
+        System.out.println("foodList.size: " + rv);
         
         return rv;
     }    
     
     public int moodsToday()
     {
+        readFromFile();
         int rv = 0;
         
         rv = moodList.size();
+        System.out.println("moodList.size: " + rv);
         
         return rv;
     }
@@ -394,13 +429,17 @@ public class StatsView extends javax.swing.JFrame {
     {
         String f1 = findFoodOfDay();
         String m1 = findMoodOfDay();
-        String foods = Integer.toString(foodsToday());
-        String moods = Integer.toString(moodsToday()) + "/" + moodList.size();
+        int p1;
+        int p2;
+        p1 = foodsToday();
+        p2 = moodsToday();
+        String foods = Integer.toString(p1);
+        String moods = Integer.toString(p1) + "/" + Integer.toString(p2);
         
         jLabel2.setText(f1);
         jLabel4.setText(m1);
-        jLabel6.setText(moods);
-        jLabel8.setText(foods);
+        jLabel6.setText(foods);
+        jLabel8.setText(moods);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel footerPanel;

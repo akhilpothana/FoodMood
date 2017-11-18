@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class MoodList {
     //FIELDS
     private static ArrayList<String> mood;
+   // private static MoodList ml1;
     
     //CONSTRUCTOR
     public MoodList()
@@ -20,6 +21,8 @@ public class MoodList {
         return mood;
     }
 
+ 
+    
     /**
      * @param mo - the mood to set
      */
