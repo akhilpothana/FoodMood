@@ -104,13 +104,13 @@ public class MainMenuUI extends javax.swing.JFrame {
         footerPanelLayout.setHorizontalGroup(
             footerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(footerPanelLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(65, 65, 65)
                 .addComponent(goToChartButton)
-                .addGap(51, 51, 51)
+                .addGap(54, 54, 54)
                 .addComponent(goToFoodMoodButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(goToRecommButton)
-                .addGap(38, 38, 38))
+                .addGap(65, 65, 65))
         );
         footerPanelLayout.setVerticalGroup(
             footerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,7 +198,7 @@ public class MainMenuUI extends javax.swing.JFrame {
                             .addGroup(mainMenuPanelLayout.createSequentialGroup()
                                 .addGap(19, 19, 19)
                                 .addComponent(newScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 4, Short.MAX_VALUE)))
+                        .addGap(0, 8, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         mainMenuPanelLayout.setVerticalGroup(
@@ -302,22 +302,22 @@ public class MainMenuUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_foodEnterFieldFocusGained
 
+    private void notificationsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificationsButtonActionPerformed
+        mmc.toNotificationCntrl();
+    }//GEN-LAST:event_notificationsButtonActionPerformed
+
     /**
      * These methods bellow are used to navigate through the application from the
      * MainMenuUI
      * @param evt 
      */
     private void goToRecommButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToRecommButtonActionPerformed
-        mmc.toRecommendationCntrl();        
+        mmc.toRecommendationCntrl();
     }//GEN-LAST:event_goToRecommButtonActionPerformed
 
     private void goToChartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToChartButtonActionPerformed
         mmc.toStatsCntrl();
     }//GEN-LAST:event_goToChartButtonActionPerformed
-
-    private void notificationsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificationsButtonActionPerformed
-        mmc.toNotificationCntrl();
-    }//GEN-LAST:event_notificationsButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addFoodMoodButton;

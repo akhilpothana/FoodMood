@@ -27,24 +27,27 @@ public class RecommendationView extends javax.swing.JFrame {
         titleLabel = new javax.swing.JLabel();
         notificationsButton = new javax.swing.JButton();
         viewUserButton = new javax.swing.JButton();
+        splitterTopFromBottom = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
         footerPanel = new javax.swing.JPanel();
         goToChartButton = new javax.swing.JButton();
         goToFoodMoodButton = new javax.swing.JButton();
         goToRecommButton = new javax.swing.JButton();
-        splitterTopFromBottom = new javax.swing.JSeparator();
-        alert = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         recommendationsPanel.setBackground(new java.awt.Color(255, 255, 255));
         recommendationsPanel.setPreferredSize(new java.awt.Dimension(375, 667));
+        recommendationsPanel.setSize(new java.awt.Dimension(375, 667));
         recommendationsPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 recommendationsPanelMousePressed(evt);
@@ -63,6 +66,11 @@ public class RecommendationView extends javax.swing.JFrame {
         });
 
         viewUserButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/crud_user_lines.png"))); // NOI18N
+
+        splitterTopFromBottom.setForeground(new java.awt.Color(51, 51, 51));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel1.setText("How do you want to feel?");
 
         footerPanel.setBackground(new java.awt.Color(102, 102, 102));
         footerPanel.setPreferredSize(new java.awt.Dimension(375, 56));
@@ -89,11 +97,11 @@ public class RecommendationView extends javax.swing.JFrame {
         footerPanelLayout.setHorizontalGroup(
             footerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(footerPanelLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addGap(65, 65, 65)
                 .addComponent(goToChartButton)
-                .addGap(62, 62, 62)
+                .addGap(54, 54, 54)
                 .addComponent(goToFoodMoodButton)
-                .addGap(58, 58, 58)
+                .addGap(54, 54, 54)
                 .addComponent(goToRecommButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -105,94 +113,115 @@ public class RecommendationView extends javax.swing.JFrame {
                     .addComponent(goToChartButton)
                     .addComponent(goToFoodMoodButton)
                     .addComponent(goToRecommButton))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        splitterTopFromBottom.setForeground(new java.awt.Color(51, 51, 51));
-
-        alert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/alert.png"))); // NOI18N
-        alert.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                alertKeyPressed(evt);
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/good.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/good.png"))); // NOI18N
-        jLabel2.setPreferredSize(new java.awt.Dimension(83, 78));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/alert.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/relaxed.png"))); // NOI18N
-        jLabel3.setPreferredSize(new java.awt.Dimension(75, 72));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/relaxed.png"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/smart.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/excited.png"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/inlove.png"))); // NOI18N
-        jLabel5.setPreferredSize(new java.awt.Dimension(74, 73));
+        jLabel2.setText("Good");
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/excited.png"))); // NOI18N
-        jLabel6.setPreferredSize(new java.awt.Dimension(75, 76));
+        jLabel3.setText("Relaxed");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel1.setText("How do you want to feel?");
+        jLabel4.setText("Excited");
+
+        jLabel5.setText("Active");
 
         javax.swing.GroupLayout recommendationsPanelLayout = new javax.swing.GroupLayout(recommendationsPanel);
         recommendationsPanel.setLayout(recommendationsPanelLayout);
         recommendationsPanelLayout.setHorizontalGroup(
             recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(splitterTopFromBottom)
-            .addComponent(footerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
-            .addGroup(recommendationsPanelLayout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addComponent(jLabel1)
-                .addGap(64, 64, 64))
+            .addComponent(footerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
             .addGroup(recommendationsPanelLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(viewUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74)
+                .addComponent(titleLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendationsPanelLayout.createSequentialGroup()
+                .addGap(0, 80, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(75, 75, 75))
+            .addGroup(recommendationsPanelLayout.createSequentialGroup()
                 .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(recommendationsPanelLayout.createSequentialGroup()
-                        .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(alert)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(54, 54, 54)
+                        .addGap(78, 78, 78)
                         .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(11, 11, 11))
+                            .addComponent(jButton1)
+                            .addComponent(jButton4))
+                        .addGap(37, 37, 37)
+                        .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2)
+                            .addComponent(jButton3)))
                     .addGroup(recommendationsPanelLayout.createSequentialGroup()
-                        .addComponent(viewUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60)
-                        .addComponent(titleLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addGap(101, 101, 101)
+                        .addComponent(jLabel2)
+                        .addGap(100, 100, 100)
+                        .addComponent(jLabel3))
+                    .addGroup(recommendationsPanelLayout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(jLabel4)
+                        .addGap(90, 90, 90)
+                        .addComponent(jLabel5)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         recommendationsPanelLayout.setVerticalGroup(
             recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(recommendationsPanelLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(recommendationsPanelLayout.createSequentialGroup()
-                        .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(viewUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(titleLabel)
-                            .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(splitterTopFromBottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel1)
-                        .addGap(60, 60, 60)
-                        .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(alert, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(108, 108, 108)
+                .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(viewUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(titleLabel)
+                    .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(splitterTopFromBottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
+                .addComponent(jLabel1)
+                .addGap(48, 48, 48)
+                .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(177, 177, 177)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addGap(35, 35, 35)
+                .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
                 .addComponent(footerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -200,7 +229,7 @@ public class RecommendationView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(recommendationsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
+            .addComponent(recommendationsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,39 +240,53 @@ public class RecommendationView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void notificationsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificationsButtonActionPerformed
-        this.setVisible(false);
         rc.toNotificationCntrl();
+        this.setVisible(false);
     }//GEN-LAST:event_notificationsButtonActionPerformed
-
-    private void goToChartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToChartButtonActionPerformed
-        this.setVisible(false);
-        rc.toStatsCntrl();
-    }//GEN-LAST:event_goToChartButtonActionPerformed
-
-    private void goToFoodMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToFoodMoodButtonActionPerformed
-        this.setVisible(false);
-    }//GEN-LAST:event_goToFoodMoodButtonActionPerformed
 
     private void recommendationsPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recommendationsPanelMousePressed
 
     }//GEN-LAST:event_recommendationsPanelMousePressed
 
-    private void alertKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alertKeyPressed
-        recommendationsPanel.add(new JPanel());
-    }//GEN-LAST:event_alertKeyPressed
+    private void goToFoodMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToFoodMoodButtonActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_goToFoodMoodButtonActionPerformed
+
+    private void goToChartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToChartButtonActionPerformed
+        rc.toStatsCntrl();
+        this.setVisible(false);
+    }//GEN-LAST:event_goToChartButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel alert;
     private javax.swing.JPanel footerPanel;
     private javax.swing.JButton goToChartButton;
     private javax.swing.JButton goToFoodMoodButton;
     private javax.swing.JButton goToRecommButton;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JButton notificationsButton;
     private javax.swing.JPanel recommendationsPanel;
     private javax.swing.JSeparator splitterTopFromBottom;

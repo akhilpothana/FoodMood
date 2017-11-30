@@ -118,13 +118,13 @@ public class StatsView extends javax.swing.JFrame {
         footerPanelLayout.setHorizontalGroup(
             footerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(footerPanelLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addGap(65, 65, 65)
                 .addComponent(goToChartButton)
-                .addGap(62, 62, 62)
+                .addGap(54, 54, 54)
                 .addComponent(goToFoodMoodButton)
-                .addGap(58, 58, 58)
+                .addGap(54, 54, 54)
                 .addComponent(goToRecommButton)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         footerPanelLayout.setVerticalGroup(
             footerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,7 +134,7 @@ public class StatsView extends javax.swing.JFrame {
                     .addComponent(goToChartButton)
                     .addComponent(goToFoodMoodButton)
                     .addComponent(goToRecommButton))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         splitterTopFromBottom.setForeground(new java.awt.Color(51, 51, 51));
@@ -171,7 +171,7 @@ public class StatsView extends javax.swing.JFrame {
             .addGroup(statsPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(viewUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
+                .addGap(74, 74, 74)
                 .addComponent(titleLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -219,7 +219,7 @@ public class StatsView extends javax.swing.JFrame {
                 .addComponent(MoodsTodayTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(MoodsTodayValue)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 243, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
                 .addComponent(footerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -231,15 +231,15 @@ public class StatsView extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(statsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 670, Short.MAX_VALUE)
+            .addComponent(statsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void notificationsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificationsButtonActionPerformed
-        this.setVisible(false);
         statsCntrl.toNotificationsCntrl();
+        this.setVisible(false);
     }//GEN-LAST:event_notificationsButtonActionPerformed
 
     private void goToFoodMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToFoodMoodButtonActionPerformed
@@ -247,8 +247,8 @@ public class StatsView extends javax.swing.JFrame {
     }//GEN-LAST:event_goToFoodMoodButtonActionPerformed
 
     private void goToRecommButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToRecommButtonActionPerformed
-        this.setVisible(false);
         statsCntrl.toRecommendationCntrl();
+        this.setVisible(false);
     }//GEN-LAST:event_goToRecommButtonActionPerformed
 
     /**

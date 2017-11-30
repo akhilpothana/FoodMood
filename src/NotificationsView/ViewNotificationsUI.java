@@ -39,7 +39,6 @@ public class ViewNotificationsUI extends javax.swing.JFrame {
         goToFoodMoodButton = new javax.swing.JButton();
         goToRecommButton = new javax.swing.JButton();
         splitterTopFromBottom = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         scrollPane1 = new java.awt.ScrollPane();
 
@@ -48,6 +47,7 @@ public class ViewNotificationsUI extends javax.swing.JFrame {
 
         notificationsPanel.setBackground(new java.awt.Color(255, 255, 255));
         notificationsPanel.setPreferredSize(new java.awt.Dimension(375, 667));
+        notificationsPanel.setSize(new java.awt.Dimension(375, 667));
 
         titleLabel.setFont(new java.awt.Font("Lucida Sans", 0, 30)); // NOI18N
         titleLabel.setText("FoodMood");
@@ -87,29 +87,26 @@ public class ViewNotificationsUI extends javax.swing.JFrame {
         footerPanelLayout.setHorizontalGroup(
             footerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(footerPanelLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addGap(65, 65, 65)
                 .addComponent(goToChartButton)
-                .addGap(62, 62, 62)
+                .addGap(54, 54, 54)
                 .addComponent(goToFoodMoodButton)
-                .addGap(58, 58, 58)
+                .addGap(54, 54, 54)
                 .addComponent(goToRecommButton)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         footerPanelLayout.setVerticalGroup(
             footerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(footerPanelLayout.createSequentialGroup()
-                .addGap(9, 9, 9)
+                .addGap(10, 10, 10)
                 .addGroup(footerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(goToChartButton)
                     .addComponent(goToFoodMoodButton)
                     .addComponent(goToRecommButton))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         splitterTopFromBottom.setForeground(new java.awt.Color(51, 51, 51));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel1.setText("Notifications");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -119,7 +116,7 @@ public class ViewNotificationsUI extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE)
+            .addComponent(scrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout notificationsPanelLayout = new javax.swing.GroupLayout(notificationsPanel);
@@ -133,14 +130,10 @@ public class ViewNotificationsUI extends javax.swing.JFrame {
                     .addGroup(notificationsPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(viewUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67)
+                        .addGap(74, 74, 74)
                         .addComponent(titleLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(notificationsPanelLayout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(notificationsPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -156,9 +149,7 @@ public class ViewNotificationsUI extends javax.swing.JFrame {
                     .addComponent(notificationsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(splitterTopFromBottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(jLabel1)
-                .addGap(9, 9, 9)
+                .addGap(70, 70, 70)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(footerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -172,9 +163,7 @@ public class ViewNotificationsUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(notificationsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(notificationsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -182,6 +171,7 @@ public class ViewNotificationsUI extends javax.swing.JFrame {
 
     private void goToChartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToChartButtonActionPerformed
         notificationsCntrl.toStatsCntrl();
+        this.setVisible(false);
     }//GEN-LAST:event_goToChartButtonActionPerformed
 
     private void goToFoodMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToFoodMoodButtonActionPerformed
@@ -190,6 +180,7 @@ public class ViewNotificationsUI extends javax.swing.JFrame {
 
     private void goToRecommButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToRecommButtonActionPerformed
         notificationsCntrl.toRecommendationCntrl();
+        this.setVisible(false);
     }//GEN-LAST:event_goToRecommButtonActionPerformed
 
     /**
@@ -231,7 +222,6 @@ public class ViewNotificationsUI extends javax.swing.JFrame {
     private javax.swing.JButton goToChartButton;
     private javax.swing.JButton goToFoodMoodButton;
     private javax.swing.JButton goToRecommButton;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton notificationsButton;
     private javax.swing.JPanel notificationsPanel;
