@@ -28,19 +28,19 @@ public class RecommendationView extends javax.swing.JFrame {
         notificationsButton = new javax.swing.JButton();
         viewUserButton = new javax.swing.JButton();
         splitterTopFromBottom = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
+        presentingLabel = new javax.swing.JLabel();
         footerPanel = new javax.swing.JPanel();
         goToChartButton = new javax.swing.JButton();
         goToFoodMoodButton = new javax.swing.JButton();
         goToRecommButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        goodMoodButton = new javax.swing.JButton();
+        activeMoodButton = new javax.swing.JButton();
+        relaxedMoodButton = new javax.swing.JButton();
+        excitedMoodButton = new javax.swing.JButton();
+        goodMoodLabel = new javax.swing.JLabel();
+        relaxedMoodLabel = new javax.swing.JLabel();
+        excitedMoodLabel = new javax.swing.JLabel();
+        activeMoodLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -69,8 +69,8 @@ public class RecommendationView extends javax.swing.JFrame {
 
         splitterTopFromBottom.setForeground(new java.awt.Color(51, 51, 51));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel1.setText("How do you want to feel?");
+        presentingLabel.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        presentingLabel.setText("How do you want to feel?");
 
         footerPanel.setBackground(new java.awt.Color(102, 102, 102));
         footerPanel.setPreferredSize(new java.awt.Dimension(375, 56));
@@ -116,41 +116,41 @@ public class RecommendationView extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/good.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        goodMoodButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/good.png"))); // NOI18N
+        goodMoodButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                goodMoodButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/alert.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        activeMoodButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/alert.png"))); // NOI18N
+        activeMoodButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                activeMoodButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/relaxed.png"))); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        relaxedMoodButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/relaxed.png"))); // NOI18N
+        relaxedMoodButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                relaxedMoodButtonActionPerformed(evt);
             }
         });
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/excited.png"))); // NOI18N
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        excitedMoodButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/excited.png"))); // NOI18N
+        excitedMoodButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                excitedMoodButtonActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Good");
+        goodMoodLabel.setText("Good");
 
-        jLabel3.setText("Relaxed");
+        relaxedMoodLabel.setText("Relaxed");
 
-        jLabel4.setText("Excited");
+        excitedMoodLabel.setText("Excited");
 
-        jLabel5.setText("Active");
+        activeMoodLabel.setText("Active");
 
         javax.swing.GroupLayout recommendationsPanelLayout = new javax.swing.GroupLayout(recommendationsPanel);
         recommendationsPanel.setLayout(recommendationsPanelLayout);
@@ -168,29 +168,29 @@ public class RecommendationView extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommendationsPanelLayout.createSequentialGroup()
                 .addGap(0, 80, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(presentingLabel)
                 .addGap(75, 75, 75))
             .addGroup(recommendationsPanelLayout.createSequentialGroup()
                 .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(recommendationsPanelLayout.createSequentialGroup()
                         .addGap(78, 78, 78)
                         .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
-                            .addComponent(jButton4))
+                            .addComponent(goodMoodButton)
+                            .addComponent(excitedMoodButton))
                         .addGap(37, 37, 37)
                         .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3)))
+                            .addComponent(activeMoodButton)
+                            .addComponent(relaxedMoodButton)))
                     .addGroup(recommendationsPanelLayout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(jLabel2)
-                        .addGap(100, 100, 100)
-                        .addComponent(jLabel3))
+                        .addGap(107, 107, 107)
+                        .addComponent(goodMoodLabel)
+                        .addGap(94, 94, 94)
+                        .addComponent(relaxedMoodLabel))
                     .addGroup(recommendationsPanelLayout.createSequentialGroup()
                         .addGap(102, 102, 102)
-                        .addComponent(jLabel4)
+                        .addComponent(excitedMoodLabel)
                         .addGap(90, 90, 90)
-                        .addComponent(jLabel5)))
+                        .addComponent(activeMoodLabel)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         recommendationsPanelLayout.setVerticalGroup(
@@ -204,23 +204,23 @@ public class RecommendationView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(splitterTopFromBottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53)
-                .addComponent(jLabel1)
+                .addComponent(presentingLabel)
                 .addGap(48, 48, 48)
                 .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(goodMoodButton, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(relaxedMoodButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                    .addComponent(goodMoodLabel)
+                    .addComponent(relaxedMoodLabel))
                 .addGap(35, 35, 35)
                 .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
+                    .addComponent(excitedMoodButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(activeMoodButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(recommendationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
+                    .addComponent(excitedMoodLabel)
+                    .addComponent(activeMoodLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
                 .addComponent(footerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -257,38 +257,38 @@ public class RecommendationView extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_goToChartButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void goodMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goodMoodButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_goodMoodButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void relaxedMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relaxedMoodButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_relaxedMoodButtonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void excitedMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excitedMoodButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_excitedMoodButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void activeMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activeMoodButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_activeMoodButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton activeMoodButton;
+    private javax.swing.JLabel activeMoodLabel;
+    private javax.swing.JButton excitedMoodButton;
+    private javax.swing.JLabel excitedMoodLabel;
     private javax.swing.JPanel footerPanel;
     private javax.swing.JButton goToChartButton;
     private javax.swing.JButton goToFoodMoodButton;
     private javax.swing.JButton goToRecommButton;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton goodMoodButton;
+    private javax.swing.JLabel goodMoodLabel;
     private javax.swing.JButton notificationsButton;
+    private javax.swing.JLabel presentingLabel;
     private javax.swing.JPanel recommendationsPanel;
+    private javax.swing.JButton relaxedMoodButton;
+    private javax.swing.JLabel relaxedMoodLabel;
     private javax.swing.JSeparator splitterTopFromBottom;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JButton viewUserButton;
