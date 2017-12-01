@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package StatsController;
- 
-import ChartsView.ChartsView;
+
 import MainMenu.MainMenuController;
 import NotificationsController.ControlViewNotifications;
 import RecommendationController.RecommendationController;
