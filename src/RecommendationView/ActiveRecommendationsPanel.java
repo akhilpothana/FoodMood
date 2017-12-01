@@ -11,13 +11,13 @@ import RecommendationController.RecommendationController;
  *
  * @author akhil
  */
-public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
+public class ActiveRecommendationsPanel extends javax.swing.JPanel {
     private RecommendationController instanceOfRecommendationsController;
     
     /**
-     * Creates new form TalkativeRecommendationsPanel
+     * Creates new form ExcitedRecommendationsPanel
      */
-    public ExcitedRecommendationsPanel(RecommendationController recommendationCntrl) {
+    public ActiveRecommendationsPanel(RecommendationController recommendationCntrl) {
         this.instanceOfRecommendationsController = recommendationCntrl;
         initComponents();
     }
@@ -112,7 +112,7 @@ public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
                 .addComponent(goToFoodMoodButton)
                 .addGap(54, 54, 54)
                 .addComponent(goToRecommButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         footerPanelLayout.setVerticalGroup(
             footerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,10 +125,10 @@ public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        learnMoreButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/chicken.png"))); // NOI18N
+        learnMoreButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/oranges.png"))); // NOI18N
 
         foodNameLabel.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        foodNameLabel.setText("Chicken");
+        foodNameLabel.setText("Oranges");
 
         benefitsLabel1.setText("Benefits:");
 
@@ -142,19 +142,19 @@ public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
             foodContainer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(foodContainer1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(learnMoreButton1)
+                .addComponent(learnMoreButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(foodContainer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(foodContainer1Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(foodContainer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(foodNameLabel)
-                            .addComponent(benefitsLabel1)
-                            .addComponent(frequencyLabel1))
-                        .addContainerGap(106, Short.MAX_VALUE))
                     .addGroup(foodContainer1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(learnMoreLabel1)
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(foodContainer1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(foodContainer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(benefitsLabel1)
+                            .addComponent(foodNameLabel)
+                            .addComponent(frequencyLabel1))
+                        .addContainerGap(101, Short.MAX_VALUE))))
         );
         foodContainer1Layout.setVerticalGroup(
             foodContainer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,13 +172,13 @@ public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
                         .addGap(17, 17, 17))
                     .addGroup(foodContainer1Layout.createSequentialGroup()
                         .addComponent(learnMoreButton1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(8, Short.MAX_VALUE))))
         );
 
-        learnMoreButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/macAndcheese.png"))); // NOI18N
+        learnMoreButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/salad.png"))); // NOI18N
 
         foodNameLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        foodNameLabel1.setText("Mac & Cheese");
+        foodNameLabel1.setText("Salads");
 
         benefitsLabel2.setText("Benefits:");
 
@@ -189,20 +189,22 @@ public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
         javax.swing.GroupLayout foodContainer2Layout = new javax.swing.GroupLayout(foodContainer2);
         foodContainer2.setLayout(foodContainer2Layout);
         foodContainer2Layout.setHorizontalGroup(
-            foodContainer2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            foodContainer2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(foodContainer2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(learnMoreButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(learnMoreButton2)
                 .addGroup(foodContainer2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(foodNameLabel1)
-                    .addComponent(benefitsLabel2)
-                    .addComponent(frequencyLabel2))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(foodContainer2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(learnMoreLabel2)
-                .addContainerGap())
+                    .addGroup(foodContainer2Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(foodContainer2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(foodNameLabel1)
+                            .addComponent(benefitsLabel2)
+                            .addComponent(frequencyLabel2))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(foodContainer2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(learnMoreLabel2)
+                        .addContainerGap())))
         );
         foodContainer2Layout.setVerticalGroup(
             foodContainer2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,10 +224,10 @@ public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        learnMoreButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ice_cream.png"))); // NOI18N
+        learnMoreButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/nuts.png"))); // NOI18N
 
         foodNameLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        foodNameLabel2.setText("Icre Cream");
+        foodNameLabel2.setText("Nuts");
 
         benefitsLabel3.setText("Benefits:");
 
@@ -239,14 +241,19 @@ public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
             foodContainer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(foodContainer3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(learnMoreButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(learnMoreButton3)
                 .addGroup(foodContainer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(foodNameLabel2)
-                    .addComponent(benefitsLabel3)
-                    .addComponent(frequencyLabel3)
-                    .addComponent(learnMoreLabel3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(foodContainer3Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(foodContainer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(foodNameLabel2)
+                            .addComponent(benefitsLabel3)
+                            .addComponent(frequencyLabel3))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(foodContainer3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(learnMoreLabel3)
+                        .addContainerGap())))
         );
         foodContainer3Layout.setVerticalGroup(
             foodContainer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,7 +284,7 @@ public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(footerPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+            .addComponent(footerPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -294,7 +301,7 @@ public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
                             .addComponent(foodContainer1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(foodContainer2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(foodContainer3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 9, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addComponent(splitterTopFromBottom)
         );
@@ -310,9 +317,9 @@ public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
                 .addComponent(splitterTopFromBottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(backButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(foodContainer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(foodContainer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(foodContainer3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
