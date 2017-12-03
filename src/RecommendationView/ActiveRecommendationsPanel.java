@@ -6,6 +6,8 @@
 package RecommendationView;
 
 import RecommendationController.RecommendationController;
+import java.awt.Desktop;
+import java.net.URL;
 
 /**
  *
@@ -13,12 +15,13 @@ import RecommendationController.RecommendationController;
  */
 public class ActiveRecommendationsPanel extends javax.swing.JPanel {
     private RecommendationController instanceOfRecommendationsController;
-    
+    private Desktop desktop;
     /**
      * Creates new form ExcitedRecommendationsPanel
      */
     public ActiveRecommendationsPanel(RecommendationController recommendationCntrl) {
         this.instanceOfRecommendationsController = recommendationCntrl;
+        desktop = Desktop.getDesktop();
         initComponents();
     }
 
@@ -301,7 +304,7 @@ public class ActiveRecommendationsPanel extends javax.swing.JPanel {
                             .addComponent(foodContainer1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(foodContainer2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(foodContainer3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 8, Short.MAX_VALUE)))
                 .addContainerGap())
             .addComponent(splitterTopFromBottom)
         );

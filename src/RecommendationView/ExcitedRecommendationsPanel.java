@@ -6,6 +6,8 @@
 package RecommendationView;
 
 import RecommendationController.RecommendationController;
+import java.awt.Desktop;
+import java.net.URL;
 
 /**
  *
@@ -13,12 +15,14 @@ import RecommendationController.RecommendationController;
  */
 public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
     private RecommendationController instanceOfRecommendationsController;
+    private Desktop desktop;
     
     /**
      * Creates new form TalkativeRecommendationsPanel
      */
     public ExcitedRecommendationsPanel(RecommendationController recommendationCntrl) {
         this.instanceOfRecommendationsController = recommendationCntrl;
+        desktop = Desktop.getDesktop();
         initComponents();
     }
 
@@ -135,6 +139,11 @@ public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
         frequencyLabel1.setText("Frequency:");
 
         learnMoreLabel1.setText("Learn");
+        learnMoreLabel1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                learnMoreLabel1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout foodContainer1Layout = new javax.swing.GroupLayout(foodContainer1);
         foodContainer1.setLayout(foodContainer1Layout);
@@ -185,6 +194,11 @@ public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
         frequencyLabel2.setText("Frequency:");
 
         learnMoreLabel2.setText("Learn");
+        learnMoreLabel2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                learnMoreLabel2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout foodContainer2Layout = new javax.swing.GroupLayout(foodContainer2);
         foodContainer2.setLayout(foodContainer2Layout);
@@ -232,6 +246,11 @@ public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
         frequencyLabel3.setText("Frequency:");
 
         learnMoreLabel3.setText("Learn");
+        learnMoreLabel3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                learnMoreLabel3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout foodContainer3Layout = new javax.swing.GroupLayout(foodContainer3);
         foodContainer3.setLayout(foodContainer3Layout);
@@ -240,30 +259,36 @@ public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
             .addGroup(foodContainer3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(learnMoreButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(foodContainer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(foodNameLabel2)
-                    .addComponent(benefitsLabel3)
-                    .addComponent(frequencyLabel3)
-                    .addComponent(learnMoreLabel3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(foodContainer3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(foodContainer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(foodNameLabel2)
+                            .addComponent(benefitsLabel3)
+                            .addComponent(frequencyLabel3))
+                        .addContainerGap(88, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, foodContainer3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(learnMoreLabel3)
+                        .addContainerGap())))
         );
         foodContainer3Layout.setVerticalGroup(
             foodContainer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(foodContainer3Layout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addComponent(foodNameLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(benefitsLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(frequencyLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(learnMoreLabel3)
-                .addGap(17, 17, 17))
-            .addGroup(foodContainer3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(learnMoreButton3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(foodContainer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(foodContainer3Layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(foodNameLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(benefitsLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(frequencyLabel3)
+                        .addGap(9, 9, 9)
+                        .addComponent(learnMoreLabel3))
+                    .addGroup(foodContainer3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(learnMoreButton3)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         backButton.setText("Back");
@@ -277,7 +302,7 @@ public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(footerPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+            .addComponent(footerPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -294,7 +319,7 @@ public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
                             .addComponent(foodContainer1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(foodContainer2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(foodContainer3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 9, Short.MAX_VALUE)))
+                        .addGap(0, 8, Short.MAX_VALUE)))
                 .addContainerGap())
             .addComponent(splitterTopFromBottom)
         );
@@ -350,6 +375,33 @@ public class ExcitedRecommendationsPanel extends javax.swing.JPanel {
         instanceOfRecommendationsController.getContainerForPanels().setVisible(false);
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed
+
+    private void learnMoreLabel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_learnMoreLabel1ActionPerformed
+        try {
+            desktop.browse(new URL("https://www.google.com/search?q=chicken").toURI());
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_learnMoreLabel1ActionPerformed
+
+    private void learnMoreLabel2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_learnMoreLabel2ActionPerformed
+        try {
+            desktop.browse(new URL("https://www.google.com/search?q=mac and cheese").toURI());
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_learnMoreLabel2ActionPerformed
+
+    private void learnMoreLabel3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_learnMoreLabel3ActionPerformed
+        try {
+            desktop.browse(new URL("https://www.google.com/search?q=ice cream").toURI());
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_learnMoreLabel3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

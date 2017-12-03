@@ -108,18 +108,18 @@ public class MainMenuUI extends javax.swing.JFrame {
                 .addComponent(goToChartButton)
                 .addGap(54, 54, 54)
                 .addComponent(goToFoodMoodButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(54, 54, 54)
                 .addComponent(goToRecommButton)
-                .addGap(65, 65, 65))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         footerPanelLayout.setVerticalGroup(
             footerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(footerPanelLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addGroup(footerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(goToRecommButton)
                     .addComponent(goToChartButton)
-                    .addComponent(goToFoodMoodButton)
-                    .addComponent(goToRecommButton))
+                    .addComponent(goToFoodMoodButton))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 

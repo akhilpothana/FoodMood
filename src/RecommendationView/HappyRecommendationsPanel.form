@@ -27,7 +27,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="footerPanel" alignment="1" pref="384" max="32767" attributes="0"/>
+          <Component id="footerPanel" alignment="1" pref="382" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -267,6 +267,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Learn"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="learnMoreLabel1ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -348,6 +351,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Learn"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="learnMoreLabel2ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -429,6 +435,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Learn"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="learnMoreLabel3ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

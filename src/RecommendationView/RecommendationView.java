@@ -120,7 +120,7 @@ public class RecommendationView extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        happyMoodButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/good.png"))); // NOI18N
+        happyMoodButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/happy.png"))); // NOI18N
         happyMoodButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 happyMoodButtonActionPerformed(evt);

@@ -6,6 +6,8 @@
 package RecommendationView;
 
 import RecommendationController.RecommendationController;
+import java.awt.Desktop;
+import java.net.URL;
 
 /**
  *
@@ -13,12 +15,14 @@ import RecommendationController.RecommendationController;
  */
 public class RelaxedRecommendationsPanel extends javax.swing.JPanel {
     private RecommendationController instanceOfRecommendationsController;
-    
+    private Desktop desktop;
+
     /**
      * Creates new form FullnSatisfiedRecommendationsPanel
      */
     public RelaxedRecommendationsPanel(RecommendationController recommendationCntrl) {
         this.instanceOfRecommendationsController = recommendationCntrl;
+        desktop = Desktop.getDesktop();
         initComponents();
     }
 
@@ -135,6 +139,11 @@ public class RelaxedRecommendationsPanel extends javax.swing.JPanel {
         frequencyLabel1.setText("Frequency:");
 
         learnMoreLabel1.setText("Learn");
+        learnMoreLabel1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                learnMoreLabel1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout foodContainer1Layout = new javax.swing.GroupLayout(foodContainer1);
         foodContainer1.setLayout(foodContainer1Layout);
@@ -184,6 +193,11 @@ public class RelaxedRecommendationsPanel extends javax.swing.JPanel {
         frequencyLabel2.setText("Frequency:");
 
         learnMoreLabel2.setText("Learn");
+        learnMoreLabel2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                learnMoreLabel2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout foodContainer2Layout = new javax.swing.GroupLayout(foodContainer2);
         foodContainer2.setLayout(foodContainer2Layout);
@@ -223,7 +237,7 @@ public class RelaxedRecommendationsPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        learnMoreButton3.setIcon(new javax.swing.ImageIcon("/Users/edgardoreinoso/NetBeansProjects/FoodMood_Analytics/FoodMood_Mobile/src/Images/beans.png")); // NOI18N
+        learnMoreButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/beans.png"))); // NOI18N
 
         foodNameLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         foodNameLabel2.setText("Beans");
@@ -233,6 +247,11 @@ public class RelaxedRecommendationsPanel extends javax.swing.JPanel {
         frequencyLabel3.setText("Frequency:");
 
         learnMoreLabel3.setText("Learn");
+        learnMoreLabel3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                learnMoreLabel3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout foodContainer3Layout = new javax.swing.GroupLayout(foodContainer3);
         foodContainer3.setLayout(foodContainer3Layout);
@@ -283,7 +302,7 @@ public class RelaxedRecommendationsPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(footerPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+            .addComponent(footerPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -300,7 +319,7 @@ public class RelaxedRecommendationsPanel extends javax.swing.JPanel {
                             .addComponent(foodContainer2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(foodContainer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(backButton))
-                        .addGap(0, 13, Short.MAX_VALUE)))
+                        .addGap(0, 8, Short.MAX_VALUE)))
                 .addContainerGap())
             .addComponent(splitterTopFromBottom)
         );
@@ -356,6 +375,33 @@ public class RelaxedRecommendationsPanel extends javax.swing.JPanel {
         instanceOfRecommendationsController.getContainerForPanels().setVisible(false);
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed
+
+    private void learnMoreLabel3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_learnMoreLabel3ActionPerformed
+        try {
+            desktop.browse(new URL("https://www.google.com/search?q=beans").toURI());
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_learnMoreLabel3ActionPerformed
+
+    private void learnMoreLabel2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_learnMoreLabel2ActionPerformed
+        try {
+            desktop.browse(new URL("https://www.google.com/search?q=rice").toURI());
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_learnMoreLabel2ActionPerformed
+
+    private void learnMoreLabel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_learnMoreLabel1ActionPerformed
+        try {
+            desktop.browse(new URL("https://www.google.com/search?q=steak").toURI());
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_learnMoreLabel1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
