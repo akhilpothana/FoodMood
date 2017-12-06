@@ -184,31 +184,7 @@ public class LoginUI extends javax.swing.JFrame {
             passwordField.setText("Password");
         }
     }
-    
-    /*
-    Get rid of if not using
-    */
-    private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usernameFieldActionPerformed
 
-    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordFieldActionPerformed
-
-/*
-    Delete this extra code
-    private void passwordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusGained
-            passwordField.setText("");
-    }//GEN-LAST:event_passwordFieldFocusGained
-
-    private void passwordFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusLost
-        if(passwordField.getPassword().length == 0)
-        {
-            passwordField.setText("Password");
-        }
-    }//GEN-LAST:event_passwordFieldFocusLost
-*/
     private void login_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_buttonActionPerformed
         if(loginCtrl.validateUser(usernameField.getText(), passwordField.getText()))
         {

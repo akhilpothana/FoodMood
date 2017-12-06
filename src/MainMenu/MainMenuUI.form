@@ -244,7 +244,8 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="What you ate"/>
+            <Property name="text" type="java.lang.String" value="    What you ate"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="foodEnterFieldFocusGained"/>
@@ -256,7 +257,7 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="How you feel"/>
+            <Property name="text" type="java.lang.String" value="    How you feel"/>
           </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="moodEnterFieldFocusGained"/>

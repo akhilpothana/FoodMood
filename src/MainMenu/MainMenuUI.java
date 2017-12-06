@@ -124,7 +124,8 @@ public class MainMenuUI extends javax.swing.JFrame {
         );
 
         foodEnterField.setBackground(new java.awt.Color(204, 204, 204));
-        foodEnterField.setText("What you ate");
+        foodEnterField.setText("    What you ate");
+        foodEnterField.setToolTipText("");
         foodEnterField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 foodEnterFieldFocusGained(evt);
@@ -135,7 +136,7 @@ public class MainMenuUI extends javax.swing.JFrame {
         });
 
         moodEnterField.setBackground(new java.awt.Color(204, 204, 204));
-        moodEnterField.setText("How you feel");
+        moodEnterField.setText("    How you feel");
         moodEnterField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 moodEnterFieldFocusGained(evt);
@@ -240,22 +241,27 @@ public class MainMenuUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addFoodMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFoodMoodButtonActionPerformed
-        JOptionPane.showMessageDialog(null,"Entry created!");
-        backgroundPanel.add(createNewJPanel(),createNewJPanelGrid(),0); //creating a new JPanel view
-        mmc.writeFoodMoodToFile(foodEnterField.getText(), moodEnterField.getText()); //write the information to a file
-        validate();
-        repaint();
-        //Once operations are done then
-        foodEnterField.setText("What you ate");
-        moodEnterField.setText("How you feel");        
+        //This if loop is supposed to get users' error in case they try to make a mistake
+        if (foodEnterField.getText().equals("    What you ate") || moodEnterField.getText().equals("    How you feel")){
+            JOptionPane.showMessageDialog(null,"Enter a valid food");
+        } else{
+            JOptionPane.showMessageDialog(null,"Entry created!");
+            backgroundPanel.add(createNewJPanel(),createNewJPanelGrid(),0); //creating a new JPanel view
+            mmc.writeFoodMoodToFile(foodEnterField.getText(), moodEnterField.getText()); //write the information to a file
+            validate();
+            repaint();
+            //Once operations are done then
+            foodEnterField.setText("    What you ate");
+            moodEnterField.setText("    How you feel"); 
+        }
     }//GEN-LAST:event_addFoodMoodButtonActionPerformed
     
-    public String foodTextFieldToString (){
+    public String foodTextFieldToString(){
         food = foodEnterField.getText();
         return food;
     }
-    
-    public String moodTextFieldToString (){
+
+    public String moodTextFieldToString(){
         mood = moodEnterField.getText();
         return mood;
     }
@@ -277,12 +283,12 @@ public class MainMenuUI extends javax.swing.JFrame {
     private void moodEnterFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_moodEnterFieldFocusLost
         if(moodEnterField.getText().isEmpty())
         {
-            moodEnterField.setText("How you feel");
+            moodEnterField.setText("    How you feel");
         }
     }//GEN-LAST:event_moodEnterFieldFocusLost
 
     private void moodEnterFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_moodEnterFieldFocusGained
-        if(moodEnterField.getText().equals("How you feel"))
+        if(moodEnterField.getText().equals("    How you feel"))
         {
             moodEnterField.setText("");
         }
@@ -291,12 +297,12 @@ public class MainMenuUI extends javax.swing.JFrame {
     private void foodEnterFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_foodEnterFieldFocusLost
         if(foodEnterField.getText().isEmpty())
         {
-            foodEnterField.setText("What you ate");
+            foodEnterField.setText("    What you ate");
         }
     }//GEN-LAST:event_foodEnterFieldFocusLost
 
     private void foodEnterFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_foodEnterFieldFocusGained
-        if(foodEnterField.getText().equals("What you ate"))
+        if(foodEnterField.getText().equals("    What you ate"))
         {
             foodEnterField.setText("");
         }
