@@ -26,7 +26,7 @@ public class InteractWithDB {
     private static InteractWithDB iwdb;
 
     public InteractWithDB() {
-        //    iwdb = new InteractWithDB();
+        
     }
 
     public static InteractWithDB getIWDB() {
@@ -36,7 +36,7 @@ public class InteractWithDB {
         return iwdb;
     }
 
-    public void uploadFoodMood(String food1, String mood1) {
+    public void uploadFoodMood(String username, String password) {
         try {
             // open a connection to the site
             URL url = new URL("http://foodmood.000webhostapp.com/postFoodMood2.php");
@@ -45,8 +45,8 @@ public class InteractWithDB {
             con.setDoOutput(true);
             PrintStream ps = new PrintStream(con.getOutputStream());
             // send your parameters to your site
-            ps.print("food="+food1);
-            ps.print("&mood="+mood1);
+            ps.print("username="+username);
+            ps.print("&password="+password);
 
             // we have to get the input stream in order to actually send the request
             con.getInputStream();
@@ -59,26 +59,55 @@ public class InteractWithDB {
             e.printStackTrace();
         }
     }
+    
+    public void uploadNewUser(String firstName, String lastName, String emailAddress, String username, String password){
+        System.out.println("email: "+emailAddress+"\nusername: "+username+"\npassword: "+password);
+        try {
+            // open a connection to the site
+            URL url = new URL("http://foodmood.000webhostapp.com/postNewUser.php");
+            URLConnection con = url.openConnection();
+            // activate the output
+            con.setDoOutput(true);
+            PrintStream ps = new PrintStream(con.getOutputStream());
+            // send your parameters to your site
+            ps.print("firstName="+firstName);
+            ps.print("&lastName="+lastName);
+            ps.print("&emailAddress="+emailAddress);
+            ps.print("&username="+username);
+            ps.print("&password="+password);
+            // we have to get the input stream in order to actually send the request
+            con.getInputStream();
 
+            // close the print stream
+            ps.close();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public String sendGet() throws Exception {
+        //Fields
         String rv; //return value
         String url = "http://foodmood.000webhostapp.com/pullFromServer.php";
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+        String inputLine;
+        StringBuffer response = new StringBuffer();
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        
+        
         // optional default is GET
         con.setRequestMethod("GET");
         //add request header
         con.setRequestProperty("User-Agent", USER_AGENT);
-              int responseCode = con.getResponseCode();
+        int responseCode = con.getResponseCode();
         System.out.println("\nSending 'GET' request to URL : " + url);
         System.out.println("Response Code : " + responseCode);
-        BufferedReader in = new BufferedReader(
-            new InputStreamReader(con.getInputStream()));
-        String inputLine;
-        StringBuffer response = new StringBuffer();
+        
         while ((inputLine = in.readLine()) != null) {
-        response.append(inputLine);
+            response.append(inputLine);
         }
         in.close();
         //print result
@@ -90,9 +119,9 @@ public class InteractWithDB {
 
     public void pullFoodMoodData() {
         try {
-                    sendGet();
+            sendGet();
         } catch (Exception ex) {
-                    Logger.getLogger(InteractWithDB.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(InteractWithDB.class.getName()).log(Level.SEVERE, null, ex);
         }
     } 
 }

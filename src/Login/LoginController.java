@@ -1,5 +1,7 @@
 package Login;
 
+import CrudUserView.CreateNewAccUI;
+import CrudUserController.CrudUserController;
 import CrudUserModel.User;
 import CrudUserModel.UserList;
 import MainMenu.MainMenuController;
@@ -22,16 +24,9 @@ import javax.swing.JFrame;
  */
 
 public class LoginController {
-
-    /**
-     * @return the mainMenu
-     */
-    public MainMenuController getMainMenu() {
-        return mainMenu;
-    }
-    
     private LoginUI loginView;
     private CreateNewAccUI newAccView;
+    private CrudUserController usrContrl;
     
     //Opening the main menu upon successful login
     private MainMenuController mainMenu;
@@ -43,10 +38,31 @@ public class LoginController {
     public LoginController() throws IOException {
         validUser = false;
         loginView = new LoginUI(this);
-        newAccView = new CreateNewAccUI(this);
         showLoginUI();
     }
     
+    /**
+     * @return the mainMenu
+     */
+    public MainMenuController getMainMenu() {
+        return mainMenu;
+    }
+    
+    public void toMainMenuUICntrl(){
+        mainMenu = new MainMenuController();
+    }
+    
+    public void createUserUI(){
+        usrContrl = new CrudUserController();
+    }
+    
+    public void showLoginUI(){
+        loginView.setTitle("FoodMood");
+        loginView.setLocationRelativeTo(null);
+        loginView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        loginView.setVisible(true);
+    }
+
     /**
      * 
      * @param username - The entered username value
@@ -75,30 +91,11 @@ public class LoginController {
     	}
         return false;
     }
-
-    public void toMainMenuUICntrl(){
-        mainMenu = new MainMenuController();
-    }
     
-    public void createUserUI(){
-        newAccView.setTitle("FoodMood");
-        newAccView.setLocationRelativeTo(null);
-        newAccView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        newAccView.setVisible(true);
-    }
-    
-    public void showLoginUI(){
-        loginView.setTitle("FoodMood");
-        loginView.setLocationRelativeTo(null);
-        loginView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        loginView.setVisible(true);
-    }
-
     /**
      * Reading user profile data from the text file
      */
-    public void readUserfromFile()
-    {
+    public void readUserfromFile() {
         try{
             File file = new File("src/users.txt");
             Scanner fileScanner = new Scanner(file);

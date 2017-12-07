@@ -23,6 +23,7 @@ public class LoginUI extends javax.swing.JFrame {
      * Creates new form LoginUI
      */
     public LoginUI(LoginController loginCtrl) {
+       System.out.println("Made it to LoginUI");
        this.loginCtrl = loginCtrl;
        validUser = false;
        initComponents();
@@ -199,7 +200,6 @@ public class LoginUI extends javax.swing.JFrame {
         loginCtrl.createUserUI();
         this.setVisible(false);
     }//GEN-LAST:event_newAccount_buttonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel loginPanel;

@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Login;
+package CrudUserView;
 
+import CrudUserController.CrudUserController;
+import Login.LoginController;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,24 +21,17 @@ import javax.swing.JOptionPane;
 public class CreateNewAccUI extends javax.swing.JFrame {
     private JLabel backgroundImageLabel;
     private ImageIcon backgroundImage;
-    private LoginController loginCtrl;
-    
+    private CrudUserController usrCntrl;
     
     /**
      * Creates new form CreateNewAccUI
      */
-    public CreateNewAccUI(LoginController loginCtrl) {
-        this.loginCtrl = loginCtrl;
+    public CreateNewAccUI(CrudUserController usrCntrl) {
+        this.usrCntrl = usrCntrl;
         initComponents();
 
         this.getRootPane().setDefaultButton(signUpButton);
         signUpButton.requestFocus();
-        
-        firstNameField.setText("First Name");
-        lastNameField.setText("Last Name");
-        emailAddressField.setText("Email Address");
-        usernameField.setText("Username");
-        
         
         backgroundImage = new ImageIcon("src/Images/loginView.png");
         backgroundImageLabel = new JLabel(backgroundImage);
@@ -58,9 +53,9 @@ public class CreateNewAccUI extends javax.swing.JFrame {
         lastNameField = new javax.swing.JTextField();
         emailAddressField = new javax.swing.JTextField();
         usernameField = new javax.swing.JTextField();
-        passwordField = new javax.swing.JTextField();
         signUpButton = new javax.swing.JButton();
         back_button = new javax.swing.JButton();
+        passwordField = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -104,8 +99,6 @@ public class CreateNewAccUI extends javax.swing.JFrame {
             }
         });
 
-        passwordField.setText("Password");
-
         signUpButton.setBackground(new java.awt.Color(204, 102, 0));
         signUpButton.setForeground(new java.awt.Color(255, 255, 255));
         signUpButton.setText("Sign Up");
@@ -130,6 +123,16 @@ public class CreateNewAccUI extends javax.swing.JFrame {
             }
         });
 
+        passwordField.setText("Password");
+        passwordField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                passwordFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                passwordFieldFocusLost(evt);
+            }
+        });
+
         javax.swing.GroupLayout createUserPanelLayout = new javax.swing.GroupLayout(createUserPanel);
         createUserPanel.setLayout(createUserPanelLayout);
         createUserPanelLayout.setHorizontalGroup(
@@ -137,7 +140,6 @@ public class CreateNewAccUI extends javax.swing.JFrame {
             .addGroup(createUserPanelLayout.createSequentialGroup()
                 .addGap(0, 85, Short.MAX_VALUE)
                 .addGroup(createUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(emailAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -148,6 +150,10 @@ public class CreateNewAccUI extends javax.swing.JFrame {
                 .addGroup(createUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(signUpButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(back_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(createUserPanelLayout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         createUserPanelLayout.setVerticalGroup(
@@ -163,11 +169,11 @@ public class CreateNewAccUI extends javax.swing.JFrame {
                 .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(9, 9, 9)
                 .addComponent(signUpButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(back_button)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -247,8 +253,14 @@ public class CreateNewAccUI extends javax.swing.JFrame {
         String username = usernameField.getText();
         String password = passwordField.getText();
         
-        loginCtrl.writeUserToFile(username, firstName, lastName, emailAddress, password);
-        loginCtrl.readUserfromFile();
+        usrCntrl.getUserDb().uploadNewUser(firstName, lastName, emailAddress, username, password);
+//        try {
+//            System.out.println(usrCntrl.getUserDb().sendGet());
+//        loginCtrl.writeUserToFile(username, firstName, lastName, emailAddress, password);
+//        loginCtrl.readUserfromFile();
+//        } catch (Exception ex) {
+//            Logger.getLogger(CreateNewAccUI.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         
 //        Handling exceptions
 //        if(firstName.equals("")|| lastName.equals("") || emailAddress.equals("") || username.equals("")){
@@ -265,14 +277,36 @@ public class CreateNewAccUI extends javax.swing.JFrame {
 //        }
 
         JOptionPane.showMessageDialog(null,"User created!");
-        loginCtrl.showLoginUI();
+        try {
+            usrCntrl.goBackToLogin();
+        } catch (IOException ex) {
+            Logger.getLogger(CreateNewAccUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setVisible(false);
     }//GEN-LAST:event_signUpButtonActionPerformed
 
     private void back_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_buttonActionPerformed
-        loginCtrl.showLoginUI();
+        try {
+            usrCntrl.goBackToLogin();
+        } catch (IOException ex) {
+            Logger.getLogger(CreateNewAccUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setVisible(false);
     }//GEN-LAST:event_back_buttonActionPerformed
+
+    private void passwordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusGained
+        if(passwordField.getText().equals("Password"))
+        {
+            passwordField.setText("");
+        }
+    }//GEN-LAST:event_passwordFieldFocusGained
+
+    private void passwordFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusLost
+        if(passwordField.getText().isEmpty())
+        {
+            passwordField.setText("Password");
+        }
+    }//GEN-LAST:event_passwordFieldFocusLost
 
     /**
      * @param args the command line arguments
@@ -308,7 +342,7 @@ public class CreateNewAccUI extends javax.swing.JFrame {
     private javax.swing.JTextField emailAddressField;
     private javax.swing.JTextField firstNameField;
     private javax.swing.JTextField lastNameField;
-    private javax.swing.JTextField passwordField;
+    private javax.swing.JPasswordField passwordField;
     private javax.swing.JButton signUpButton;
     private javax.swing.JTextField usernameField;
     // End of variables declaration//GEN-END:variables
