@@ -4,6 +4,8 @@ import RecommendationController.RecommendationController;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -242,12 +244,16 @@ public class MainMenuUI extends javax.swing.JFrame {
 
     private void addFoodMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFoodMoodButtonActionPerformed
         //This if loop is supposed to get users' error in case they try to make a mistake
-        if (foodEnterField.getText().equals("    What you ate") || moodEnterField.getText().equals("    How you feel")){
+        if (foodEnterField.getText().equals("    What you ate") || foodEnterField.getText().equals("")){
             JOptionPane.showMessageDialog(null,"Enter a valid food");
         } else{
             JOptionPane.showMessageDialog(null,"Entry created!");
             backgroundPanel.add(createNewJPanel(),createNewJPanelGrid(),0); //creating a new JPanel view
-            mmc.writeFoodMoodToFile(foodEnterField.getText(), moodEnterField.getText()); //write the information to a file
+            try {
+                mmc.writeFoodMoodToFile(foodEnterField.getText(), moodEnterField.getText()); //write the information to a file
+            } catch (Exception ex) {
+                Logger.getLogger(MainMenuUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
             validate();
             repaint();
             //Once operations are done then

@@ -6,6 +6,7 @@ public class FoodList {
     
     //FIELDS
     private static ArrayList<String> foodList;
+    private static FoodList fl1;
     
     //CONSTRUCTOR
     public FoodList()
@@ -22,6 +23,13 @@ public class FoodList {
         return foodList.get(pos);
     }
     
+    public static FoodList getTheFoodList() {
+        if (fl1 == null) {
+            fl1 = new FoodList();
+        }
+        return fl1;
+    }
+    
     /**
      *  @param f - the food to add to the list
      */
@@ -36,6 +44,9 @@ public class FoodList {
     }
 
     public static ArrayList<String> getFoodList() {
+        for (int i = 0; i < foodList.size(); i++) {
+            System.out.println("food="+foodList.get(i));
+        }
         return foodList;
     }
 }

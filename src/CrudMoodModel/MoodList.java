@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class MoodList {
     //FIELDS
     private static ArrayList<String> mood;
-   // private static MoodList ml1;
+    private static MoodList ml1;
     
     //CONSTRUCTOR
     public MoodList()
@@ -17,8 +17,11 @@ public class MoodList {
     /**
      * @return the historical mood data
      */
-    public static ArrayList<String> getMoodList() {
-        return mood;
+    public static MoodList getTheMoodList() {
+        if (ml1 == null) {
+            ml1 = new MoodList();
+        }
+        return ml1;
     }
 
  
@@ -43,4 +46,10 @@ public class MoodList {
         return mood.get(i);
     }
     
+    public static ArrayList<String> getMoodList() {
+        for (int i = 0; i < mood.size(); i++) {
+            System.out.println("mood="+mood.get(i));
+        }
+        return mood;
+    }
 }

@@ -3,6 +3,7 @@ package MainMenu;
 //our code
 import CrudFoodModel.FoodList;
 import CrudMoodModel.MoodList;
+import Data.InteractWithDB;
 import NotificationsController.ControlViewNotifications;
 import RecommendationController.RecommendationController;
 import StatsController.StatsController;
@@ -17,6 +18,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
 
 public class MainMenuController {
@@ -25,6 +28,7 @@ public class MainMenuController {
     private StatsController statsCntrl;
     private RecommendationController recommendationCntrl;
     private static MainMenuController mmc1;
+    private static InteractWithDB data;
     
     //These will be the only instances of these class and will be 
     //passed around as necessary
@@ -39,6 +43,7 @@ public class MainMenuController {
         System.out.println("Made it to Main Menu Controller");
         foodData = new FoodList();
         moodData = new MoodList();
+        populateFMLists();
         
         mainMenuUI = new MainMenuUI(this);
         mainMenuUI.setTitle("FoodMood");
@@ -59,15 +64,36 @@ public class MainMenuController {
         if (mmc1 == null)
         {
             mmc1 = new MainMenuController();
+            //populateFMLists();
         }
         
         return mmc1;
     }
     
-    public void writeFoodMoodToFile(String food, String mood)
+    public static void populateFMLists() {
+        data = InteractWithDB.getIWDB();
+        try {
+            String s = data.sendGet();
+            data.populateLists(s);
+        } catch (Exception ex) {
+            Logger.getLogger(MainMenuController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void writeFoodMoodToFile(String food, String mood) throws Exception
     {
         try
         {
+            data = InteractWithDB.getIWDB();
+            data.uploadFoodMood(food, mood);
+            //String s = data.sendGet();
+            //data.updateLists(s);
+            foodData = FoodList.getTheFoodList();
+            foodData.addFood(food);
+            foodData.getFoodList();
+            moodData = MoodList.getTheMoodList();
+            moodData.addMood(mood);
+            moodData.getMoodList();
             PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("src/food_mood_data.txt", true)));
             out.print(food + ";");
             out.print(mood + ";");
