@@ -428,6 +428,16 @@ public class StatsView extends javax.swing.JFrame {
         rv = moodList.size();
         System.out.println("moodList.size: " + rv);
         
+        rv = 0;
+        for (int i = 0; i < moodList.size(); i++) {
+              if (moodList.get(i).equals("")) {
+                  //do nothing
+              } else {
+                  rv++;
+              }
+              
+        }
+        
         return rv;
     }
     
@@ -443,7 +453,7 @@ public class StatsView extends javax.swing.JFrame {
         p1 = foodsToday();
         p2 = moodsToday();
         String foods = Integer.toString(p1);
-        String moods = Integer.toString(p1) + "/" + Integer.toString(p2);
+        String moods = Integer.toString(p2) + "/" + Integer.toString(p1);
         
         FoodOfDayValue.setText(f1);
         MoodOfDayValue.setText(m1);

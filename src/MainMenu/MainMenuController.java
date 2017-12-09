@@ -94,7 +94,12 @@ public class MainMenuController {
             foodData.addFood(food);
             foodData.getFoodList();
             moodData = MoodList.getTheMoodList();
-            moodData.addMood(mood);
+            if (mood.contains("How you feel")) {
+                moodData.addMood("");
+            } else {
+                moodData.addMood(mood);
+            }
+            
             moodData.getMoodList();
             PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("src/food_mood_data.txt", true)));
             out.print(food + ";");

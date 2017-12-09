@@ -45,6 +45,10 @@ public class InteractWithDB {
     }
 
     public void uploadFoodMood(String food1, String mood1) {
+        if (mood1.contains("How you feel")) {
+            mood1 = "";
+        }
+        
         try {
             // open a connection to the site
             URL url = new URL("http://foodmood.000webhostapp.com/postFoodMood2.php");
