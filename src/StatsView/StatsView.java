@@ -24,6 +24,8 @@ public class StatsView extends javax.swing.JFrame {
     private StatsController statsCntrl;
     private Date date;
     private ArrayList<String> foodList;
+    //private FoodList flcntl;
+    //private MoodList mlcntl;
     private ArrayList<String> moodList;
     private static MainMenuController mmc1;
     String f1; //food of day
@@ -134,7 +136,7 @@ public class StatsView extends javax.swing.JFrame {
                     .addComponent(goToChartButton)
                     .addComponent(goToFoodMoodButton)
                     .addComponent(goToRecommButton))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         splitterTopFromBottom.setForeground(new java.awt.Color(51, 51, 51));
@@ -322,7 +324,9 @@ public class StatsView extends javax.swing.JFrame {
      */
     public String findFoodOfDay()
     {
-        readFromFile();
+        //readFromFile();
+        //flcntl = FoodList.getTheFoodList();
+        foodList = FoodList.getFoodList();
         String foodMode = new String();
         Map<String, Integer> foodCount = new HashMap<>();
         
@@ -362,7 +366,8 @@ public class StatsView extends javax.swing.JFrame {
     
     public String findMoodOfDay()
     {
-        readFromFile();
+        //readFromFile();
+        moodList = MoodList.getMoodList();
         String moodMode = new String();
         Map<String, Integer> moodCount = new HashMap<>();
         
@@ -404,7 +409,8 @@ public class StatsView extends javax.swing.JFrame {
      */
     public int foodsToday()
     {
-        readFromFile();
+        //readFromFile();
+        foodList = FoodList.getFoodList();
         int rv = 0;
         
         rv = foodList.size();
@@ -415,7 +421,8 @@ public class StatsView extends javax.swing.JFrame {
     
     public int moodsToday()
     {
-        readFromFile();
+        //readFromFile();
+        moodList = MoodList.getMoodList();
         int rv = 0;
         
         rv = moodList.size();

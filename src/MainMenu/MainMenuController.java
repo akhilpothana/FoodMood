@@ -44,6 +44,8 @@ public class MainMenuController {
         foodData = new FoodList();
         moodData = new MoodList();
         populateFMLists();
+        foodData = FoodList.getTheFoodList();
+        moodData = MoodList.getTheMoodList();
         
         mainMenuUI = new MainMenuUI(this);
         mainMenuUI.setTitle("FoodMood");
