@@ -30,6 +30,7 @@ public class MainMenuController {
     private static MainMenuController mmc1;
     private static InteractWithDB data;
     private IdleTimer idleTime;
+    private MoodTimer moodTime;
     
     //These will be the only instances of these class and will be 
     //passed around as necessary
@@ -65,7 +66,7 @@ public class MainMenuController {
      * @return 
      */
     
-    public static MainMenuController getMMC() {
+    public  static MainMenuController getMMC() {
         if (mmc1 == null)
         {
             mmc1 = new MainMenuController();
@@ -191,5 +192,16 @@ public class MainMenuController {
     
     public void idleNotification(){
         mainMenuUI.makeIdleNotification();
+    }
+    
+    public void checkMood(String mood){
+        if(mood.equals("    How you feel") || mood.equals("")){
+            moodTime = new MoodTimer();
+            moodTime.start();
+        }
+    }
+    
+    public void moodNotification(){
+        mainMenuUI.makeMoodNotification();
     }
 }

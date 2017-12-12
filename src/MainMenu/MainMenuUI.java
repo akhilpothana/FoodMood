@@ -256,6 +256,7 @@ public class MainMenuUI extends javax.swing.JFrame {
             }
             validate();
             repaint();
+            mmc.checkMood(moodEnterField.getText());
             //Once operations are done then
             foodEnterField.setText("    What you ate");
             moodEnterField.setText("    How you feel"); 
@@ -288,6 +289,11 @@ public class MainMenuUI extends javax.swing.JFrame {
     public void makeIdleNotification(){
         JOptionPane.showMessageDialog(null, "You haven't made a food entry in" +
                 " a while. Would you like to make one now?");
+    }
+    
+     public void makeMoodNotification(){
+        JOptionPane.showMessageDialog(null, "You haven't made a mood for your" +
+                " food yet. Would you like to make one now?");
     }
 
     

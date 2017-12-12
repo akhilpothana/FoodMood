@@ -23,10 +23,6 @@ public class IdleTimer {
         public void run(){
             mmc = MainMenuController.getMMC();
             mmc.idleNotification();
-        System.out.println("The print worked");
-         if(mmc == null){
-        System.out.println("mmc is null.");
-    }
         }
        
     };

@@ -5,10 +5,28 @@
  */
 package MainMenu;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 /**
  *
  * @author Shawn
  */
 public class MoodTimer {
+    private MainMenuController mmc;
+    Timer timer = new Timer();
+    TimerTask task = new TimerTask(){
+        @Override
+        public void run(){
+            mmc = MainMenuController.getMMC();
+            mmc.moodNotification();
+            
+        }
+       
+    };
+    
+    public void start(){
+        timer.schedule(task, 10*1000);
+    }
     
 }

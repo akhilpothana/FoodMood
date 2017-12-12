@@ -49,7 +49,7 @@ public class LoginController {
     }
     
     public void toMainMenuUICntrl(){
-        mainMenu = new MainMenuController();
+        mainMenu = MainMenuController.getMMC();
     }
     
     public void createUserUI(){
