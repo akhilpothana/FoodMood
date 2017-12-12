@@ -284,6 +284,11 @@ public class MainMenuUI extends javax.swing.JFrame {
         addANewFoodMoodGrid.fill = GridBagConstraints.HORIZONTAL;
         return addANewFoodMoodGrid;
     }
+    
+    public void makeIdleNotification(){
+        JOptionPane.showMessageDialog(null, "You haven't made a food entry in" +
+                " a while. Would you like to make one now?");
+    }
 
     
     private void moodEnterFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_moodEnterFieldFocusLost

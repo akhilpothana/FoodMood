@@ -29,6 +29,7 @@ public class MainMenuController {
     private RecommendationController recommendationCntrl;
     private static MainMenuController mmc1;
     private static InteractWithDB data;
+    private IdleTimer idleTime;
     
     //These will be the only instances of these class and will be 
     //passed around as necessary
@@ -52,6 +53,8 @@ public class MainMenuController {
         mainMenuUI.setLocationRelativeTo(null);
         mainMenuUI.setVisible(true);   
         date = new Date();
+        idleTime = new IdleTimer();
+        idleTime.start();
     }
     
     /**
@@ -184,5 +187,9 @@ public class MainMenuController {
      */
     public void setMainMenuUI(MainMenuUI mainMenuUI) {
         this.mainMenuUI = mainMenuUI;
+    }
+    
+    public void idleNotification(){
+        mainMenuUI.makeIdleNotification();
     }
 }
